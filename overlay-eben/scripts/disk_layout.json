@@ -116,7 +116,7 @@
           "squashfs": "-noI -comp lzo -Xalgorithm lzo1x_999 -Xcompression-level 9"
         },
         "size": "2048 MiB",
-        "fs_size": "624 MiB",
+        "fs_size": "424 MiB",
         "uuid": "clear"
       },
       {
@@ -146,7 +146,7 @@
         # Shrunken rootfs partition to support smaller USB sticks.
         # installation will expand this to size from base.
         "num": 3,
-        "size": "890 MiB"
+        "size": "424 MiB"
       }
     ],
     # Used for factory install images.
@@ -184,7 +184,7 @@
         # The offset to the beginning of this partition, and the FS
         # size must match base exactly to allow secure boot.
         "num": 3,
-        "size": "890 MiB"
+        "size": "424 MiB"
       },
       {
         # Stateful on recovery is dynamically resized larger.
