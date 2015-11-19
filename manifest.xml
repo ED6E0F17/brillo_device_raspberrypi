@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <remote  name="github"
+           fetch="https://github.com/"
+           review="review.cyanogenmod.org" />
+
+  <default revision="master"
+           remote="aosp"
+           sync-j="4" />
+
+  <!-- Brillo-specific build tooling -->
+  <project path="device/generic/brillo" name="device/generic/brillo" groups="bdk" />
+  <project path="tools/bdk" name="platform/tools/bdk" groups="bdk" />
+
+  <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" />
+  <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" />
+  <project path="external/gentoo/portage" name="platform/external/gentoo/portage" groups="bdk" />
+
+  <!-- Brillo product examples -->
+  <project path="product/google/common" name="product/google/common" groups="bdk" />
+  <project path="product/google/example-ledflasher" name="product/google/example-ledflasher" groups="bdk" />
+
+  <!-- BEGIN open-source projects -->
+  <project path="build" name="platform/build" groups="bdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="build/blueprint" name="platform/build/blueprint" groups="bdk" />
+  <project path="build/kati" name="platform/build/kati" groups="bdk" />
+  <project path="build/soong" name="platform/build/soong" groups="bdk" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="abi/cpp" name="platform/abi/cpp" groups="bdk" />
+  <project path="bionic" name="platform/bionic" groups="bdk" />
+  <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
+  <project path="device/generic/arm64" name="device/generic/arm64" groups="bdk" />
+  <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="bdk" />
+  <project path="device/generic/common" name="device/generic/common" groups="bdk" />
+  <project path="device/generic/goldfish" name="device/generic/goldfish" groups="bdk" />
+  <project path="device/generic/mini-emulator-arm64" name="device/generic/mini-emulator-arm64" groups="bdk" />
+  <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="bdk" />
+  <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="bdk" />
+  <project path="device/generic/mini-emulator-x86_64" name="device/generic/mini-emulator-x86_64" groups="bdk" />
+  <project path="device/generic/x86" name="device/generic/x86" groups="bdk" />
+  <project path="device/generic/x86_64" name="device/generic/x86_64" groups="bdk" />
+  <project path="external/aac" name="platform/external/aac" groups="bdk" />
+  <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
+  <project path="external/bison" name="platform/external/bison" groups="bdk" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="bdk" />
+  <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
+  <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
+  <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
+  <project path="external/clang" name="platform/external/clang" groups="bdk" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
+  <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
+  <project path="external/curl" name="platform/external/curl" groups="bdk" />
+  <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
+  <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="bdk" />
+  <project path="external/dhcpcd" name="platform/external/dhcpcd" groups="bdk" />
+  <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
+  <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
+  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
+  <project path="external/elfutils" name="platform/external/elfutils" groups="bdk" />
+  <project path="external/expat" name="platform/external/expat" groups="bdk" />
+  <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="bdk" />
+  <project path="external/fec" name="platform/external/fec" groups="bdk" />
+  <project path="external/flac" name="platform/external/flac" groups="bdk" />
+  <project path="external/gmock" name="platform/external/gmock" groups="bdk" />
+  <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
+  <project path="external/gtest" name="platform/external/gtest" groups="bdk" />
+  <project path="external/icu" name="platform/external/icu" groups="bdk" />
+  <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
+  <project path="external/iptables" name="platform/external/iptables" groups="bdk" />
+  <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
+  <project path="external/iw" name="platform/external/iw" groups="bdk" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
+  <project path="external/jpeg" name="platform/external/jpeg" groups="bdk" />
+  <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
+  <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
+  <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="bdk" />
+  <project path="external/libchrome" name="platform/external/libchrome" groups="bdk" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="bdk" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="bdk" />
+  <project path="external/libdivsufsort" name="platform/external/libdivsufsort" groups="bdk" />
+  <project path="external/libdaemon" name="platform/external/libdaemon" groups="bdk" />
+  <project path="external/libevent" name="platform/external/libevent" groups="bdk" />
+  <project path="external/libgsm" name="platform/external/libgsm" groups="bdk" />
+  <project path="external/liblzf" name="platform/external/liblzf" groups="bdk" />
+  <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="bdk" />
+  <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
+  <project path="external/libogg" name="platform/external/libogg" groups="bdk" />
+  <project path="external/libopus" name="platform/external/libopus" groups="bdk" />
+  <project path="external/libselinux" name="platform/external/libselinux" groups="bdk" />
+  <project path="external/libunwind" name="platform/external/libunwind" groups="bdk" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="bdk" />
+  <project path="external/libvpx" name="platform/external/libvpx" groups="bdk" />
+  <project path="external/libweave" name="platform/external/libweave" groups="bdk" />
+  <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
+  <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
+  <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
+  <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
+  <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
+  <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
+  <project path="external/protobuf" name="platform/external/protobuf" groups="bdk" />
+  <project path="external/rootdev" name="platform/external/rootdev" groups="bdk" />
+  <project path="external/safe-iop" name="platform/external/safe-iop" groups="bdk" />
+  <project path="external/selinux" name="platform/external/selinux" groups="bdk" />
+  <project path="external/sepolicy" name="platform/external/sepolicy" groups="bdk" />
+  <project path="external/sonic" name="platform/external/sonic" groups="bdk" />
+  <project path="external/sonivox" name="platform/external/sonivox" groups="bdk" />
+  <project path="external/speex" name="platform/external/speex" groups="bdk" />
+  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="bdk" />
+  <project path="external/strace" name="platform/external/strace" groups="bdk" />
+  <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="bdk" />
+  <project path="external/tinycompress" name="platform/external/tinycompress" groups="bdk" />
+  <project path="external/tinyxml" name="platform/external/tinyxml" groups="bdk" />
+  <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="bdk" />
+  <project path="external/tlsdate" name="platform/external/tlsdate" groups="bdk" />
+  <project path="external/toybox" name="platform/external/toybox" groups="bdk" />
+  <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
+  <project path="external/valgrind" name="platform/external/valgrind" groups="bdk" />
+  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="bdk" />
+  <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
+  <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
+  <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="bdk" />
+  <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
+  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
+  <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
+  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
+  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
+  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="master" clone-depth="1" groups="linux,bdk" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="linux,arm,bdk" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="linux,arm,bdk" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="linux,bdk" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="linux,bdk" />
+  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="linux,mips,bdk" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="linux,x86,bdk" />
+  <project path="prebuilts/gdb/linux-x86" name="platform/prebuilts/gdb/linux-x86" groups="linux,bdk" />
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,bdk" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,bdk" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="bdk" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="bdk" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,bdk" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="darwin,bdk" />
+  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="bdk,linux" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
+  <project path="system/attestation" name="platform/system/attestation" groups="bdk" />
+  <project path="system/bt" name="platform/system/bt" groups="bdk" />
+  <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
+  <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
+  <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
+  <project path="system/core" name="platform/system/core" groups="bdk" />
+  <project path="system/extras" name="platform/system/extras" groups="bdk" />
+  <project path="system/firewalld" name="platform/system/firewalld" groups="bdk" />
+  <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
+  <project path="system/media" name="platform/system/media" groups="bdk" />
+  <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
+  <project path="system/netd" name="platform/system/netd" groups="bdk" />
+  <project path="system/security" name="platform/system/security" groups="bdk" />
+  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="bdk" />
+  <project path="system/tpm_manager" name="platform/system/tpm_manager" groups="bdk" />
+  <project path="system/trunks" name="platform/system/trunks" groups="bdk" />
+  <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
+  <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
+  <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
+
+  <!-- BEGIN starter boards -->
+  <project path="hardware/bsp/rpi/kernel" name="raspberrypi/linux" groups="bdk" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
+  <!-- Intel -->
+  <project path="device/intel/edison"
+	   name="device/intel/edison"
+	   groups="edison" />
+  <project path="hardware/bsp/intel"
+           name="platform/hardware/bsp/intel"
+           groups="edison" />
+  <!-- END starter boards -->
+</manifest>
