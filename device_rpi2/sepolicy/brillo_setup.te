@@ -1,0 +1,36 @@
+# Brillo setup services; used for the different init.brillo-setup-*.sh scripts.
+type brillo_setup, domain;
+type brillo_setup_exec, exec_type, file_type;
+type brillo_setup_prop, property_type;
+
+init_daemon_domain(brillo_setup)
+net_domain(brillo_setup)
+
+# Inherit open file to shell (interpreter) for script.
+allow brillo_setup shell_exec:file read;
+
+# Configure interfaces, routes and firewall rules.
+allow brillo_setup self:capability { net_admin net_raw };
+allow brillo_setup self:rawip_socket create;
+allow brillo_setup self:rawip_socket getopt;
+allow brillo_setup self:rawip_socket setopt;
+allow brillo_setup system_file:file execute_no_trans;
+
+# Set properties for init.
+set_prop(brillo_setup, brillo_setup_prop)
+
+allow brillo_setup toolbox_exec:file { rx_file_perms };
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(brillo_setup)
+
+# Allow /proc access.
+allow brillo_setup proc:dir search;
+allow brillo_setup proc:filesystem getattr;
+allow brillo_setup proc_net:file getattr;
+allow brillo_setup selinuxfs:filesystem getattr;
+
+# Quiet logging.
+dontaudit brillo_setup kernel:system module_request;
+dontaudit brillo_setup sysfs_devices_system_cpu:dir search;
+dontaudit brillo_setup sysfs_devices_system_cpu:file r_file_perms;

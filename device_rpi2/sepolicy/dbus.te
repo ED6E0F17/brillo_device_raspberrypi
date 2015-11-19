@@ -1,0 +1,21 @@
+type dbus_daemon_socket, file_type;
+type dbus_daemon, domain;
+type dbus_daemon_exec, exec_type, file_type;
+
+init_daemon_domain(dbus_daemon)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(dbus_daemon)
+
+# This seems to prevent linker warnings like:
+# linker  : readlink('/proc/self/fd/X') failed: Permission denied [fd=X]
+allow dbus_daemon proc:dir search;
+
+# dbus-daemon optimistically tries to read debug information from /proc when it
+# sees a connection. Suppress the denials when this happens.
+dontaudit dbus_daemon domain:file r_file_perms;
+dontaudit dbus_daemon domain:dir search;
+
+# Same for /sys/devices/system/cpu.
+dontaudit dbus_daemon sysfs_devices_system_cpu:dir search;
+dontaudit dbus_daemon sysfs_devices_system_cpu:file r_file_perms;

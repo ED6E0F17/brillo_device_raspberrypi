@@ -1,0 +1,71 @@
+type crash_reporter, domain;
+type crash_reporter_data_file, file_type, data_file_type;
+type crash_reporter_exec, exec_type, file_type;
+type crash_reporter_prop, property_type;
+
+# Permissions for crash collector directory.
+allow crash_reporter crash_reporter_data_file:dir create_dir_perms;
+allow crash_reporter crash_reporter_data_file:file create_file_perms;
+
+brillo_domain(crash_reporter)
+
+# Allow setting supplementary groups.
+allow crash_reporter crash_reporter:capability { setgid };
+
+# Allow calling `metrics_client -c`.
+allow crash_reporter metrics_exec:file rx_file_perms;
+
+# Allow using metrics_lib.
+allow crash_reporter metrics_data_file:dir ra_dir_perms;
+allow crash_reporter metrics_data_file:file create_file_perms;
+
+# Allow setting crash reporter properties.
+set_prop(crash_reporter, crash_reporter_prop)
+
+# crash_reporter gets called by the kernel as the root uid and gid.  It needs
+# to then switch to the user and gid of the crashing process to access files in
+# /proc/<pid> and copy them to temporary space, then switches back to root to
+# generate the minidump for crash_sender to access.  It thus needs the chown
+# capability to allow root to access the files put in temporary space that were
+# generated while running as the crashed user.
+allow crash_reporter self:capability { chown };
+
+# Allow reading from /proc.
+r_dir_file(crash_reporter, proc)
+allow crash_reporter proc_cpuinfo:file r_file_perms;
+
+# Permissions for calling dbus-send and signaling metrics.
+allow crash_reporter kernel:fifo_file r_file_perms;
+
+# Allow calling core2md.
+allow crash_reporter crash_reporter_exec:file rx_file_perms;
+
+# Allow calling dbus-send.
+allow crash_reporter crash_reporter:capability { setuid };
+allow crash_reporter dbus_daemon_exec:file rx_file_perms;
+
+# Allow crash_sender to call metrics client.
+allow crash_reporter brillo_exec:file rx_file_perms;
+
+# Allow crash_sender to run shell.
+allow crash_reporter shell_exec:file rx_file_perms;
+
+# Allow crash_sender to call grep.
+allow crash_reporter system_file:file rx_file_perms;
+
+# Allow crash_sender to call toybox.
+allow crash_reporter toolbox_exec:file rx_file_perms;
+
+# crash_sender network access policies.
+net_domain(crash_reporter)
+allow crash_reporter self:capability net_raw;
+
+# Allow reading os-release.d properties.
+r_dir_file(crash_reporter, os_release_file);
+
+allow crash_reporter device:dir getattr;
+allow crash_reporter kernel:fd use;
+allow crash_reporter rootfs:dir getattr;
+allow crash_reporter selinuxfs:filesystem getattr;
+allow crash_reporter system_file:dir getattr;
+allow crash_reporter zoneinfo_data_file:dir search;

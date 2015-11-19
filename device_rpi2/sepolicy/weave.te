@@ -1,0 +1,22 @@
+# weaved.
+type weaved, domain;
+type weaved_exec, exec_type, file_type;
+type weaved_data_file, file_type, data_file_type;
+
+brillo_domain(weaved)
+net_domain(weaved)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(weaved)
+
+allow weaved weaved_data_file:dir w_dir_perms;
+allow weaved weaved_data_file:file create_file_perms;
+allow weaved webservd:fd use;
+allow weaved webservd:fifo_file rw_file_perms;
+allow weaved webservd_data_file:file r_file_perms;
+
+allow weaved debugfs:dir search;
+allow weaved system_file:dir r_file_perms;
+
+# Allow reading os-release.d properties.
+r_dir_file(weaved, os_release_file);

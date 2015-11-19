@@ -1,0 +1,21 @@
+# This file contains Brillo-specific SELinux policy for
+# update_engine. For the main update_engine policy, see
+# external/sepolicy/update_engine.te
+
+# Allow update_engine to use D-Bus.
+unix_socket_connect(update_engine, dbus_daemon, dbus_daemon)
+
+# Allow using metrics_lib.
+allow update_engine metrics_data_file:dir ra_dir_perms;
+allow update_engine metrics_data_file:file create_file_perms;
+
+# Allow read/write on misc partition. This can be removed when we're no
+# longer using the boot_control_copy implementation of the boot_control
+# HAL.
+allow update_engine misc_block_device:blk_file rw_file_perms;
+
+# Allow reading os-release.d properties.
+r_dir_file(update_engine, os_release_file);
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(update_engine)

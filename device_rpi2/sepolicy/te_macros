@@ -1,0 +1,35 @@
+#####################################
+# brillo_domain(domain)
+# Allow a base set of permissions common across Brillo daemons.
+define(`brillo_domain', `
+init_daemon_domain($1)
+# Allow using binder and performing IPC to system services.
+binder_use($1)
+binder_service($1)
+# Allow connections to dbus_daemon.
+unix_socket_connect($1, dbus_daemon, dbus_daemon)
+
+# Allow /proc.
+allow $1 proc:dir search;
+
+# Cut down on spam.
+dontaudit $1 kernel:system module_request;
+dontaudit $1 sysfs_devices_system_cpu:dir search;
+dontaudit $1 sysfs_devices_system_cpu:file r_file_perms;
+')
+
+#####################################
+# allow_crash_reporter(domain)
+# Allow crash_reporter to access crashes for a domain.
+define(`allow_crash_reporter', `
+r_dir_file(crash_reporter, $1)
+allow crash_reporter $1_exec:file r_file_perms;
+')
+
+#####################################
+# allow_power_management(domain)
+# Allow a domain to control power management.
+define(`allow_power_management', `
+allow $1 power_service:service_manager find;
+binder_call($1, nativepowerman)
+')

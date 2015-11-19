@@ -1,0 +1,11 @@
+# avahi-daemon.
+type avahi, domain;
+type avahi_exec, exec_type, file_type;
+
+brillo_domain(avahi)
+net_domain(avahi)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(avahi)
+
+allow avahi self:netlink_route_socket { create_socket_perms nlmsg_read };

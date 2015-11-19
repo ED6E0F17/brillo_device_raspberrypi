@@ -1,0 +1,2 @@
+# Allow dhcpcd-6.8.2 to use the D-Bus socket.
+unix_socket_connect(dhcp, dbus_daemon, dbus_daemon)

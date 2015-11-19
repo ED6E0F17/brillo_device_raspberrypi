@@ -1,0 +1,2 @@
+# Allow the kernel to trigger crash_reporter during core dumps.
+domain_auto_trans(kernel, crash_reporter_exec, crash_reporter)

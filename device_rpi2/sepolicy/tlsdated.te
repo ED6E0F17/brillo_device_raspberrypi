@@ -1,0 +1,18 @@
+# tlsdated.
+type tlsdated, domain;
+type tlsdated_exec, exec_type, file_type;
+type tlsdated_data_file, file_type, data_file_type;
+
+brillo_domain(tlsdated)
+net_domain(tlsdated)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(tlsdated)
+
+allow tlsdated self:capability { sys_time setuid setgid };
+allow tlsdated tlsdated_exec:file rx_file_perms;
+allow tlsdated tlsdated_data_file:dir w_dir_perms;
+allow tlsdated tlsdated_data_file:file create_file_perms;
+
+allow tlsdated system_file:dir getattr;
+allow tlsdated zoneinfo_data_file:dir search;

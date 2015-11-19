@@ -1,0 +1,18 @@
+# firewalld.
+type firewalld, domain;
+type firewalld_exec, exec_type, file_type;
+
+brillo_domain(firewalld)
+net_domain(firewalld)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(firewalld)
+
+allow firewalld self:capability { net_admin net_raw };
+allow firewalld self:rawip_socket create_socket_perms;
+
+allow firewalld system_file:file rx_file_perms;
+
+r_dir_file(firewalld, proc)
+allow firewalld proc:filesystem getattr;
+allow firewalld proc_net:file getattr;

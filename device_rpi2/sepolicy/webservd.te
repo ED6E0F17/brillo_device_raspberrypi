@@ -1,0 +1,22 @@
+# Domain for webservd daemon.
+type webservd, domain;
+type webservd_exec, exec_type, file_type;
+type webservd_data_file, file_type, data_file_type;
+
+brillo_domain(webservd)
+net_domain(webservd)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(webservd)
+
+# Allow to pass file descriptors from webserver over D-Bus.
+allow dbus_daemon webservd:fd use;
+allow dbus_daemon webservd_data_file:file r_file_perms;
+allow dbus_daemon webservd:fifo_file rw_file_perms;
+
+allow webservd self:capability { net_bind_service };
+allow webservd webservd_data_file:dir rw_dir_perms;
+allow webservd webservd_data_file:file create_file_perms;
+
+allow webservd debugfs:dir search;
+allow webservd zoneinfo_data_file:dir search;

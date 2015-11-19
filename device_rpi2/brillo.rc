@@ -1,0 +1,53 @@
+#
+# Copyright 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Common Brillo init script. This is loaded by init.rc.
+# Services should define their own init scripts and install
+# them into /system/etc/init.
+
+on boot
+    start firewall-setup
+    setprop dev.bootcomplete 1
+
+on property:firewall.init=1
+    enable firewalld
+
+on post-fs-data
+    chown system system /data/misc/wifi
+    chown system system /data/misc/wifi/sockets
+
+service firewall-setup /system/etc/init.firewall-setup.sh
+    user root
+    group root net_admin net_raw
+    oneshot
+
+service wifi-setup /system/etc/init.wifi-setup.sh
+    class core
+    user root
+    oneshot
+
+service dbus /system/bin/dbus-daemon --system --nofork
+    class core
+    socket dbus stream 0660 dbus dbus
+    user dbus
+    group dbus
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -Dnl80211 -c/system/lib/shill/shims/wpa_supplicant.conf -u
+    class late_start
+    socket wpa_wlan0 dgram 0660 system system
+    user system
+    group system dbus inet

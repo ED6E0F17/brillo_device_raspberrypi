@@ -1,0 +1,9 @@
+# Domain for Brillo daemons.
+type brillo, domain;
+type brillo_exec, exec_type, file_type;
+
+brillo_domain(brillo)
+net_domain(brillo)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(brillo)
