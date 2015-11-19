@@ -44,7 +44,6 @@ KERNEL_TOOLCHAIN_ABS := $(realpath $(TARGET_TOOLCHAIN_ROOT)/bin)
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 
-ifeq ($(TARGET_KERNEL_ARCH), arm)
 KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androideabi-
 KERNEL_SRC_ARCH := arm
 KERNEL_CFLAGS :=
@@ -52,24 +51,6 @@ ifdef TARGET_KERNEL_DTB
 KERNEL_NAME := zImage
 else
 KERNEL_NAME := zImage-dtb
-endif
-else ifeq ($(TARGET_KERNEL_ARCH), arm64)
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/aarch64-linux-android-
-KERNEL_SRC_ARCH := arm64
-KERNEL_CFLAGS :=
-KERNEL_NAME := Image
-else ifeq ($(TARGET_KERNEL_ARCH), i386)
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/x86_64-linux-android-
-KERNEL_SRC_ARCH := x86
-KERNEL_CFLAGS := -mstack-protector-guard=tls
-KERNEL_NAME := bzImage
-else ifeq ($(TARGET_KERNEL_ARCH), x86_64)
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/x86_64-linux-android-
-KERNEL_SRC_ARCH := x86
-KERNEL_CFLAGS := -mstack-protector-guard=tls
-KERNEL_NAME := bzImage
-else
-$(error kernel arch not supported at present)
 endif
 
 # Allow caller to override toolchain.
@@ -87,20 +68,11 @@ endif
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
-KERNEL_CONFIG_REQUIRED := $(KERNEL_OUT)/.config.required
 
-KERNEL_BIN := $(KERNEL_OUT)/arch/$(KERNEL_SRC_ARCH)/boot/$(KERNEL_NAME)
+KERNEL_BIN := $(KERNEL_OUT)/arch/arm/boot/$(KERNEL_NAME)
 
 # Figure out which kernel version is being built (disregard -stable version).
 KERNEL_VERSION := $(shell $(MAKE) --no-print-directory -C $(TARGET_KERNEL_SRC) -s SUBLEVEL="" kernelversion)
-
-KERNEL_CONFIGS_DIR := device/generic/brillo/kconfig
-KERNEL_CONFIGS_COMMON := $(KERNEL_CONFIGS_DIR)/common.config
-KERNEL_CONFIGS_ARCH := $(KERNEL_CONFIGS_DIR)/$(KERNEL_ARCH).config
-KERNEL_CONFIGS_VER := $(KERNEL_CONFIGS_DIR)/$(KERNEL_VERSION)/common.config
-KERNEL_CONFIGS_VER_ARCH := $(KERNEL_CONFIGS_DIR)/$(KERNEL_VERSION)/$(KERNEL_ARCH).config
-
-KERNEL_MERGE_CONFIG := device/generic/brillo/mergeconfig.sh
 
 
 ifdef TARGET_KERNEL_DTB
@@ -115,7 +87,8 @@ $(KERNEL_OUT):
 
 # Merge the final target kernel config.
 $(KERNEL_CONFIG): $(KERNEL_OUT)
-	$(TARGET_KERNEL_SRC) $(realpath $(KERNEL_OUT)) $(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) arch/$(KERNEL_SRC_ARCH)/configs/$(TARGET_KERNEL_DEFCONFIG) $(TARGET_KERNEL_CONFIGS)
+	$(hide) cp $(TARGET_KERNEL_SRC)/arch/arm/configs/$(TARGET_KERNEL_DEFCONFIG) $(KERNEL_OUT)/.config
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) olddefconfig ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(KERNEL_CROSS_COMPILE)
 
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) echo "Building $(KERNEL_ARCH) $(KERNEL_VERSION) kernel..."
