@@ -51,18 +51,19 @@
         "size": "2014 KiB"
       },
       {
-        # Kernel for Slot A, no file system.
+        # System Partition on Brillo builds:
+        # 32Mb squashfs or 96Mb Ext4.
         "num": 2,
-        "label": "KERN-A",
-        "type": "kernel",
-        "size": "16 MiB"
+        "label": "Brillo",
+        "type": "data",
+        "size": "128 MiB"
       },
       {
         # Kernel for Slot B, no file system.
         "num": 4,
         "label": "KERN-B",
         "type": "kernel",
-        "size": "16 MiB"
+        "size": "8 MiB"
       },
       {
         # Board specific files, mostly unused.
@@ -70,13 +71,13 @@
         "label": "OEM",
         "type": "data",
         "fs_format": "ext4",
-        "size": "16 MiB",
+        "size": "8 MiB",
         "uuid": "random"
       },
       {
         # Pad out, but not sure why.
         "type": "blank",
-        "size": "64 MiB"
+        "size": "8 MiB"
       },
       {
         # Used for Legacy Bios, and EFI Bios, not ChromeOS hardware
@@ -115,8 +116,8 @@
         "fs_options": {
           "squashfs": "-noI -comp lzo -Xalgorithm lzo1x_999 -Xcompression-level 9"
         },
-        "size": "360 MiB",
-        "fs_size": "240 MiB",
+        "size": "208 MiB",
+        "fs_size": "200 MiB",
         "uuid": "clear"
       },
       {
@@ -125,7 +126,7 @@
         "label": "STATE",
         "type": "data",
         "fs_format": "ext4",
-        "size": "360 MiB",
+        "size": "320 MiB",
         "features": ["expand"],
         "uuid": "random"
       }
@@ -146,14 +147,14 @@
         # Shrunken rootfs partition to support smaller USB sticks.
         # installation will expand this to size from base.
         "num": 3,
-        "size": "320 MiB"
+        "size": "208 MiB"
       }
     ],
     # Used for factory install images.
     "factory_install": [
       {
         "num": 12,
-        "size": "32 MiB"
+        "size": "16 MiB"
       },
       {
         "num": 5,
@@ -161,8 +162,8 @@
       },
       {
         "num": 3,
-        "size": "360 MiB",
-        "fs_size": "240 MiB"
+        "size": "208 MiB",
+        "fs_size": "200 MiB"
       },
       {
         "num": 1,
@@ -184,7 +185,7 @@
         # The offset to the beginning of this partition, and the FS
         # size must match base exactly to allow secure boot.
         "num": 3,
-        "size": "320 MiB"
+        "size": "208 MiB"
       },
       {
         # Stateful on recovery is dynamically resized larger.
