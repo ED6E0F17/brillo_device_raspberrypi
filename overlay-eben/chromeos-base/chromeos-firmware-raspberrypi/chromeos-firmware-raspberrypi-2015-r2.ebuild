@@ -20,5 +20,4 @@ src_install() {
 	cd "firmware-master/boot"
 	insinto /firmware/rpi
 	doins fixup.dat start.elf bootcode.bin
-	doins -r overlays
 }
