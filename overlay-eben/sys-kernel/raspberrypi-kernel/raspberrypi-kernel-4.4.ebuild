@@ -31,5 +31,5 @@ src_install() {
         doins "${FILESDIR}"/{cmdline,config}.txt
         doins "${T}/kernel.img"
 	doins "$(cros-workon_get_build_dir)/arch/arm/boot/dts/bcm2709-rpi-2-b.dtb"
-	dodir "$(cros-workon_get_build_dir)/arch/arm/boot/dts/overlays"
+	doins -r "$(cros-workon_get_build_dir)/arch/arm/boot/dts/overlays"
 }
