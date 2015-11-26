@@ -14,16 +14,13 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/rpi2/rpi2_base.mk)
+on fs
+    mount_all /fstab.device
 
-PRODUCT_NAME := Eben
-PRODUCT_BRAND := Brillo
+on boot
+    start initnetwork
 
-PRODUCT_DEVICE := rpi2
-
-# Install emulator-specific config file for weaved.
-PRODUCT_COPY_FILES += \
-  device/rpi2/eben/base_product/weaved.conf:system/etc/weaved/weaved.conf
-
-PRODUCT_PACKAGES += \
-#  eben
+service initnetwork /system/bin/initnetwork.sh
+    user root
+    group root
+    oneshot

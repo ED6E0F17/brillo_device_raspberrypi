@@ -14,10 +14,16 @@
 # limitations under the License.
 #
 
-# This has to live here for now as the variables it requires are
-# not read when BoardConfig.mk is parsed.
+$(call inherit-product, device/rpi/rpi_base.mk)
 
-TARGET_KERNEL_DEFCONFIG :=bcm2709_defconfig
-TARGET_KERNEL_SRC :=hardware/bsp/rpi/kernel/
-TARGET_KERNEL_DTB :=bcm2709-rpi-2-b.dtb
-include device/rpi2/kernel.mk
+PRODUCT_NAME := Eben
+PRODUCT_BRAND := Brillo
+
+PRODUCT_DEVICE := rpi0
+
+# Install device-specific config file for weaved.
+PRODUCT_COPY_FILES += \
+  device/rpi/weaved.conf:system/etc/weaved/weaved.conf
+
+PRODUCT_PACKAGES += \
+#  liz

@@ -24,7 +24,7 @@ scan_for_brillo_products()
 {
 	test -n "$NO_BRILLO" && return
 	local f
-	for f in `test -d device/rpi2 && find -L device/rpi2 -maxdepth 4 -name 'productsetup.sh' 2> /dev/null | sort`;
+	for f in `test -d device/rpi && find -L device/rpi -maxdepth 4 -name 'productsetup.sh' 2> /dev/null | sort`;
 	do
 		echo "including $f"
 		. $f

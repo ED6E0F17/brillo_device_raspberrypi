@@ -17,9 +17,9 @@
 # Standard devices would usally define an SoC.
 # Arm32 device.
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a
+TARGET_ARCH_VARIANT := armv6
 TARGET_CPU_VARIANT := generic
-TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI := generic
 TARGET_CPU_ABI2 := armeabi
 TARGET_KERNEL_ARCH := $(TARGET_ARCH)
 
@@ -33,11 +33,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 102410240
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_USES_FULL_RECOVERY_IMAGE := true
-TARGET_RECOVERY_FSTAB = device/rpi2/eben/fstab.device
+TARGET_RECOVERY_FSTAB = device/rpi/fstab.device
 TARGET_SKIP_OTA_PACKAGE := false
 
 # Use clang.
 USE_CLANG_PLATFORM_BUILD := true
 
 PRODUCT_COPY_FILES += \
-    device/rpi2/eben/fstab.device:root/fstab.device
+    device/rpi/fstab.device:root/fstab.device

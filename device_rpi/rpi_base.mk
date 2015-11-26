@@ -19,10 +19,10 @@
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
-  device/rpi2/brillo.rc:system/etc/init/brillo.rc \
-  device/rpi2/sensorservice.rc:system/etc/init/sensorservice.rc \
-  device/rpi2/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
-  device/rpi2/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+  device/rpi/brillo.rc:system/etc/init/brillo.rc \
+  device/rpi/sensorservice.rc:system/etc/init/sensorservice.rc \
+  device/rpi/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
+  device/rpi/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
 
 # Directory for init files.
 TARGET_COPY_OUT_INITRCD := $(TARGET_COPY_OUT_SYSTEM)/etc/init
@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
   tools/bdk/VERSION:system/etc/$(OSRELEASED_DIRECTORY)/bdk_version
 
 # Include the cfgtree helpers for loading config values from disk.
-include device/rpi2/cfgtree.mk
+include device/rpi/cfgtree.mk
 
 # Global Brillo USE flags
 BRILLO_USE_DBUS := 1
@@ -47,7 +47,7 @@ WITHOUT_CHECK_API := true
 ANDROID_NO_TEST_CHECK := true
 
 # Template for init files.
-INITRC_TEMPLATE := device/rpi2/init.template.rc.in
+INITRC_TEMPLATE := device/rpi/init.template.rc.in
 
 PRODUCT_PACKAGES = \
   adbd \
@@ -213,7 +213,7 @@ PRODUCT_PACKAGES += \
 # For android_filesystem_config.h
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
-device/rpi2/fs_config/android_filesystem_config.h
+device/rpi/fs_config/android_filesystem_config.h
 PRODUCT_PACKAGES += \
   fs_config_files \
 
@@ -221,7 +221,7 @@ PRODUCT_PACKAGES += \
 AB_OTA_UPDATER := true
 
 # Do not build Android OTA package.
-TARGET_SKIP_OTA_PACKAGE := true
+TARGET_SKIP_OTA_PACKAGE := false
 
 # This is the list of partitions the A/B updater will update. These need to have
 # two partitions each in the partition table, with the right suffix used by the
@@ -283,21 +283,21 @@ endif
 
 # TODO(derat): Move this config file to a saner place.
 PRODUCT_COPY_FILES += \
-  device/rpi2/dbus.conf:system/etc/dbus.conf \
+  device/rpi/dbus.conf:system/etc/dbus.conf \
 
 # TODO(samueltan): Move this config file to a saner place.
 PRODUCT_COPY_FILES += \
-  device/rpi2/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
+  device/rpi/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
 
 # TODO(zqiu): Move this config file to a saner place.
 PRODUCT_COPY_FILES += \
-  device/rpi2/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
+  device/rpi/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
 # TODO(arihc): Move this whitelist file to a saner place.
 PRODUCT_COPY_FILES += \
-  device/rpi2/tests.txt:data/nativetest/tests.txt
+  device/rpi/tests.txt:data/nativetest/tests.txt
 
-BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi2/sepolicy
+BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
 
 # Define a make variable and a C define that identify Brillo targets. __BRILLO__
 # should only be used to differentiate between Brillo and non-Brillo-but-Android

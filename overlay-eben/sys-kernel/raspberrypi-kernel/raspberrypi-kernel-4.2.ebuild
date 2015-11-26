@@ -23,14 +23,13 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	cros-kernel2_src_install
-#	make bcm2709-rpi-2-b.dtb
-
-        "${FILESDIR}/mkknlimg" \
+        "${D}/../work/raspberrypi-kernel/scripts/mkknlimg" \
                 "$(cros-workon_get_build_dir)/arch/arm/boot/zImage" \
-                "${T}/dtImage"
+                "${T}/kernel.img"
 
-        insinto /boot
+        insinto /rpi/firmware
         doins "${FILESDIR}"/{cmdline,config}.txt
-        doins "${T}/dtImage"
-	doins "${FILESDIR}/bcm2709-rpi-2-b.dtb"
+	doins "${T}/kernel.img"
+	doins "$(cros-workon_get_build_dir)/arch/arm/boot/dts/bcm2709-rpi-2-b.dtb"
+	doins -r "$(cros-workon_get_build_dir)/arch/arm/boot/dts/overlays"
 }

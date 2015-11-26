@@ -87,7 +87,7 @@ $(KERNEL_OUT):
 
 # Merge the final target kernel config.
 $(KERNEL_CONFIG): $(KERNEL_OUT)
-	$(hide) cp device/rpi2/kernel.config $(KERNEL_OUT)/.config
+	$(hide) cp device/rpi/eben/kernel.config $(KERNEL_OUT)/.config
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) olddefconfig ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(KERNEL_CROSS_COMPILE)
 
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
