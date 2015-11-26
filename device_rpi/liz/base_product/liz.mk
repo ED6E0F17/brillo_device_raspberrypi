@@ -16,10 +16,9 @@
 
 $(call inherit-product, device/rpi/rpi_base.mk)
 
-PRODUCT_NAME := Eben
+PRODUCT_NAME := liz
 PRODUCT_BRAND := Brillo
-
-PRODUCT_DEVICE := rpi0
+PRODUCT_DEVICE := liz
 
 # Install device-specific config file for weaved.
 PRODUCT_COPY_FILES += \

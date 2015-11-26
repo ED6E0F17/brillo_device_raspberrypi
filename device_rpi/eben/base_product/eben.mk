@@ -16,14 +16,13 @@
 
 $(call inherit-product, device/rpi/rpi_base.mk)
 
-PRODUCT_NAME := Eben
+PRODUCT_NAME := eben
 PRODUCT_BRAND := Brillo
-
-PRODUCT_DEVICE := rpi2
+PRODUCT_DEVICE := eben
 
 # Install emulator-specific config file for weaved.
 PRODUCT_COPY_FILES += \
-  device/rpi/base_product/weaved.conf:system/etc/weaved/weaved.conf
+  device/rpi/weaved.conf:system/etc/weaved/weaved.conf
 
 PRODUCT_PACKAGES += \
 #  eben
