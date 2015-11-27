@@ -17,11 +17,11 @@
 # Standard devices would usally define an SoC.
 # Arm32 device.
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv5te
+TARGET_ARCH_VARIANT := armv7-a
 TARGET_CPU_VARIANT := generic
-TARGET_CPU_ABI := generic
+TARGET_CPU_ABI := armeabi
 TARGET_CPU_ABI2 := armeabi
-TARGET_KERNEL_ARCH := armv6k
+TARGET_KERNEL_ARCH := $(TARGET_ARCH)
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
