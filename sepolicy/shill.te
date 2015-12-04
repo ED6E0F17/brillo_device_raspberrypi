@@ -9,6 +9,9 @@ net_domain(shill)
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(shill)
 
+# Allow shill to report metrics.
+allow_metrics_reporting(shill)
+
 file_type_auto_trans(shill, system_data_file, shill_data_file)
 
 # Following permissions are needed for shill.
@@ -17,8 +20,6 @@ allow shill self:packet_socket create_socket_perms;
 allow shill self:netlink_socket create_socket_perms;
 allow shill self:netlink_route_socket { rw_socket_perms nlmsg_write };
 allow shill proc_net:file w_file_perms;
-allow shill metrics_data_file:dir rw_dir_perms;
-allow shill metrics_data_file:file create_file_perms;
 allow shill sysfs:file w_file_perms;
 allow shill wifi_sysfs_entry:file rw_file_perms;
 allow shill self:capability { setuid setgid fsetid kill net_admin net_bind_service net_raw sys_module dac_override fowner };

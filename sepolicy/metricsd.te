@@ -1,0 +1,28 @@
+# Shared metrics files.
+type metrics_data_file, file_type, data_file_type;
+
+###############################
+# metricsd
+type metricsd, domain;
+type metricsd_exec, exec_type, file_type;
+type metricsd_data_file, file_type, data_file_type;
+
+brillo_domain(metricsd)
+net_domain(metricsd)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(metricsd)
+
+# Rules for accessing the private files.
+allow metricsd metricsd_data_file:dir rw_dir_perms;
+allow metricsd metricsd_data_file:file create_file_perms;
+
+# Rules for accessing the shared files.
+allow metricsd metrics_data_file:dir rw_dir_perms;
+allow metricsd metrics_data_file:file create_file_perms;
+
+allow metricsd zoneinfo_data_file:dir search;
+allow metricsd system_file:dir getattr;
+
+# Allow reading os-release.d properties.
+r_dir_file(metricsd, os_release_file);

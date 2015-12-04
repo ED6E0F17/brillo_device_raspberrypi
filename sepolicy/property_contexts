@@ -1,3 +1,4 @@
 firewall               u:object_r:brillo_setup_prop:s0
 crash_reporter         u:object_r:crash_reporter_prop:s0
 wifi-setup             u:object_r:wifi_setup_prop:s0
+weave                  u:object_r:weave_prop:s0

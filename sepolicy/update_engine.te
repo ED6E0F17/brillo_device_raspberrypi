@@ -6,8 +6,7 @@
 unix_socket_connect(update_engine, dbus_daemon, dbus_daemon)
 
 # Allow using metrics_lib.
-allow update_engine metrics_data_file:dir ra_dir_perms;
-allow update_engine metrics_data_file:file create_file_perms;
+allow_metrics_reporting(update_engine)
 
 # Allow read/write on misc partition. This can be removed when we're no
 # longer using the boot_control_copy implementation of the boot_control

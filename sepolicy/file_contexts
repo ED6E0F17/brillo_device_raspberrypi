@@ -20,10 +20,19 @@
 /system/bin/webservd       u:object_r:webservd_exec:s0
 /data/misc/webservd(/.*)?  u:object_r:webservd_data_file:s0
 
-/data/misc/metrics(/.*)?         u:object_r:metrics_data_file:s0
-/system/bin/metricsd             u:object_r:metrics_exec:s0
-/system/bin/metrics_collector    u:object_r:metrics_exec:s0
-/system/bin/metrics_client       u:object_r:metrics_exec:s0
+# Context for shared metrics files.
+/data/misc/metrics(/.*)?            u:object_r:metrics_data_file:s0
+
+# Context for private metricsd files.
+/data/misc/metricsd(/.*)?           u:object_r:metricsd_data_file:s0
+/system/bin/metricsd                u:object_r:metricsd_exec:s0
+
+# Context for private metrics_collector files.
+/data/misc/metrics_collector(/.*)?  u:object_r:metrics_collector_data_file:s0
+/system/bin/metrics_collector       u:object_r:metrics_collector_exec:s0
+
+# Context for metrics_client.
+/system/bin/metrics_client          u:object_r:metrics_client_exec:s0
 
 /data/misc/weaved(/.*)?    u:object_r:weaved_data_file:s0
 /system/bin/weaved         u:object_r:weaved_exec:s0

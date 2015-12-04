@@ -13,11 +13,10 @@ brillo_domain(crash_reporter)
 allow crash_reporter crash_reporter:capability { setgid };
 
 # Allow calling `metrics_client -c`.
-allow crash_reporter metrics_exec:file rx_file_perms;
+allow crash_reporter metrics_client_exec:file rx_file_perms;
 
 # Allow using metrics_lib.
-allow crash_reporter metrics_data_file:dir ra_dir_perms;
-allow crash_reporter metrics_data_file:file create_file_perms;
+allow_metrics_reporting(crash_reporter)
 
 # Allow setting crash reporter properties.
 set_prop(crash_reporter, crash_reporter_prop)

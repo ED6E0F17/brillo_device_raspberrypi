@@ -9,9 +9,6 @@ binder_service($1)
 # Allow connections to dbus_daemon.
 unix_socket_connect($1, dbus_daemon, dbus_daemon)
 
-# Allow /proc.
-allow $1 proc:dir search;
-
 # Cut down on spam.
 dontaudit $1 kernel:system module_request;
 dontaudit $1 sysfs_devices_system_cpu:dir search;
@@ -32,4 +29,12 @@ allow crash_reporter $1_exec:file r_file_perms;
 define(`allow_power_management', `
 allow $1 power_service:service_manager find;
 binder_call($1, nativepowerman)
+')
+
+#####################################
+# allow_metrics_reporting(domain)
+# Allow a domain to log metrics using libmetrics.
+define(`allow_metrics_reporting', `
+allow $1 metrics_data_file:dir rw_dir_perms;
+allow $1 metrics_data_file:file create_file_perms;
 ')
