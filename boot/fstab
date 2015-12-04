@@ -1,0 +1,2 @@
+/dev/mmcblk0p2  /system ext4    ro                                wait
+/dev/mmcblk0p3  /data   auto    noatime,nodev,nomblk_io_submit    wait,check

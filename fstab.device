@@ -1,2 +1,0 @@
-/dev/block/mmcblk0p2  /system ext4    ro                                                  wait
-/dev/block/mmcblk0p8  /data   ext4    noatime,nosuid,nodev,nomblk_io_submit,errors=panic  wait,check

@@ -33,11 +33,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 102410240
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_USES_FULL_RECOVERY_IMAGE := true
-TARGET_RECOVERY_FSTAB = device/rpi/fstab.device
+TARGET_RECOVERY_FSTAB = device/rpi/boot/fstab
 TARGET_SKIP_OTA_PACKAGE := false
 
 # Use clang.
 USE_CLANG_PLATFORM_BUILD := true
 
 PRODUCT_COPY_FILES += \
-    device/rpi/fstab.device:root/fstab.device
+    device/rpi/boot/fstab:root/fstab.unknown

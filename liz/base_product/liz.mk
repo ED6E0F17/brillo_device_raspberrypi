@@ -25,4 +25,5 @@ PRODUCT_COPY_FILES += \
   device/rpi/weaved.conf:system/etc/weaved/weaved.conf
 
 PRODUCT_PACKAGES += \
+
 #  liz
