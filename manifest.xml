@@ -25,15 +25,18 @@
   <project path="product/google/example-ledflasher" name="product/google/example-ledflasher" groups="bdk" />
 
   <!-- BEGIN open-source projects -->
-  <project path="build" name="platform/build" groups="bdk" >
+  <!--project path="build" name="platform/build" groups="bdk" -->
+  <project path="build" name="ed6e0f17/platform_build" groups="bdk" remote="github" clone-depth="1">
     <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="soong/root.bp" dest="Android.bp" />
+    <linkfile src="soong/bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="bdk" />
   <project path="build/kati" name="platform/build/kati" groups="bdk" />
-  <project path="build/soong" name="platform/build/soong" groups="bdk" >
+  <!--project path="build/soong" name="platform/build/soong" groups="bdk" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
-  </project>
+  </project-->
   <project path="abi/cpp" name="platform/abi/cpp" groups="bdk" />
   <project path="bionic" name="platform/bionic" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
@@ -173,8 +176,8 @@
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
 
   <!-- BEGIN starter boards -->
+  <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
   <project path="hardware/bsp/rpi/kernel" name="raspberrypi/linux" groups="bdk" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
-  <project path="external/openssh" name="platform/external/openssh" groups="bdk" />
   <!-- Intel -->
   <project path="device/intel/edison"
 	   name="device/intel/edison"
