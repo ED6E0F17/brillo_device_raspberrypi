@@ -15,10 +15,17 @@
 #
 
 on fs
-    mount_all /fstab.device
+    chmod 666 /dev/ttyAMA0
+#    mount_all /fstab.liz
 
 on boot
-    start initnetwork
+#    start initnetwork
+
+service dbus /system/bin/dbus-daemon --system --nofork
+    class core
+    socket dbus stream 0660 dbus dbus
+    user dbus
+    group dbus
 
 service initnetwork /system/bin/initnetwork.sh
     user root

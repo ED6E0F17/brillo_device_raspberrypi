@@ -40,4 +40,5 @@ TARGET_SKIP_OTA_PACKAGE := false
 USE_CLANG_PLATFORM_BUILD := true
 
 PRODUCT_COPY_FILES += \
-    device/rpi/boot/fstab:root/fstab.unknown
+    device/rpi/liz/bsp/init.liz.rc:root/init.liz.rc \
+    device/rpi/boot/fstab:root/fstab.liz

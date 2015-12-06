@@ -19,10 +19,11 @@
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
-  device/rpi/brillo.rc:system/etc/init/brillo.rc \
-  device/rpi/sensorservice.rc:system/etc/init/sensorservice.rc \
-  device/rpi/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
-  device/rpi/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
+  device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
+  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+
+# device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
 
 # Directory for init files.
 TARGET_COPY_OUT_INITRCD := $(TARGET_COPY_OUT_SYSTEM)/etc/init
@@ -221,7 +222,7 @@ PRODUCT_PACKAGES += \
 AB_OTA_UPDATER := true
 
 # Do not build Android OTA package.
-TARGET_SKIP_OTA_PACKAGE := false
+TARGET_SKIP_OTA_PACKAGE := true
 
 # This is the list of partitions the A/B updater will update. These need to have
 # two partitions each in the partition table, with the right suffix used by the
