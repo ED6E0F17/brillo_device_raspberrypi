@@ -180,10 +180,21 @@
   <project path="hardware/bsp/rpi/kernel" name="raspberrypi/linux" groups="bdk" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
   <!-- Intel -->
   <project path="device/intel/edison"
-	   name="device/intel/edison"
-	   groups="edison" />
+           name="device/intel/edison"
+           groups="edison" />
   <project path="hardware/bsp/intel"
            name="platform/hardware/bsp/intel"
            groups="edison" />
+  <!-- Qualcomm Dragonboard -->
+  <project path="device/qcom/dragonboard"
+           name="device/qcom/dragonboard"
+           groups="dragonboard" />
+  <project path="hardware/bsp/qcom"
+           name="platform/hardware/bsp/qcom"
+           groups="dragonboard" />
+  <project path="hardware/bsp/kernel/qcom/qcom-msm-3.10"
+           name="platform/hardware/bsp/kernel/qcom"
+           revision="qcom-msm-3.10"
+           groups="dragonboard" />
   <!-- END starter boards -->
 </manifest>
