@@ -15,10 +15,10 @@
 #
 
 on fs
-    chmod 666 /dev/ttyAMA0
 #    mount_all /fstab.liz
 
 on boot
+     setprop dev.bootcomplete 1
 #    start initnetwork
 
 service dbus /system/bin/dbus-daemon --system --nofork

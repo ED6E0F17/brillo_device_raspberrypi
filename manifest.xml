@@ -192,9 +192,5 @@
   <project path="hardware/bsp/qcom"
            name="platform/hardware/bsp/qcom"
            groups="dragonboard" />
-  <project path="hardware/bsp/kernel/qcom/qcom-msm-3.10"
-           name="platform/hardware/bsp/kernel/qcom"
-           revision="qcom-msm-3.10"
-           groups="dragonboard" />
   <!-- END starter boards -->
 </manifest>

@@ -22,7 +22,7 @@ PRODUCT_DEVICE := liz
 
 # Install device-specific config file for weaved.
 PRODUCT_COPY_FILES += \
-  device/rpi/weaved.conf:system/etc/weaved/weaved.conf
+  device/rpi/common/weaved.conf:system/etc/weaved/weaved.conf
 
 PRODUCT_PACKAGES += \
 

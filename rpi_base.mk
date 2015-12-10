@@ -19,11 +19,12 @@
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
-  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
-  device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
-  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+  device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc
 
-# device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
+#  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
+#  device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
+#  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+#  device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
 
 # Directory for init files.
 TARGET_COPY_OUT_INITRCD := $(TARGET_COPY_OUT_SYSTEM)/etc/init
@@ -36,7 +37,7 @@ PRODUCT_COPY_FILES += \
   tools/bdk/VERSION:system/etc/$(OSRELEASED_DIRECTORY)/bdk_version
 
 # Include the cfgtree helpers for loading config values from disk.
-include device/rpi/cfgtree.mk
+include device/rpi/common/cfgtree.mk
 
 # Global Brillo USE flags
 BRILLO_USE_DBUS := 1
@@ -211,10 +212,9 @@ PRODUCT_PACKAGES += \
   tlsdate-helper \
   tlsdated \
 
-# For android_filesystem_config.h
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
-device/rpi/fs_config/android_filesystem_config.h
+device/rpi/common/android_filesystem_config.h
 PRODUCT_PACKAGES += \
   fs_config_files \
 
@@ -273,8 +273,11 @@ PRODUCT_PACKAGES += \
   ping \
   wpa_cli \
 
+#
 # Bluetooth.
+#
 # Don't compile for targets without WiFi support until b/25083459 is fixed.
+#
 ifeq ($(WIFI_SUPPORTED),true)
 PRODUCT_PACKAGES += \
   bluetoothtbd \
@@ -282,21 +285,11 @@ PRODUCT_PACKAGES += \
 
 endif
 
-# TODO(derat): Move this config file to a saner place.
 PRODUCT_COPY_FILES += \
-  device/rpi/dbus.conf:system/etc/dbus.conf \
-
-# TODO(samueltan): Move this config file to a saner place.
-PRODUCT_COPY_FILES += \
-  device/rpi/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
-
-# TODO(zqiu): Move this config file to a saner place.
-PRODUCT_COPY_FILES += \
-  device/rpi/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
-
-# TODO(arihc): Move this whitelist file to a saner place.
-PRODUCT_COPY_FILES += \
-  device/rpi/tests.txt:data/nativetest/tests.txt
+  device/rpi/common/dbus.conf:system/etc/dbus.conf \
+  device/rpi/common/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
+  device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
+  device/rpi/common/tests.txt:data/nativetest/tests.txt
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
 
