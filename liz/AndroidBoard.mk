@@ -20,4 +20,5 @@
 TARGET_KERNEL_DEFCONFIG :=bcmrpi_defconfig
 TARGET_KERNEL_SRC :=hardware/bsp/rpi/kernel/
 TARGET_KERNEL_DTB :=bcm2708-rpi-b-plus.dtb
+#TARGET_KERNEL_DTB :=bcm2835-rpi-a-plus.dtb
 include device/rpi/liz/kernel.mk

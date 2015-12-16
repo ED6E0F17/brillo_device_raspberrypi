@@ -7,7 +7,9 @@
   <remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
-
+  <remote  name="linux"
+           fetch="https://kernel.googlesource.com/pub/scm/linux/kernel/git/"
+            />
   <default revision="master"
            remote="aosp"
            sync-j="4" />
@@ -126,6 +128,7 @@
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="bdk" />
   <project path="external/tlsdate" name="platform/external/tlsdate" groups="bdk" />
   <project path="external/toybox" name="platform/external/toybox" groups="bdk" />
+  <project path="external/tpm2" name="platform/external/tpm2" groups="bdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
   <project path="external/valgrind" name="platform/external/valgrind" groups="bdk" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="bdk" />
@@ -179,19 +182,14 @@
   <!-- BEGIN starter boards -->
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
   <project path="hardware/bsp/rpi/kernel" name="raspberrypi/linux" groups="bdk" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
+  <!--project path="hardware/bsp/rpi/kernel" name="torvalds/linux" groups="bdk" remote="linux" clone-depth="1"/-->
   <!-- Intel -->
   <project path="device/intel/edison"
            name="device/intel/edison"
            groups="edison" />
-  <project path="hardware/bsp/intel"
-           name="platform/hardware/bsp/intel"
-           groups="edison" />
   <!-- Qualcomm Dragonboard -->
   <project path="device/qcom/dragonboard"
            name="device/qcom/dragonboard"
-           groups="dragonboard" />
-  <project path="hardware/bsp/qcom"
-           name="platform/hardware/bsp/qcom"
            groups="dragonboard" />
   <!-- END starter boards -->
 </manifest>
