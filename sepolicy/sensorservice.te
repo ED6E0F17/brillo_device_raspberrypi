@@ -20,9 +20,6 @@ allow sensorservice cgroup:file w_file_perms;
 
 allow sensorservice cpuctl_device:dir search;
 
-allow sensorservice debugfs:dir search;
-allow sensorservice debugfs:file w_file_perms;
-
 allow sensorservice proc_net:dir search;
 allow sensorservice proc_net:file r_file_perms;
 

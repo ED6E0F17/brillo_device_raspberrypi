@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 # Setup networking when boot starts
-ifconfig eth0 192.168.1.246 netmask 255.255.255.0 up
+ifconfig usb0 192.168.1.246 netmask 255.255.255.0 up
 route add default gw 192.168.1.1
 # Open up port 5555 for adb
 iptables -I INPUT -p tcp --dport 5555 -j ACCEPT -w

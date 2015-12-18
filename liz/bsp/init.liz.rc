@@ -19,7 +19,7 @@ on fs
 
 on boot
      setprop dev.bootcomplete 1
-#    start initnetwork
+     start initnetwork
 
 service dbus /system/bin/dbus-daemon --system --nofork
     class core

@@ -54,6 +54,7 @@
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="bdk" />
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
   <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
+  <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="bdk" />
