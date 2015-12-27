@@ -19,10 +19,10 @@
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
+  device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
   device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc
 
 #  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
-#  device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
 #  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
 #  device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
 

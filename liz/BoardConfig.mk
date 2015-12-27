@@ -17,7 +17,9 @@
 # Standard devices would usally define an SoC.
 # Arm32 device.
 TARGET_ARCH := arm
+# define armv7-a because armv5 fails. Convert to armv6 in build system
 TARGET_ARCH_VARIANT := armv7-a
+#TODO Make arm6v a TARGET_CPU_VARIANT 
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_ABI := armeabi
 TARGET_CPU_ABI2 := armeabi
@@ -40,6 +42,10 @@ TARGET_SKIP_OTA_PACKAGE := false
 USE_CLANG_PLATFORM_BUILD := true
 
 PRODUCT_COPY_FILES += \
+    device/rpi/liz/bsp/initnetwork.sh:system/bin/initnetwork.sh \
     device/rpi/liz/bsp/init.liz.rc:root/init.liz.rc \
     device/rpi/common/init.usb.rc:root/init.usb.rc \
     device/rpi/boot/fstab:root/fstab.liz
+
+# Must be defined at the end of the file
+$(call add_device_packages)
