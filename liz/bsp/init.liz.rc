@@ -18,7 +18,6 @@ on fs
 #    mount_all /fstab.liz
 
 on boot
-     echo heartbeat > /sys/class/leds/led0/trigger
      setprop dev.bootcomplete 1
      start initnetwork
 
