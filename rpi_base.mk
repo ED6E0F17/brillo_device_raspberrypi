@@ -20,11 +20,11 @@
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
   device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
+  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
+  device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
   device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc
 
 #  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
-#  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
-#  device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
 
 # Directory for init files.
 TARGET_COPY_OUT_INITRCD := $(TARGET_COPY_OUT_SYSTEM)/etc/init
@@ -299,7 +299,6 @@ BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
 # an Android-derived environment (including Brillo) as opposed to an
 # entirely different environment (e.g. Chrome OS).
 BRILLO := 1
-COMMON_GLOBAL_CFLAGS += -D__BRILLO__
 
 # Generate Breakpad symbols.
 BREAKPAD_GENERATE_SYMBOLS := true
