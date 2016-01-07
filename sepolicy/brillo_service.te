@@ -1,0 +1,21 @@
+# Example domain for a Brillo service.
+# You can use 'brillo_service' as your service's domain directly,
+# or use it as a base for your service's own domain.
+type brillo_service, domain;
+type brillo_service_exec, exec_type, file_type;
+
+# To use 'brillo_service' as the domain for your service,
+# label the service's executable as 'brillo_service_exec' in the 'file_contexts'
+# file in this directory.
+# brillo_domain() below ensures that executables labelled 'brillo_service_exec'
+# will be put in the 'brillo_service' domain at runtime.
+
+# Allow domain transition from init, and access to D-Bus and Binder.
+# See 'te_macros' in this directory for details.
+brillo_domain(brillo_service)
+
+# Allow network access (e.g. opening sockets).
+net_domain(brillo_service)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(brillo_service)

@@ -1,0 +1,2 @@
+type metricsd_service, service_manager_type;
+type metricscollectorservice, service_manager_type;

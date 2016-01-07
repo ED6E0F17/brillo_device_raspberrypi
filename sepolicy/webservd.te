@@ -17,6 +17,3 @@ allow dbus_daemon webservd:fifo_file rw_file_perms;
 allow webservd self:capability { net_bind_service };
 allow webservd webservd_data_file:dir rw_dir_perms;
 allow webservd webservd_data_file:file create_file_perms;
-
-allow webservd debugfs:dir search;
-allow webservd zoneinfo_data_file:dir search;

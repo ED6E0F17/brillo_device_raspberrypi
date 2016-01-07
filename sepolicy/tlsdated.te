@@ -15,4 +15,3 @@ allow tlsdated tlsdated_data_file:dir w_dir_perms;
 allow tlsdated tlsdated_data_file:file create_file_perms;
 
 allow tlsdated system_file:dir getattr;
-allow tlsdated zoneinfo_data_file:dir search;

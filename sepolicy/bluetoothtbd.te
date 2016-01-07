@@ -29,8 +29,3 @@ allow bluetoothtbd self:capability2 wake_alarm;
 
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(bluetoothtbd)
-
-allow bluetoothtbd cgroup:dir search;
-allow bluetoothtbd cgroup:file w_file_perms;
-allow bluetoothtbd debugfs:dir search;
-allow bluetoothtbd zoneinfo_data_file:dir search;

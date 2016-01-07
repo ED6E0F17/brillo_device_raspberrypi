@@ -1,12 +1,11 @@
-hdmi_drive=2
 kernel=kernel.img
-disable_overscan=1
 #ramfsfile=ramdisk.img
 #ramfsaddr=0x01800000
 gpu_mem=128
 cma_lwm=16
 cma_hwm=32
 cma_offline_start=16
+dtparam=act_led_activelow=on
 #dtparam=audio=on
 #dtoverlay=vc4-kms-v3d
-avoid_warnings=2            # KMS/DRM
+#avoid_warnings=2            # KMS/DRM

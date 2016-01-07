@@ -9,14 +9,11 @@ allow sensorservice servicemanager:binder { transfer call };
 
 # Allow servicemanager to access sensorservice.
 allow servicemanager sensorservice:dir search;
-allow servicemanager sensorservice:file { read open };
+allow servicemanager sensorservice:file r_file_perms;
 allow servicemanager sensorservice:process getattr;
 
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(sensorservice)
-
-allow sensorservice cgroup:dir search;
-allow sensorservice cgroup:file w_file_perms;
 
 allow sensorservice cpuctl_device:dir search;
 

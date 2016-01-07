@@ -25,7 +25,6 @@ allow wifi_setup wifi_sysfs_entry:file rw_file_perms;
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(wifi_setup)
 
-allow wifi_setup debugfs:dir search;
 allow wifi_setup proc:file read;
 allow wifi_setup selinuxfs:filesystem getattr;
 allow wifi_setup sysfs:lnk_file read;

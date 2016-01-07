@@ -9,10 +9,12 @@ binder_service($1)
 # Allow connections to dbus_daemon.
 unix_socket_connect($1, dbus_daemon, dbus_daemon)
 
+# Allow access to cgroups mount point at /acct.
+allow $1 cgroup:dir search;
+allow $1 cgroup:file w_file_perms;
+
 # Cut down on spam.
 dontaudit $1 kernel:system module_request;
-dontaudit $1 sysfs_devices_system_cpu:dir search;
-dontaudit $1 sysfs_devices_system_cpu:file r_file_perms;
 ')
 
 #####################################
@@ -35,6 +37,26 @@ binder_call($1, nativepowerman)
 # allow_metrics_reporting(domain)
 # Allow a domain to log metrics using libmetrics.
 define(`allow_metrics_reporting', `
-allow $1 metrics_data_file:dir rw_dir_perms;
-allow $1 metrics_data_file:file create_file_perms;
+allow $1 metricsd_service:service_manager find;
+binder_use($1)
+binder_call($1, metricsd)
+allow $1 metrics_data_file:dir r_dir_perms;
+allow $1 metrics_data_file:file r_file_perms;
+')
+
+#####################################
+# allow_metricscollectorservice_events(domain)
+# Allow a domain to report events using libmetricscollectorservice.
+define(`allow_metricscollectorservice_events', `
+allow $1 metricscollectorservice:service_manager find;
+binder_call($1, metrics_collector)
+')
+
+#####################################
+# webservd_use(domain)
+# Allow a domain to talk to webservd.
+define(`webservd_use', `
+allow $1 webservd:fd use;
+allow $1 webservd:fifo_file rw_file_perms;
+allow $1 webservd_data_file:file r_file_perms;
 ')

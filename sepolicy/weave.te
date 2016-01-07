@@ -15,13 +15,11 @@ set_prop(weaved, weave_prop)
 
 allow weaved weaved_data_file:dir w_dir_perms;
 allow weaved weaved_data_file:file create_file_perms;
-allow weaved webservd:fd use;
-allow weaved webservd:fifo_file rw_file_perms;
-allow weaved webservd_data_file:file r_file_perms;
 
-allow weaved debugfs:dir search;
+# Allow talking to webservd.
+webservd_use(weaved)
+
 allow weaved system_file:dir r_file_perms;
-allow weaved zoneinfo_data_file:dir search;
 
 # Allow reading os-release.d properties.
 r_dir_file(weaved, os_release_file);

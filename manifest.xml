@@ -182,8 +182,9 @@
 
   <!-- BEGIN starter boards -->
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
-  <project path="hardware/bsp/rpi/kernel" name="raspberrypi/linux" groups="bdk" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
-  <!--project path="hardware/bsp/rpi/kernel" name="torvalds/linux" groups="bdk" remote="linux" clone-depth="1"/-->
+  <project path="hardware/bsp/rpi/kernel"
+           name="raspberrypi/linux"
+           groups="rpi" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
   <!-- Intel -->
   <project path="device/intel/edison"
            name="device/intel/edison"
@@ -192,5 +193,9 @@
   <project path="device/qcom/dragonboard"
            name="device/qcom/dragonboard"
            groups="dragonboard" />
+  <!-- Marvell Abox -->
+  <project path="device/marvell/abox_edge"
+           name="device/marvell/abox_edge"
+           groups="abox" />
   <!-- END starter boards -->
 </manifest>

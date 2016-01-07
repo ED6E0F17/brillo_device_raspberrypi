@@ -1,0 +1,2 @@
+android.brillo.metrics.IMetricsd u:object_r:metricsd_service:s0
+android.brillo.metrics.IMetricsCollectorService u:object_r:metricscollectorservice:s0

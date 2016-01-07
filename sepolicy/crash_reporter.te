@@ -9,7 +9,8 @@ allow crash_reporter crash_reporter_data_file:file create_file_perms;
 
 brillo_domain(crash_reporter)
 
-# Allow setting supplementary groups.
+# Allow setting supplementary users and groups.
+allow crash_reporter crash_reporter:capability { setuid };
 allow crash_reporter crash_reporter:capability { setgid };
 
 # Allow calling `metrics_client -c`.
@@ -17,6 +18,8 @@ allow crash_reporter metrics_client_exec:file rx_file_perms;
 
 # Allow using metrics_lib.
 allow_metrics_reporting(crash_reporter)
+# Allow libmetricscollectorservice
+allow_metricscollectorservice_events(crash_reporter)
 
 # Allow setting crash reporter properties.
 set_prop(crash_reporter, crash_reporter_prop)
@@ -33,15 +36,11 @@ allow crash_reporter self:capability { chown };
 r_dir_file(crash_reporter, proc)
 allow crash_reporter proc_cpuinfo:file r_file_perms;
 
-# Permissions for calling dbus-send and signaling metrics.
+# Allow FIFO reads
 allow crash_reporter kernel:fifo_file r_file_perms;
 
 # Allow calling core2md.
 allow crash_reporter crash_reporter_exec:file rx_file_perms;
-
-# Allow calling dbus-send.
-allow crash_reporter crash_reporter:capability { setuid };
-allow crash_reporter dbus_daemon_exec:file rx_file_perms;
 
 # Allow crash_sender to call metrics client.
 allow crash_reporter brillo_exec:file rx_file_perms;
@@ -67,4 +66,3 @@ allow crash_reporter kernel:fd use;
 allow crash_reporter rootfs:dir getattr;
 allow crash_reporter selinuxfs:filesystem getattr;
 allow crash_reporter system_file:dir getattr;
-allow crash_reporter zoneinfo_data_file:dir search;

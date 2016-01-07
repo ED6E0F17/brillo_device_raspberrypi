@@ -39,8 +39,6 @@ dontaudit shill wifi_device:chr_file { getattr ioctl };
 # Permissions for dnsmasq.
 allow shill dnsmasq_exec:file rx_file_perms;
 
-allow shill debugfs:dir search;
-
 # Read /proc.
 r_dir_file(shill, proc)
 
@@ -53,8 +51,6 @@ allow shill rootfs:dir getattr;
 # Read /sys.
 r_dir_file(shill, sysfs)
 allow shill sysfs:lnk_file read;
-
-allow shill zoneinfo_data_file:dir search;
 
 # Don't spam the logs when trying to kill dhcpcd.
 # TODO(samueltan): remove this once b/24944751 is fixed.
