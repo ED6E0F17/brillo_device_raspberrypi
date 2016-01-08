@@ -10,8 +10,13 @@ net_domain(weaved)
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(weaved)
 
+# Allow weaved to talk to power manager in order to be able to reboot system.
+allow_power_management(weaved)
+
 # Allow setting weave properties.
 set_prop(weaved, weave_prop)
+
+allow weaved weave_service:service_manager { add find };
 
 allow weaved weaved_data_file:dir w_dir_perms;
 allow weaved weaved_data_file:file create_file_perms;

@@ -17,6 +17,10 @@
 # This is a build configuration for the base of a Brillo system.
 # It contains the mandatory targets required to boot a Brillo device.
 
+BRILLO := 1
+BRILLO_USE_DBUS := 1
+BRILLO_USE_WEAVE :=1
+
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
   device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
@@ -38,9 +42,6 @@ PRODUCT_COPY_FILES += \
 
 # Include the cfgtree helpers for loading config values from disk.
 include device/rpi/common/cfgtree.mk
-
-# Global Brillo USE flags
-BRILLO_USE_DBUS := 1
 
 # Skip API checks.
 WITHOUT_CHECK_API := true
@@ -292,13 +293,6 @@ PRODUCT_COPY_FILES += \
   device/rpi/common/tests.txt:data/nativetest/tests.txt
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
-
-# Define a make variable and a C define that identify Brillo targets. __BRILLO__
-# should only be used to differentiate between Brillo and non-Brillo-but-Android
-# environments. Use __ANDROID__ instead to test if something is being built in
-# an Android-derived environment (including Brillo) as opposed to an
-# entirely different environment (e.g. Chrome OS).
-BRILLO := 1
 
 # Generate Breakpad symbols.
 BREAKPAD_GENERATE_SYMBOLS := true

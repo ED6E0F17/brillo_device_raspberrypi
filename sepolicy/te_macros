@@ -60,3 +60,12 @@ allow $1 webservd:fd use;
 allow $1 webservd:fifo_file rw_file_perms;
 allow $1 webservd_data_file:file r_file_perms;
 ')
+
+#####################################
+# allow_weave_service(domain)
+# Allow a domain and weaved to communicate with each other over binder.
+define(`allow_weave_service', `
+allow $1 weave_service:service_manager find;
+binder_call($1, weaved)
+binder_call(weaved, $1)
+')
