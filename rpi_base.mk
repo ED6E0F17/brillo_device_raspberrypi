@@ -286,6 +286,10 @@ PRODUCT_PACKAGES += \
 
 endif
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+  debug.atrace.tags.enableflags=0 \
+  ro.build.shutdown_timeout=5 \
+
 PRODUCT_COPY_FILES += \
   device/rpi/common/dbus.conf:system/etc/dbus.conf \
   device/rpi/common/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
