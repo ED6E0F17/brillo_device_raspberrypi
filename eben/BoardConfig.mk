@@ -40,4 +40,10 @@ TARGET_SKIP_OTA_PACKAGE := false
 USE_CLANG_PLATFORM_BUILD := true
 
 PRODUCT_COPY_FILES += \
-    device/rpi/boot/fstab:root/fstab.unknown
+    device/rpi/eben/bsp/initnetwork.sh:system/bin/initnetwork.sh \
+    device/rpi/eben/bsp/init.eben.rc:root/init.eben.rc \
+    device/rpi/common/init.usb.rc:root/init.usb.rc \
+    device/rpi/boot/fstab:root/fstab.eben
+
+# Must be defined at the end of the file
+$(call add_device_packages)

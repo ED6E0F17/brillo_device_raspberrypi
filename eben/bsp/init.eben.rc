@@ -15,7 +15,7 @@
 #
 
 on fs
-    mount_all /fstab.device
+    mount_all /fstab.eben
 
 on boot
     start initnetwork

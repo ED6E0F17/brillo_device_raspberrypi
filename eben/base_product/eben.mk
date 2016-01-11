@@ -20,9 +20,10 @@ PRODUCT_NAME := eben
 PRODUCT_BRAND := Brillo
 PRODUCT_DEVICE := eben
 
-# Install emulator-specific config file for weaved.
+# Install device-specific config file for weaved.
 PRODUCT_COPY_FILES += \
-  device/rpi/weaved.conf:system/etc/weaved/weaved.conf
+  device/rpi/common/weaved.conf:system/etc/weaved/weaved.conf
 
 PRODUCT_PACKAGES += \
+
 #  eben
