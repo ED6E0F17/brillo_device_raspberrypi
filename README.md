@@ -1,8 +1,15 @@
-# Building Brillo for armv7a-generic uses android build system:
+# Building Brillo uses Android build system:
 
-    repo init -u https://android.googlesource.com//brillo/manifest
+    repo init -u git://github.com/ED6E0F17/brillo_device_raspberrypi.git -m manifest.xml
+    repo sync
     . build/envsetup.sh 
     lunch
     make -j3
 
-# WIP: some missing repos.
+# WIP: Brillo/Weave is not open/free.
+
+Lunch options:
+
+    liz:  armv6 (PiZero).
+    eben: armv7 (Model2B).
+

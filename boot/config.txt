@@ -5,7 +5,8 @@ gpu_mem=128
 cma_lwm=16
 cma_hwm=32
 cma_offline_start=16
-dtparam=act_led_activelow=on
-#dtparam=audio=on
+
+dtparam=audio=on
+
 #dtoverlay=vc4-kms-v3d
 #avoid_warnings=2            # KMS/DRM

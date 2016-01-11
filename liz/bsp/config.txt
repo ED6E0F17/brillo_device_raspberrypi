@@ -1,0 +1,14 @@
+kernel=kernel.img
+#ramfsfile=ramdisk.img
+#ramfsaddr=0x01800000
+gpu_mem=128
+cma_lwm=16
+cma_hwm=32
+cma_offline_start=16
+
+dtparam=act_led_activelow=on
+dtparam=audio=on
+
+dtoverlay=dwc2,g-rx-fifo-size="2000",g-rx-fifo-size="512 512 512 512"
+# dtoverlay=vc4-kms-v3d
+# avoid_warnings=2            # KMS/DRM

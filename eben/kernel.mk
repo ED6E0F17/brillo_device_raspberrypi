@@ -100,6 +100,7 @@ $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2709* $(PRODUCT_OUT)/boot
 	$(hide) cp -r $(KERNEL_OUT)/arch/arm/boot/dts/overlays $(PRODUCT_OUT)/boot
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
+	$(hide) cp device/rpi/eben/bsp/cmdline.txt $(PRODUCT_OUT)/boot
 
 # If the kernel generates VDSO files, generate breakpad symbol files for them.
 # VDSO libraries are mapped as linux-gate.so, so rename the symbol file to
