@@ -9,3 +9,5 @@ iptables -I INPUT -p tcp --dport 5555 -j ACCEPT -w
 # Bionic hard-wires DNS requests to go to 0.0.0.0, so this acts as a DNS proxy.
 dnsmasq --no-hosts --listen-address=127.0.0.1 --no-resolv --server=8.8.8.8 \
   --pid-file < /dev/null
+
+setprop net.init 1

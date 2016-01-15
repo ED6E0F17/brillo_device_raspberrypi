@@ -118,6 +118,7 @@
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="bdk" />
   <project path="external/selinux" name="platform/external/selinux" groups="bdk" />
   <project path="external/sepolicy" name="platform/external/sepolicy" groups="bdk" />
+  <project path="external/shflags" name="platform/external/shflags" groups="bdk" />
   <project path="external/sonic" name="platform/external/sonic" groups="bdk" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="bdk" />
   <project path="external/speex" name="platform/external/speex" groups="bdk" />

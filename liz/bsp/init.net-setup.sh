@@ -13,3 +13,5 @@ iptables -I INPUT -p tcp --dport 5555 -j ACCEPT -w
 
 #dnsmasq --no-hosts --listen-address=127.0.0.1 --no-resolv --server=8.8.8.8 \
 #  --pid-file < /dev/null
+
+setprop net.init 1

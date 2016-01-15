@@ -16,11 +16,9 @@
 
 on fs
     mount_all /fstab.liz
-
-on boot
     start initnetwork
 
-service initnetwork /system/bin/initnetwork.sh
+service initnetwork /system/etc/init.net-setup.sh
     user root
     group root
     oneshot
