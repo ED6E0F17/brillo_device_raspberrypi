@@ -72,7 +72,6 @@ PRODUCT_PACKAGES = \
   power_example \
   reboot \
   rootdev \
-  servicemanager \
   softkeymaster \
   sh \
   toolbox \
@@ -82,18 +81,16 @@ PRODUCT_PACKAGES = \
   weaved \
   webservd \
 
+# servicemanager \
+
 # Android build adds libstdc++ dependencies to some modules. Normally Android
 # devices inherit embedded.mk which brings in libstdc++, but we don't, so we
 # need to explicitly add it. See http://b/24499744.
 PRODUCT_PACKAGES += \
   libstdc++ \
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-# eng builds don't include the official payload key so developers can test
-# providing their own testing key.
 PRODUCT_PACKAGES += \
   brillo-update-payload-key
-endif
 
 # TODO(deymo): Remove the example postinst once payload v2 is used.
 PRODUCT_PACKAGES += \
@@ -122,57 +119,18 @@ PRODUCT_PACKAGES += \
   dbus-monitor \
   dbus-send \
 
-# Brillo audio tests for libmedia and libstagefright.
-PRODUCT_PACKAGES += \
-  brillo_audio_test \
-
-# Audio HAL tests.
-PRODUCT_PACKAGES += \
-  audio_hal_playback_test \
-  audio_hal_record_test \
-
-# Audio NDK tests.
-PRODUCT_PACKAGES += \
-  slesTest_playFdPath \
-  slesTest_recBuffQueue \
-  slesTest_sawtoothBufferQueue \
-
 # Audio dependencies.
 PRODUCT_PACKAGES += \
   libaudioroute \
   libtinyalsa \
   libtinycompress \
   local_time.default \
-  mediaserver \
+
+#  mediaserver \
 
 # Audio libraries.
 PRODUCT_PACKAGES += \
   libmedia \
-  libstagefright \
-  libOpenSLES \
-  libOpenMAXAL \
-
-# OpenMAX audio codecs.
-PRODUCT_PACKAGES += \
-  libstagefright_soft_aacdec \
-  libstagefright_soft_aacenc \
-  libstagefright_soft_amrdec \
-  libstagefright_soft_amrnbenc \
-  libstagefright_soft_amrwbenc \
-  libstagefright_soft_flacenc \
-  libstagefright_soft_g711dec \
-  libstagefright_soft_gsmdec \
-  libstagefright_soft_mp3dec \
-  libstagefright_soft_opusdec \
-  libstagefright_soft_rawdec \
-  libstagefright_soft_vorbisdec \
-
-# Sensor packages and example programs.
-PRODUCT_PACKAGES += \
-  libsensor \
-  sensorservice \
-  sensors-hal-example-app \
-  sensors-ndk-example-app \
 
 # Connectivity packages.
 PRODUCT_PACKAGES += \
@@ -294,7 +252,6 @@ PRODUCT_COPY_FILES += \
   device/rpi/common/dbus.conf:system/etc/dbus.conf \
   device/rpi/common/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
-  device/rpi/common/tests.txt:data/nativetest/tests.txt
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
 
