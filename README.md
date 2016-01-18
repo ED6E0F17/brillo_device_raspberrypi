@@ -11,5 +11,6 @@
 Lunch options:
 
     liz:  armv6 (PiZero).
+    gert: armv6 (ModelB+).
     eben: armv7 (Model2B).
 
