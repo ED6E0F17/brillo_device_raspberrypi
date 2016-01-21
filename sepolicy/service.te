@@ -1,3 +1,4 @@
 type metricsd_service, service_manager_type;
 type metricscollectorservice, service_manager_type;
+type update_engine_service, service_manager_type;
 type weave_service, service_manager_type;

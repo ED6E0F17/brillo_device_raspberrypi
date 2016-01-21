@@ -8,6 +8,9 @@ unix_socket_connect(update_engine, dbus_daemon, dbus_daemon)
 # Allow using metrics_lib.
 allow_metrics_reporting(update_engine)
 
+# Allow hosting of the binder service.
+allow update_engine update_engine_service:service_manager { add find };
+
 # Allow read/write on misc partition. This can be removed when we're no
 # longer using the boot_control_copy implementation of the boot_control
 # HAL.

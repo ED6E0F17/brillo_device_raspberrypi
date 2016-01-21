@@ -1,0 +1,12 @@
+# Domain for webservd daemon.
+type webservd_test_client, domain;
+type webservd_test_client_exec, exec_type, file_type;
+type webservd_test_client_data_file, file_type, data_file_type;
+
+brillo_domain(webservd_test_client)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(webservd_test_client)
+
+# Allow servicing HTTP(s) requests via webservd.
+webservd_use(webservd_test_client)

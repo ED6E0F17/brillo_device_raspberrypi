@@ -69,3 +69,12 @@ allow $1 weave_service:service_manager find;
 binder_call($1, weaved)
 binder_call(weaved, $1)
 ')
+
+#####################################
+# allow_update_engine_service(domain)
+# Allow a domain and update_engine to communicate with each other over binder.
+define(`allow_update_engine_service', `
+allow $1 update_engine_service:service_manager find;
+binder_call($1, update_engine_service)
+binder_call(update_engine_service, $1)
+')

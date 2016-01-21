@@ -61,6 +61,14 @@ allow crash_reporter self:capability net_raw;
 # Allow reading os-release.d properties.
 r_dir_file(crash_reporter, os_release_file);
 
+# Allow crash_reporter to collect crashes for processes started as the 'su'
+# user in userdebug and eng builds.  It is a common workflow where developers
+# test their executable directly through an ADB shell command, which sets the
+# context of some files to the su domain.
+userdebug_or_eng(`
+r_dir_file(crash_reporter, su)
+')
+
 allow crash_reporter device:dir getattr;
 allow crash_reporter kernel:fd use;
 allow crash_reporter rootfs:dir getattr;

@@ -23,6 +23,7 @@ BRILLO_USE_WEAVE :=1
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
+  device/rpi/common/init.usb.rc:root/init.usb.rc \
   device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
   device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
   device/rpi/common/init.net-setup.sh:system/etc/init.net-setup.sh \
@@ -70,9 +71,11 @@ PRODUCT_PACKAGES = \
   logcat \
   logd \
   nativepowerman \
+  peripheralman \
   power_example \
   reboot \
   rootdev \
+  service \
   softkeymaster \
   sh \
   toolbox \
@@ -82,6 +85,7 @@ PRODUCT_PACKAGES = \
   weaved \
   webservd \
 
+#  Removed due to boot loops:
 # servicemanager \
 
 # Android build adds libstdc++ dependencies to some modules. Normally Android
@@ -92,10 +96,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
   brillo-update-payload-key
-
-# TODO(deymo): Remove the example postinst once payload v2 is used.
-PRODUCT_PACKAGES += \
-  postinst_example \
 
 # SELinux packages.
 PRODUCT_PACKAGES += \

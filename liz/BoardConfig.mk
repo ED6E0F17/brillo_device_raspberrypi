@@ -38,12 +38,8 @@ BOARD_USES_FULL_RECOVERY_IMAGE := true
 TARGET_RECOVERY_FSTAB = device/rpi/boot/fstab
 TARGET_SKIP_OTA_PACKAGE := false
 
-# Use clang.
-USE_CLANG_PLATFORM_BUILD := true
-
 PRODUCT_COPY_FILES += \
     device/rpi/liz/bsp/init.liz.rc:root/init.liz.rc \
-    device/rpi/common/init.usb.rc:root/init.usb.rc \
     device/rpi/boot/fstab:root/fstab.liz
 
 # Must be defined at the end of the file

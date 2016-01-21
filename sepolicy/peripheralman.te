@@ -1,0 +1,8 @@
+# Domain for peripheralman daemon.
+type peripheralman, domain;
+type peripheralman_exec, exec_type, file_type;
+
+brillo_domain(peripheralman)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(peripheralman)

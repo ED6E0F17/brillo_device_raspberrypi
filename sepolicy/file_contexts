@@ -53,9 +53,13 @@
 
 # Defining the contexts for bluetoothtbd.
 /system/bin/bluetoothtbd   u:object_r:bluetoothtbd_exec:s0
+/system/bin/peripheralman  u:object_r:peripheralman_exec:s0
+
+# This service only runs during tests for webservd's correctness
+/system/bin/webservd_test_client      u:object_r:webservd_test_client_exec:s0
 
 /system/etc/init\.firewall-setup\.sh  u:object_r:brillo_setup_exec:s0
-/system/etc/init\.net-setup\.sh       u:object_r:brillo_setup_exec:s0
+/system/etc/init\.net-setup\.sh       u:object_r:brillo_service_exec:s0
 /system/etc/init\.wifi-setup\.sh      u:object_r:wifi_setup_exec:s0
 
 /system/etc/os-release\.d(/.*)?       u:object_r:os_release_file:s0
