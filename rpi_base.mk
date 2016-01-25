@@ -19,7 +19,8 @@
 
 BRILLO := 1
 BRILLO_USE_DBUS := 1
-BRILLO_USE_WEAVE :=1
+BRILLO_USE_WEAVE := 1
+BRILLO_USE_BINDER := 1
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
