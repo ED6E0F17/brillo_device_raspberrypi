@@ -57,6 +57,9 @@ for iptables in ip{,6}tables; do
   # Accept DHCP traffic (communicating as either client or server).
   ${iptables_bin} -I INPUT -p udp --dport 67:68 --sport 67:68 -j ACCEPT -w
   ${iptables_bin} -I OUTPUT -p udp --dport 67:68 --sport 67:68 -j ACCEPT -w
+
+  # Accept ADB traffic
+  ${iptables_bin} -I INPUT -p tcp --dport 5555 --syn -m state --state NEW -j ACCEPT -w
 done
 
 

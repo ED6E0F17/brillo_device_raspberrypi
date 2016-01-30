@@ -22,6 +22,10 @@ BRILLO_USE_DBUS := 1
 BRILLO_USE_WEAVE := 1
 BRILLO_USE_BINDER := 1
 
+# true == 1 ???
+JAVA_NOT_REQUIRED := true
+TARGET_NO_RECOVERY := true
+
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
   device/rpi/common/init.usb.rc:root/init.usb.rc \
