@@ -1,0 +1,23 @@
+# trunksd.
+type trunksd, domain;
+type trunksd_exec, exec_type, file_type;
+type trunksd_data_file, file_type, data_file_type;
+
+brillo_domain(trunksd)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(trunksd)
+
+# Allow Minijail to drop privilege.
+allow trunksd self:capability { setuid setgid };
+
+# Allow adding the binder service.
+allow trunksd trunks_service:service_manager { add find };
+
+# Allow the TPM simulator to manage persistent data.
+allow trunksd trunksd_data_file:dir rw_dir_perms;
+allow trunksd trunksd_data_file:file create_file_perms;
+
+# TODO(dkrahn): Investigate why these are needed.
+allow trunksd proc:file r_file_perms;
+allow trunksd self:capability dac_override;

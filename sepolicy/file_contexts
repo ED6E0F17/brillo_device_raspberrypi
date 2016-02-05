@@ -44,6 +44,9 @@
 /system/bin/tlsdate-helper u:object_r:tlsdated_exec:s0
 /system/bin/tlsdate        u:object_r:tlsdated_exec:s0
 
+/data/misc/trunksd(/.*)?   u:object_r:trunksd_data_file:s0
+/system/bin/trunksd        u:object_r:trunksd_exec:s0
+
 /system/bin/nativepowerman u:object_r:nativepowerman_exec:s0
 /sys/power/state           u:object_r:sysfs_power_state:s0
 

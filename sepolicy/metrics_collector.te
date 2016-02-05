@@ -20,7 +20,7 @@ allow metrics_collector metrics_data_file:file create_file_perms;
 allow metrics_collector metricscollectorservice:service_manager { add find };
 
 # Allow metrics_collector to talk to weaved over binder.
-allow_weave_service(metrics_collector)
+allow_call_weave(metrics_collector)
 
 # Allow metrics_collector to access its own data files.
 allow metrics_collector metrics_collector_data_file:dir rw_dir_perms;

@@ -45,36 +45,36 @@ allow $1 metrics_data_file:file r_file_perms;
 ')
 
 #####################################
-# allow_metricscollectorservice_events(domain)
+# allow_metrics_event_reporting(domain)
 # Allow a domain to report events using libmetricscollectorservice.
-define(`allow_metricscollectorservice_events', `
+define(`allow_metrics_event_reporting', `
 allow $1 metricscollectorservice:service_manager find;
 binder_call($1, metrics_collector)
 ')
 
 #####################################
-# webservd_use(domain)
+# use_webservd(domain)
 # Allow a domain to talk to webservd.
-define(`webservd_use', `
+define(`use_webservd', `
 allow $1 webservd:fd use;
 allow $1 webservd:fifo_file rw_file_perms;
 allow $1 webservd_data_file:file r_file_perms;
 ')
 
 #####################################
-# allow_weave_service(domain)
+# allow_call_weave(domain)
 # Allow a domain and weaved to communicate with each other over binder.
-define(`allow_weave_service', `
+define(`allow_call_weave', `
 allow $1 weave_service:service_manager find;
 binder_call($1, weaved)
 binder_call(weaved, $1)
 ')
 
 #####################################
-# allow_update_engine_service(domain)
+# allow_call_update_engine(domain)
 # Allow a domain and update_engine to communicate with each other over binder.
-define(`allow_update_engine_service', `
+define(`allow_call_update_engine', `
 allow $1 update_engine_service:service_manager find;
-binder_call($1, update_engine_service)
-binder_call(update_engine_service, $1)
+binder_call($1, update_engine)
+binder_call(update_engine, $1)
 ')

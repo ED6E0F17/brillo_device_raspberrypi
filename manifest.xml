@@ -7,9 +7,7 @@
   <remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
-  <remote  name="linux"
-           fetch="https://kernel.googlesource.com/pub/scm/linux/kernel/git/"
-            />
+
   <default revision="master"
            remote="aosp"
            sync-j="4" />
@@ -57,13 +55,11 @@
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
-  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="bdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
-  <project path="external/conscrypt" name="platform/external/conscrypt" groups="bdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
@@ -173,8 +169,8 @@
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
   <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
-  <project path="system/netd" name="platform/system/netd" groups="bdk" />
   <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" />
+  <project path="system/netd" name="platform/system/netd" groups="bdk" />
   <project path="system/security" name="platform/system/security" groups="bdk" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
@@ -199,5 +195,13 @@
   <project path="device/marvell/abox_edge"
            name="device/marvell/abox_edge"
            groups="abox" />
+  <!-- Rockchip Kylin -->
+  <project path="device/rockchip/kylin"
+           name="device/rockchip/kylin"
+           groups="kylin" />
+  <!-- Freescale Picoimx -->
+  <project path="device/freescale/picoimx"
+           name="device/freescale/picoimx"
+           groups="picoimx" />
   <!-- END starter boards -->
 </manifest>

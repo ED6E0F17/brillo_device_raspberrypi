@@ -22,7 +22,7 @@ allow weaved weaved_data_file:dir w_dir_perms;
 allow weaved weaved_data_file:file create_file_perms;
 
 # Allow talking to webservd.
-webservd_use(weaved)
+use_webservd(weaved)
 
 allow weaved system_file:dir r_file_perms;
 

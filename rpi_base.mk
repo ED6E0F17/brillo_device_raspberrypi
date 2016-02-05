@@ -22,9 +22,11 @@ BRILLO_USE_DBUS := 1
 BRILLO_USE_WEAVE := 1
 BRILLO_USE_BINDER := 1
 
-# true == 1 ???
 JAVA_NOT_REQUIRED := true
 TARGET_NO_RECOVERY := true
+WITHOUT_CHECK_API := true
+ANDROID_NO_TEST_CHECK := true
+BREAKPAD_GENERATE_SYMBOLS := falsify
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
@@ -49,12 +51,6 @@ PRODUCT_COPY_FILES += \
 
 # Include the cfgtree helpers for loading config values from disk.
 include device/rpi/common/cfgtree.mk
-
-# Skip API checks.
-WITHOUT_CHECK_API := true
-# Don't try to build and run all tests by default. Several tests have
-# dependencies on the framework.
-ANDROID_NO_TEST_CHECK := true
 
 # Template for init files.
 INITRC_TEMPLATE := device/rpi/init.template.rc.in
@@ -151,18 +147,18 @@ PRODUCT_PACKAGES += \
   wpa_supplicant \
 
 # It only makes sense to include apmanager if WiFi is supported.
+WIFI_SUPPORTED := true
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
 
-# Metrics daemons and metrics library.
 PRODUCT_PACKAGES += \
-  libmetrics \
-  metrics_client \
-  metricsd \
-
-# Crash reporter package.
-PRODUCT_PACKAGES += \
-  crash_reporter \
+  3rd-party-packages \
+ 
+# Packages needed by autotools.
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_3RD_PARTY_PACKAGES += \
+  dev-lang/python:2.7
+endif
 
 # Avahi packages.
 PRODUCT_PACKAGES += \
@@ -176,6 +172,13 @@ PRODUCT_PACKAGES += \
   tlsdate \
   tlsdate-helper \
   tlsdated \
+
+# TPM packages.
+PRODUCT_PACKAGES += \
+  libtrunks \
+  trunks_client \
+  trunksd \
+  libtpm2\
 
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
@@ -260,9 +263,6 @@ PRODUCT_COPY_FILES += \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
-
-# Generate Breakpad symbols.
-BREAKPAD_GENERATE_SYMBOLS := true
 
 # TODO(jorgelo): Move into main build.
 define generate-initrc-file

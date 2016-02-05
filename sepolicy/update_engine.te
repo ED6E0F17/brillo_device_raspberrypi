@@ -23,4 +23,4 @@ r_dir_file(update_engine, os_release_file);
 allow_crash_reporter(update_engine)
 
 # Allow update_engine to talk to weaved over binder.
-allow_weave_service(update_engine)
+allow_call_weave(update_engine)

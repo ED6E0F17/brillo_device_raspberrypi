@@ -1,3 +1,5 @@
 type metricsd_service, service_manager_type;
 type metricscollectorservice, service_manager_type;
+type peripheralman_service, service_manager_type;
+type trunks_service, service_manager_type;
 type weave_service, service_manager_type;
