@@ -157,7 +157,9 @@ PRODUCT_PACKAGES += \
 # Packages needed by autotools.
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_3RD_PARTY_PACKAGES += \
-  dev-lang/python:2.7
+
+#  dev-lang/python:2.7
+#  dev-libs/wiringPi
 endif
 
 # Avahi packages.
