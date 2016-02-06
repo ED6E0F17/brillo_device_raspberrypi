@@ -183,6 +183,7 @@
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
            groups="rpi" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
+  <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <!-- Intel -->
   <project path="device/intel/edison"
            name="device/intel/edison"

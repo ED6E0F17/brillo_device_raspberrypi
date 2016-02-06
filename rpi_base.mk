@@ -154,13 +154,10 @@ SHILL_USE_WIFI := true
 PRODUCT_PACKAGES += \
   3rd-party-packages \
  
-# Packages needed by autotools.
-ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_3RD_PARTY_PACKAGES += \
+  dev-libs/wiringPi \
 
 #  dev-lang/python:2.7
-#  dev-libs/wiringPi
-endif
 
 # Avahi packages.
 PRODUCT_PACKAGES += \
