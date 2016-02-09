@@ -34,6 +34,12 @@ service firewall-setup /system/etc/init.firewall-setup.sh
     group root net_admin net_raw
     oneshot
 
+service net-setup /system/etc/init.net-setup.sh
+    class core
+    user root
+    group root net_admin net_raw shell
+    oneshot
+
 service wifi-setup /system/etc/init.wifi-setup.sh
     class core
     user root

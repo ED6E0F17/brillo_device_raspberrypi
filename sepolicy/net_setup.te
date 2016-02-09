@@ -1,0 +1,32 @@
+# net_setup.
+type net_setup, domain;
+type net_setup_exec, exec_type, file_type;
+type net_setup_prop, property_type;
+type net_device, dev_type;
+type net_sysfs_entry, fs_type, sysfs_type;
+
+brillo_domain(net_setup)
+
+# Inherit open file to shell (interpreter) for script.
+allow net_setup shell_exec:file read;
+allow net_setup system_file:file execute_no_trans;
+allow net_setup toolbox_exec:file { rx_file_perms };
+
+# Set properties for init.
+set_prop(net_setup, net_setup_prop);
+
+# Permissions for driver initialization.
+allow net_setup self:capability { net_admin net_raw };
+allow net_setup self:udp_socket create_socket_perms;
+allow net_setup sysfs:file w_file_perms;
+allow net_setup net_device:chr_file rw_file_perms;
+allow net_setup net_sysfs_entry:file rw_file_perms;
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(net_setup)
+
+allow net_setup proc:file read;
+allow net_setup selinuxfs:filesystem getattr;
+allow net_setup sysfs:lnk_file read;
+
+dontaudit net_setup net_device:chr_file { getattr ioctl };

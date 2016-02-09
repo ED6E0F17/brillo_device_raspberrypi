@@ -16,9 +16,3 @@
 
 on fs
     mount_all /fstab.gert
-    start initnetwork
-
-service initnetwork /system/etc/init.net-setup.sh
-    user root
-    group root
-    oneshot
