@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
 include device/rpi/common/cfgtree.mk
 
 # Template for init files.
-INITRC_TEMPLATE := device/rpi/init.template.rc.in
+INITRC_TEMPLATE := device/rpi//common/init.template.rc.in
 
 PRODUCT_PACKAGES = \
   adbd \

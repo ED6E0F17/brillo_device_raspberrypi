@@ -13,6 +13,13 @@ unix_socket_connect($1, dbus_daemon, dbus_daemon)
 allow $1 cgroup:dir search;
 allow $1 cgroup:file w_file_perms;
 
+# Allow access to files in /proc.
+# Fixes denials like:
+# avc: denied { read } for pid=1267 comm="peripheralman" name="misc" dev="proc"
+#   ino=4026531967 scontext=u:r:peripheralman:s0
+#   tcontext=u:object_r:proc:s0 tclass=file permissive=0
+allow $1 proc:file r_file_perms;
+
 # Cut down on spam.
 dontaudit $1 kernel:system module_request;
 ')

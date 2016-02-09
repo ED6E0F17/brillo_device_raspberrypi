@@ -1,7 +1,6 @@
 # Always start adbd
 
 on fs
-    chmod 666 /dev/tty
     setprop service.adb.tcp.port 5555
     start adbd
 
