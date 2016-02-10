@@ -148,8 +148,20 @@ PRODUCT_PACKAGES += \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
+WIFI_DRIVER_HAL_MODULE := wifi_driver.$(TARGET_DEVICE)
+WIFI_DRIVER_HAL_PERIPHERAL := rtl8192cu
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
+
+# RTL8192CU WIFI Firmware
+RTL8192CU_WIFI_FW_SRC := device/rpi/wifi/firmware
+RTL8192CU_WIFI_FW_DST := system/vendor/firmware/rtlwifi
+
+PRODUCT_COPY_FILES += \
+        $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw.bin     \
+        $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_A.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_A.bin \
+        $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_B.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_B.bin \
+        $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_TMSC.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_TMSC.bin
 
 PRODUCT_PACKAGES += \
   3rd-party-packages \
