@@ -12,3 +12,5 @@ ifconfig eth0 192.168.1.10 netmask 255.255.255.0 up && route add default gw 192.
 # Shill enables dnsmasq so we can access hosts on the Internet.
 # Bionic hard-wires DNS requests to go to 0.0.0.0, so this acts as a DNS proxy.
 
+# Set completion property.
+setprop net-setup.complete 1

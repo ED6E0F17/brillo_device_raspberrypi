@@ -207,7 +207,6 @@ TARGET_SKIP_OTA_PACKAGE := true
 # two partitions each in the partition table, with the right suffix used by the
 # bootloader, for example "system_a" and "system_b".
 AB_OTA_PARTITIONS := \
-  boot \
   system
 
 # We must select a wpa_supplicant version, or the AOSP version won't be built.

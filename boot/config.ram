@@ -1,4 +1,4 @@
-kernel=kernel.img
+#kernel=kernel.img
 ramfsfile=ramdisk.img
 ramfsaddr=0x01800000
 gpu_mem=128

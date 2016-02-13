@@ -8,6 +8,7 @@
 /system/bin/periodic_scheduler   u:object_r:crash_reporter_exec:s0
 /data/misc/crash_reporter(/.*)?  u:object_r:crash_reporter_data_file:s0
 
+/dev/tty1                  u:object_r:console_device:s0
 /dev/ttyAMA0               u:object_r:console_device:s0
 
 /system/bin/avahi-daemon   u:object_r:avahi_exec:s0
@@ -51,8 +52,8 @@
 /sys/power/state           u:object_r:sysfs_power_state:s0
 
 # Defining the contexts for shill.
-/system/bin/shill                              u:object_r:shill_exec:s0
-/data/misc/shill(/.*)?                         u:object_r:shill_data_file:s0
+/system/bin/shill          u:object_r:shill_exec:s0
+/data/misc/shill(/.*)?     u:object_r:shill_data_file:s0
 
 # Defining the contexts for bluetoothtbd.
 /system/bin/bluetoothtbd   u:object_r:bluetoothtbd_exec:s0

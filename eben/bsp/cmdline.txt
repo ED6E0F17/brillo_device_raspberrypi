@@ -1,1 +1,1 @@
-coherent_pool=16M  cma=128 console=ttyAMA0 selinux=1 androidboot.hardware=eben init=/init androidboot.selinux=permissive root=/dev/mmcblk0p2
+coherent_pool=16M  cma=128 console=ttyAMA0 selinux=1 androidboot.hardware=eben init=/init androidboot.selinux=permissive root=/dev/mmcblk0p2 firmware_class.path=/system/vendor/firmware android.console=tty1 

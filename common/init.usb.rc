@@ -4,7 +4,7 @@ on fs
     setprop service.adb.tcp.port 5555
     start adbd
 
-service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
+service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=brillo_rpi
     disabled
     socket adbd stream 660 system system
     seclabel u:r:adbd:s0

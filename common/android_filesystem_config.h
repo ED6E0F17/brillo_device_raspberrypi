@@ -30,7 +30,7 @@
 ** and will allow partial matches.
 */
 static const struct fs_path_config android_device_files[] = {
-    { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_NET_BIND_SERVICE), "system/bin/dnsmasq" },
+    { 00555, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_NET_BIND_SERVICE), "system/bin/dnsmasq" },
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_BLOCK_SUSPEND),    "system/bin/nativepowerman" },
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_SYS_TIME),         "system/bin/tlsdated" },
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_NET_BIND_SERVICE), "system/bin/webservd" },
@@ -45,7 +45,9 @@ static const struct fs_path_config android_device_files[] = {
                                      CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/apmanager" },
     { 00755, AID_WIFI,    AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
                                      CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/hostapd" },
-    { 06550, AID_ROOT,   AID_SHELL, 0,                                   "system/usr/bin/gpio" },
+    { 00755, AID_SYSTEM,  AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
+                                     CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/ifconfig" },
+    { 00555, AID_ROOT,   AID_SHELL, 0,                                   "system/usr/bin/gpio" },
     { 00550, AID_ROOT,   AID_SHELL, 0,                                   "system/etc/init.firewall-setup.sh" },
     { 00550, AID_ROOT,   AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
 				    CAP_MASK_LONG(CAP_NET_RAW),		 "system/etc/init.net-setup.sh" },
