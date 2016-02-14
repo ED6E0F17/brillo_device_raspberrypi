@@ -148,7 +148,7 @@ PRODUCT_PACKAGES += \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
-WIFI_DRIVER_HAL_MODULE := wifi_driver.$(PRODUCT_DEVICE)
+WIFI_DRIVER_HAL_MODULE := wifi_driver.8192cu
 WIFI_DRIVER_HAL_PERIPHERAL := rtl8192cu
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
