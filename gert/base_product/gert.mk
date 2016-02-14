@@ -14,16 +14,8 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/rpi/rpi_base.mk)
-
 PRODUCT_NAME := gert
 PRODUCT_BRAND := Brillo
 PRODUCT_DEVICE := gert
+$(call inherit-product, device/rpi/rpi_base.mk)
 
-# Install device-specific config file for weaved.
-PRODUCT_COPY_FILES += \
-  device/rpi/common/weaved.conf:system/etc/weaved/weaved.conf
-
-PRODUCT_PACKAGES += \
-
-#  gert

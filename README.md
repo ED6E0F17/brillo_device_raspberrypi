@@ -6,7 +6,7 @@
     lunch
     make -j3
 
-# WIP: Brillo/Weave is not open/free.
+# WIP: Weave is not open/free.
 
 Lunch options:
 

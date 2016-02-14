@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
   device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
   device/rpi/common/init.net-setup.sh:system/etc/init.net-setup.sh \
   device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
-  device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc
+  device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc \
 
 #  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \
 
@@ -148,7 +148,7 @@ PRODUCT_PACKAGES += \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
-WIFI_DRIVER_HAL_MODULE := wifi_driver.8192cu
+WIFI_DRIVER_HAL_MODULE := wifi_driver.$(PRODUCT_DEVICE)
 WIFI_DRIVER_HAL_PERIPHERAL := rtl8192cu
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
@@ -269,6 +269,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
   device/rpi/common/dbus.conf:system/etc/dbus.conf \
+  device/rpi/common/weaved.conf:system/etc/weaved/weaved.conf \
   device/rpi/common/wpa_supplicant.conf:/system/lib/shill/shims/wpa_supplicant.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
