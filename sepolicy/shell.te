@@ -1,0 +1,2 @@
+#============= unlabeled ==============
+allow unlabeled self:filesystem associate;

@@ -21,6 +21,7 @@ allow apmanager hostapd_exec:file { read getattr open execute execute_no_trans }
 allow apmanager self:capability { setuid fsetid kill net_admin net_bind_service net_raw setgid sys_module dac_override };
 allow apmanager self:netlink_route_socket { write getattr nlmsg_write read bind create nlmsg_read };
 allow apmanager self:netlink_socket { write getattr setopt read bind create };
+allow apmanager self:netlink_generic_socket create_socket_perms;
 allow apmanager self:packet_socket { write ioctl setopt read bind create };
 allow apmanager apmanager_data_file:dir create_dir_perms;
 allow apmanager apmanager_data_file:file create_file_perms;

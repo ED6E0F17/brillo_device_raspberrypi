@@ -11,6 +11,9 @@
 /dev/tty1                  u:object_r:console_device:s0
 /dev/ttyAMA0               u:object_r:console_device:s0
 
+/dev/block/mmcblk0         u:object_r:mmc_block_device:s0
+/dev/block/mmcblk0p[0-9]+  u:object_r:mmc_block_device:s0
+
 /system/bin/avahi-daemon   u:object_r:avahi_exec:s0
 
 /system/bin/firewalld      u:object_r:firewalld_exec:s0

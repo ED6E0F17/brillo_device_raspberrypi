@@ -85,3 +85,21 @@ allow $1 update_engine_service:service_manager find;
 binder_call($1, update_engine)
 binder_call(update_engine, $1)
 ')
+
+#####################################
+# allow_call_webservd(domain)
+# Allow a domain and webservd to communicate with each other over binder.
+define(`allow_call_webservd', `
+allow $1 webservd_service:service_manager find;
+binder_call($1, webservd)
+binder_call(webservd, $1)
+')
+
+#####################################
+# allow_call_firewalld(domain)
+# Allow a domain and firewalld to communicate with each other over binder.
+define(`allow_call_firewalld', `
+allow $1 firewalld_service:service_manager find;
+binder_call($1, firewalld)
+binder_call(firewalld, $1)
+')

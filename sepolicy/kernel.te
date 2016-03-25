@@ -1,2 +1,9 @@
 # Allow the kernel to trigger crash_reporter during core dumps.
 domain_auto_trans(kernel, crash_reporter_exec, crash_reporter)
+
+allow kernel device:blk_file { create setattr };
+allow kernel device:dir { write add_name };
+allow kernel self:capability mknod;
+
+allow kernel device:chr_file { create getattr setattr unlink };
+allow kernel device:dir { remove_name rmdir };

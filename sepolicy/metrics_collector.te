@@ -39,6 +39,8 @@ r_dir_file(metrics_collector, sysfs)
 
 r_dir_file(metrics_collector, sysfs_zram)
 
+allow metrics_collector proc_meminfo:file r_file_perms;
+
 # Allow reading os-release.d properties.
 r_dir_file(metrics_collector, os_release_file);
 

@@ -77,6 +77,36 @@ directory.
 For most user-written services, the `brillo_service` domain should be a good
 starting point.
 
+## Binder
+
+Your service might also require access to the Binder IPC mechanism.
+
+To be able to add the required policy line to your service's `.te` file,
+first define a type for the Binder service in the [`service.te`](https://android.googlesource.com/device/generic/brillo/+/master/sepolicy/service.te)
+file. Then, use that type to label the Binder interface the process is trying to
+add.
+
+* Define the type for the Binder service in the `service.te` file:
+
+        ...
+        # Add a context for brillo_service.
+        type brilloservice, service_manager_type;
+
+* Label the interface with this type in the `service_contexts` file:
+
+        # Associate brillo_service's name (as defined when it is added
+        # to the service manager) with a context.
+        android.brillo.BrilloService u:object_r:brilloservice:s0
+
+* Add the following lines to the `.te` file (`brillo_service.te` in this
+  example) to allow the domain to add the Binder service:
+
+        # Allow the service to add itself to service_manager.
+        allow brillo_service brilloservice:service_manager add;
+
+This procedure allows the `brillo_service` domain to add services
+labeled `brilloservice` to _servicemanager_.
+
 ## Configuring SELinux permissions
 
 It's likely that your service will require access to resources not covered by
@@ -96,7 +126,6 @@ $ audit2allow -i {file with error messages} -p ${ANDROID_PRODUCT_OUT}/root/sepol
 
 ## TBD
 ### Common recipes/access to common services
-### Binder rules and macros
 ### Naming conventions
 - `allow_call_{service}` for services exposed over binder.
 - `use_{resource|service}` for other services or resources.

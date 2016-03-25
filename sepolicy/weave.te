@@ -13,6 +13,9 @@ allow_crash_reporter(weaved)
 # Allow weaved to talk to power manager in order to be able to reboot system.
 allow_power_management(weaved)
 
+# Allow weaved to talk to webservd.
+allow_call_webservd(weaved)
+
 # Allow setting weave properties.
 set_prop(weaved, weave_prop)
 

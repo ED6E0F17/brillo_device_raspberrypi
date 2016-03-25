@@ -28,3 +28,6 @@ allow metricsd system_file:dir getattr;
 
 # Allow reading os-release.d properties.
 r_dir_file(metricsd, os_release_file);
+
+# Allow calling update engine.
+allow_call_update_engine(metricsd);

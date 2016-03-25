@@ -4,3 +4,6 @@ android.os.IPeripheralManager u:object_r:peripheralman_service:s0
 trunks_service u:object_r:trunks_service:s0
 android.brillo.UpdateEngineService u:object_r:update_engine_service:s0
 weave_service u:object_r:weave_service:s0
+android.brillo.brilloaudioservice.BrilloAudioService u:object_r:brilloaudioservice:s0
+android.webservd.Server u:object_r:webservd_service:s0
+android.firewalld.Firewall u:object_r:firewalld_service:s0

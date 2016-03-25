@@ -26,6 +26,8 @@ JAVA_NOT_REQUIRED := true
 TARGET_NO_RECOVERY := true
 WITHOUT_CHECK_API := true
 ANDROID_NO_TEST_CHECK := true
+TARGET_BOARD_PLATFORM := rpi
+TARGET_BOARD_HAS_NO_SURFACE_FLINGER := true
 BREAKPAD_GENERATE_SYMBOLS := falsify
 
 # Common Brillo init scripts.
@@ -68,6 +70,7 @@ PRODUCT_PACKAGES = \
   keymaster \
   keystore \
   libminijail \
+  libstdc++ \
   linker \
   logcat \
   logd \
@@ -88,12 +91,6 @@ PRODUCT_PACKAGES = \
 
 #  Removed due to boot loops:
 # servicemanager \
-
-# Android build adds libstdc++ dependencies to some modules. Normally Android
-# devices inherit embedded.mk which brings in libstdc++, but we don't, so we
-# need to explicitly add it. See http://b/24499744.
-PRODUCT_PACKAGES += \
-  libstdc++ \
 
 PRODUCT_PACKAGES += \
   brillo-update-payload-key

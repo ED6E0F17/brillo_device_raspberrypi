@@ -1,0 +1,25 @@
+# Domain for the Brillo audio service.
+type brillo_audio_service, domain;
+type brillo_audio_service_exec, exec_type, file_type;
+type brillo_audio_service_state, fs_type, sysfs_type;
+
+# Allow domain transistion from init and access to Binder.
+brillo_domain(brillo_audio_service)
+
+# Allow brilloaudioservice to talk to the audio policy service.
+allow brillo_audio_service mediaserver_service:service_manager find;
+binder_call(brillo_audio_service, mediaserver)
+
+# Allow brilloaudioservice to register with the service manager.
+allow brillo_audio_service brilloaudioservice:service_manager { add find };
+
+# Allow reading of initial headphone state.
+allow brillo_audio_service sysfs:file read;
+allow brillo_audio_service brillo_audio_service_state:file r_file_perms;
+
+# Allow reading of input events.
+allow brillo_audio_service input_device:dir r_dir_perms;
+allow brillo_audio_service input_device:chr_file r_file_perms;
+
+# Allow crash reporter to access dump files.
+allow_crash_reporter(brillo_audio_service)

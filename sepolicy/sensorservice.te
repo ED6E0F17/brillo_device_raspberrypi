@@ -7,21 +7,13 @@ brillo_domain(sensorservice)
 allow sensorservice sensorservice_service:service_manager add;
 allow sensorservice servicemanager:binder { transfer call };
 
-# Allow servicemanager to access sensorservice.
-allow servicemanager sensorservice:dir search;
-allow servicemanager sensorservice:file r_file_perms;
-allow servicemanager sensorservice:process getattr;
-
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(sensorservice)
 
-allow sensorservice cpuctl_device:dir search;
+r_dir_file(sensorservice, proc_net)
+r_dir_file(sensorservice, sysfs)
 
-allow sensorservice proc_net:dir search;
-allow sensorservice proc_net:file r_file_perms;
-
-allow sensorservice sysfs:dir r_dir_perms;
-allow sensorservice sysfs:file r_file_perms;
-allow sensorservice sysfs:lnk_file read;
+allow sensorservice input_device:chr_file r_file_perms;
+allow sensorservice input_device:dir search;
 
 allow sensorservice self:capability { net_admin sys_nice };
