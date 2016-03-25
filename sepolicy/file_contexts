@@ -14,6 +14,8 @@
 /dev/block/mmcblk0         u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p[0-9]+  u:object_r:mmc_block_device:s0
 
+/dev/spidev.*              u:object_r:spi_device:s0
+
 /system/bin/avahi-daemon   u:object_r:avahi_exec:s0
 
 /system/bin/firewalld      u:object_r:firewalld_exec:s0
@@ -63,7 +65,7 @@
 /system/bin/peripheralman  u:object_r:peripheralman_exec:s0
 
 # This service only runs during tests for webservd's correctness
-/system/bin/webservd_test_client      u:object_r:webservd_test_client_exec:s0
+/system/bin/webservd_testc u:object_r:webservd_testc_exec:s0
 
 /system/etc/init\.firewall-setup\.sh  u:object_r:brillo_setup_exec:s0
 /system/etc/init\.wifi-setup\.sh      u:object_r:wifi_setup_exec:s0

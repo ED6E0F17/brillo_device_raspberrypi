@@ -1,1 +1,2 @@
+type spi_device, dev_type;
 type mmc_block_device, dev_type;
