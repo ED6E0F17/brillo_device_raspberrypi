@@ -7,7 +7,6 @@
   <remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
-
   <default revision="master"
            remote="aosp"
            sync-j="4" />
@@ -58,6 +57,7 @@
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
+  <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
@@ -105,6 +105,7 @@
   <project path="external/libweave" name="platform/external/libweave" groups="bdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
+  <project path="external/lzop" name="platform/external/lzop" groups="bdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
@@ -142,7 +143,7 @@
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="master" clone-depth="1" groups="linux,bdk" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="linux,bdk" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="linux,arm,bdk" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="linux,arm,bdk" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="linux,bdk" />
@@ -160,6 +161,7 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
   <project path="system/bt" name="platform/system/bt" groups="bdk" />
+  <project path="system/bvb" name="platform/system/bvb" groups="bdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
@@ -169,6 +171,7 @@
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
   <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
+  <project path="system/nvram" name="platform/system/nvram" groups="bdk" />
   <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" />
   <project path="system/netd" name="platform/system/netd" groups="bdk" />
   <project path="system/security" name="platform/system/security" groups="bdk" />
@@ -177,17 +180,26 @@
   <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
-
   <!-- BEGIN starter boards -->
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
-           groups="rpi" remote="github" revision="rpi-4.4.y" clone-depth="1"/>
+           groups="rpi" remote="github" revision="rpi-4.5.y" clone-depth="1"/>
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
-  <!-- Intel -->
+<!-- Intel SoCs and Peripherals -->
+  <project path="hardware/bsp/intel"
+           name="platform/hardware/bsp/intel"
+           groups="edison,minnowboard" />
   <project path="device/intel/edison"
            name="device/intel/edison"
            groups="edison" />
+  <project path="hardware/broadcom/libbt"
+           name="platform/hardware/broadcom/libbt"
+           groups="edison" />
+  <!-- Intel MinnowBoard -->
+  <project path="device/intel/minnowboard"
+           name="device/intel/minnowboard"
+           groups="minnowboard" />
   <!-- Qualcomm Dragonboard -->
   <project path="device/qcom/dragonboard"
            name="device/qcom/dragonboard"
@@ -204,5 +216,15 @@
   <project path="device/freescale/picoimx"
            name="device/freescale/picoimx"
            groups="picoimx" />
+  <project path="hardware/bsp/freescale"
+           name="platform/hardware/bsp/freescale"
+           groups="picoimx" />
+  <!-- Imagination Creator -->
+  <project path="device/imagination/creatorci41"
+           name="device/imagination/creatorci41"
+           groups="creatorci41" />
+  <project path="hardware/bsp/imagination"
+           name="platform/hardware/bsp/imagination"
+           groups="creatorci41" />
   <!-- END starter boards -->
 </manifest>
