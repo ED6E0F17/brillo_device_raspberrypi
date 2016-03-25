@@ -187,9 +187,6 @@
            groups="rpi" remote="github" revision="rpi-4.5.y" clone-depth="1"/>
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
 <!-- Intel SoCs and Peripherals -->
-  <project path="hardware/bsp/intel"
-           name="platform/hardware/bsp/intel"
-           groups="edison,minnowboard" />
   <project path="device/intel/edison"
            name="device/intel/edison"
            groups="edison" />

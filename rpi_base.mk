@@ -154,10 +154,14 @@ PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
 
 # RTL8192CU WIFI Firmware
-RTL8192CU_WIFI_FW_SRC := device/rpi/wifi/firmware
+BRCM_WIFI_FW_SRC := device/rpi/wifi/firmware/brcm
+BRCM_WIFI_FW_DST := system/vendor/firmware/brcm
+RTL8192CU_WIFI_FW_SRC := device/rpi/wifi/firmware/rtlwifi
 RTL8192CU_WIFI_FW_DST := system/vendor/firmware/rtlwifi
 
 PRODUCT_COPY_FILES += \
+	$(BRCM_WIFI_FW_SRC/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.txt \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw.bin     \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_A.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_A.bin \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_B.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_B.bin \
