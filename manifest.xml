@@ -36,7 +36,6 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project-->
-  <project path="abi/cpp" name="platform/abi/cpp" groups="bdk" />
   <project path="bionic" name="platform/bionic" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="bdk" />
