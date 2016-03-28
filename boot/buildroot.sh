@@ -3,9 +3,9 @@ mkdir -p tmp
 mkdir -p tmpmount
 
 cp kernel.img tmp
-cp ../ramdisk.img tmp
-cp cmdline.ram tmp
-cp config.ram tmp
+cp ramdisk.img tmp
+cp cmdline.ram tmp/cmdline.txt
+cp config.ram tmp/config.txt
 cp bcm27* tmp
 cp -r overlays tmp
 FSIZE=$((`du tmp |tail -n 1| cut -f 1`))
