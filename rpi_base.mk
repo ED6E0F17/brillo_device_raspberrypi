@@ -169,8 +169,8 @@ PRODUCT_PACKAGES += \
  
 PRODUCT_3RD_PARTY_PACKAGES += \
   dev-libs/wiringPi \
+  media-libs/brillo-userland
 
-#  media-libs/raspberrypi-userland
 #  dev-lang/python:2.7
 
 # Avahi packages.
