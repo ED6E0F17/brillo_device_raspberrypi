@@ -1,0 +1,18 @@
+service sconsole /system/bin/sh
+    class core
+    console ttyAMA0
+    oneshot
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+
+service fbconsole /system/bin/sh
+    class core
+    console tty0
+    disabled
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+
+#on property:ro.debuggable=1
+#    start sconsole

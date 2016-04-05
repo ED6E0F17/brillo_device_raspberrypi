@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
   device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
   device/rpi/common/init.net-setup.sh:system/etc/init.net-setup.sh \
   device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
+  device/rpi/common/consoles.rc:system/etc/init/consoles.rc \
   device/rpi/common/ueventd.rc:system/etc/init/ueventd.rc \
 
 #  device/rpi/common/sensorservice.rc:system/etc/init/sensorservice.rc \

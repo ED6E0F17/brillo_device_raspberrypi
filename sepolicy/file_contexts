@@ -8,8 +8,9 @@
 /system/bin/periodic_scheduler   u:object_r:crash_reporter_exec:s0
 /data/misc/crash_reporter(/.*)?  u:object_r:crash_reporter_data_file:s0
 
-/dev/tty1                  u:object_r:console_device:s0
+/dev/tty0                  u:object_r:console_device:s0
 /dev/ttyAMA0               u:object_r:console_device:s0
+#	/dev/ttyAMA0		u:object_r:bluetoothtbd_device:s0
 
 /dev/block/mmcblk0         u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p[0-9]+  u:object_r:mmc_block_device:s0
