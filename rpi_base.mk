@@ -158,7 +158,7 @@ RTL8192CU_WIFI_FW_SRC := device/rpi/wifi/firmware/rtlwifi
 RTL8192CU_WIFI_FW_DST := system/vendor/firmware/rtlwifi
 
 PRODUCT_COPY_FILES += \
-	$(BRCM_WIFI_FW_SRC/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
 	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.txt \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw.bin     \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_A.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_A.bin \
@@ -212,7 +212,7 @@ TARGET_SKIP_OTA_PACKAGE := true
 AB_OTA_PARTITIONS := \
   system
 
-# We must select a wpa_supplicant version, or the AOSP version won't be built.
+# We must select a wpa_supplicant version, or the AOSP version wont be built.
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -257,7 +257,7 @@ PRODUCT_PACKAGES += \
 #
 # Bluetooth.
 #
-# Don't compile for targets without WiFi support until b/25083459 is fixed.
+# Dont compile for targets without WiFi support until b/25083459 is fixed.
 #
 ifeq ($(WIFI_SUPPORTED),true)
 PRODUCT_PACKAGES += \
