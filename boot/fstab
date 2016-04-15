@@ -1,2 +1,2 @@
 /dev/block/mmcblk0p2  /       ext4    ro              wait
-/dev/block/mmcblk0p3  /data   auto    noatime,nodev   wait,check,encryptable=footer
+/dev/block/mmcblk0p3  /data   ext4    noatime,nodev   wait,check,encryptable=footer

@@ -86,6 +86,7 @@
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="bdk" />
   <project path="external/libchrome" name="platform/external/libchrome" groups="bdk" />
+  <project path="external/libconstrainedcrypto" name="platform/external/libconstrainedcrypto" groups="bdk" />
   <project path="external/libcxx" name="platform/external/libcxx" groups="bdk" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="bdk" />
   <project path="external/libdivsufsort" name="platform/external/libdivsufsort" groups="bdk" />
@@ -175,6 +176,7 @@
   <project path="system/security" name="platform/system/security" groups="bdk" />
   <project path="system/sepolicy" name="platform/system/sepolicy" groups="bdk" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="bdk" />
+  <project path="system/tools/bpt" name="platform/system/tools/bpt" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
@@ -183,7 +185,7 @@
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
-           groups="rpi" remote="github" revision="rpi-4.5.y" clone-depth="1"/>
+           groups="rpi" remote="github" revision="rpi-4.6.y" clone-depth="1"/>
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
 <!-- Intel SoCs and Peripherals -->
