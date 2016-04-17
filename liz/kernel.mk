@@ -98,7 +98,8 @@ $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
 	$(hide) $(TARGET_KERNEL_SRC)/scripts/mkknlimg $(KERNEL_OUT)/arch/arm/boot/zImage $(PRODUCT_OUT)/boot/kernel.img
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2708* $(PRODUCT_OUT)/boot
-	$(hide) cp -r $(KERNEL_OUT)/arch/arm/boot/dts/overlays $(PRODUCT_OUT)/boot
+	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
+	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
 	$(hide) cp device/rpi/liz/bsp/config.txt $(PRODUCT_OUT)/boot
 
