@@ -38,16 +38,7 @@
   </project-->
   <project path="bionic" name="platform/bionic" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
-  <project path="device/generic/arm64" name="device/generic/arm64" groups="bdk" />
-  <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="bdk" />
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
-  <project path="device/generic/goldfish" name="device/generic/goldfish" groups="bdk" />
-  <project path="device/generic/mini-emulator-arm64" name="device/generic/mini-emulator-arm64" groups="bdk" />
-  <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="bdk" />
-  <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="bdk" />
-  <project path="device/generic/mini-emulator-x86_64" name="device/generic/mini-emulator-x86_64" groups="bdk" />
-  <project path="device/generic/x86" name="device/generic/x86" groups="bdk" />
-  <project path="device/generic/x86_64" name="device/generic/x86_64" groups="bdk" />
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
   <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />

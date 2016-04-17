@@ -21,3 +21,6 @@ allow trunksd trunksd_data_file:file create_file_perms;
 # TODO(dkrahn): Investigate why these are needed.
 allow trunksd proc:file r_file_perms;
 allow trunksd self:capability dac_override;
+
+# Allow access to TPM device.
+allow trunksd tpm_device:chr_file rw_file_perms;

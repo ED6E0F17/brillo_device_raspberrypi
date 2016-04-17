@@ -26,6 +26,7 @@ allow bluetoothtbd sysfs_bluetoothtbd_writable:file rw_file_perms;
 
 allow bluetoothtbd self:capability net_admin;
 allow bluetoothtbd self:capability2 wake_alarm;
+allow bluetoothtbd self:socket create_socket_perms;
 
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(bluetoothtbd)
