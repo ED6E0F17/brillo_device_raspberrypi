@@ -54,6 +54,6 @@ service dbus /system/bin/dbus-daemon --system --nofork
 service wpa_supplicant /system/bin/wpa_supplicant \
     -Dnl80211 -c/system/lib/shill/shims/wpa_supplicant.conf -u
     class late_start
-    socket wpa_wlan0 dgram 0660 system system
-    user system
-    group system dbus inet
+    socket wpa_wlan0 dgram 0660 wifi wifi
+    user wifi
+    group wifi dbus inet

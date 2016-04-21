@@ -60,8 +60,8 @@ binder_call($1, metrics_collector)
 # Allow a domain to talk to webservd.
 define(`use_webservd', `
 allow $1 webservd:fd use;
-allow $1 webservd:fifo_file rw_file_perms;
-allow $1 webservd_data_file:file r_file_perms;
+allow $1 webservd:fifo_file { getattr read ioctl write };
+allow $1 webservd_data_file:file { getattr read ioctl };
 ')
 
 #####################################

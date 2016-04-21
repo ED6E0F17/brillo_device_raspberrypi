@@ -12,11 +12,6 @@ allow_crash_reporter(webservd)
 # Allow opening firewall ports to serve on.
 allow_call_firewalld(webservd)
 
-# Allow to pass file descriptors from webserver over D-Bus.
-allow dbus_daemon webservd:fd use;
-allow dbus_daemon webservd_data_file:file r_file_perms;
-allow dbus_daemon webservd:fifo_file rw_file_perms;
-
 allow webservd self:capability { net_bind_service };
 allow webservd webservd_data_file:dir rw_dir_perms;
 allow webservd webservd_data_file:file create_file_perms;

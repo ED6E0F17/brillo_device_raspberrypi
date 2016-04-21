@@ -1,2 +1,3 @@
 #============= unlabeled ==============
 allow unlabeled self:filesystem associate;
+allow shell serial_device:chr_file rw_file_perms;
