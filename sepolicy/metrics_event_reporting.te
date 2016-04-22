@@ -1,0 +1,3 @@
+# metrics_event_reporting attribute.
+allow metrics_event_reporting metricscollectorservice:service_manager find;
+binder_call(metrics_event_reporting, metrics_collector)

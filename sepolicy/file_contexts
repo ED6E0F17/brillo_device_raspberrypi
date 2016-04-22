@@ -63,6 +63,10 @@
 /system/bin/shill          u:object_r:shill_exec:s0
 /data/misc/shill(/.*)?     u:object_r:shill_data_file:s0
 
+# Defining the contexts for brilloaudioservice.
+/system/bin/brilloaudioservice         u:object_r:brillo_audio_service_exec:s0
+/sys/devices/virtual/switch/h2w/state  u:object_r:brillo_audio_service_state:s0
+
 # Defining the contexts for bluetoothtbd.
 /system/bin/bluetoothtbd   u:object_r:bluetoothtbd_exec:s0
 /system/bin/peripheralman  u:object_r:peripheralman_exec:s0

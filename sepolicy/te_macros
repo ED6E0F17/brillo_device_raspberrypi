@@ -33,69 +33,55 @@ allow crash_reporter $1_exec:file r_file_perms;
 # Allow a domain to control power management.
 define(`allow_power_management', `
 allow $1 power_service:service_manager find;
-binder_call($1, nativepowerman)
+binder_call($1, nativepowerman);
+')
+
+#####################################
+# bidi_binder_call(domain, otherdomain)
+# Allow either domain to call the other over binder.
+define(`bidi_binder_call', `
+binder_call($1, $2);
+binder_call($2, $1);
 ')
 
 #####################################
 # allow_metrics_reporting(domain)
 # Allow a domain to log metrics using libmetrics.
 define(`allow_metrics_reporting', `
-allow $1 metricsd_service:service_manager find;
-binder_use($1)
-binder_call($1, metricsd)
-allow $1 metrics_data_file:dir r_dir_perms;
-allow $1 metrics_data_file:file r_file_perms;
+typeattribute $1 metrics_reporting;
 ')
 
 #####################################
 # allow_metrics_event_reporting(domain)
 # Allow a domain to report events using libmetricscollectorservice.
 define(`allow_metrics_event_reporting', `
-allow $1 metricscollectorservice:service_manager find;
-binder_call($1, metrics_collector)
-')
-
-#####################################
-# use_webservd(domain)
-# Allow a domain to talk to webservd.
-define(`use_webservd', `
-allow $1 webservd:fd use;
-allow $1 webservd:fifo_file { getattr read ioctl write };
-allow $1 webservd_data_file:file { getattr read ioctl };
+typeattribute $1 metrics_event_reporting;
 ')
 
 #####################################
 # allow_call_weave(domain)
 # Allow a domain and weaved to communicate with each other over binder.
 define(`allow_call_weave', `
-allow $1 weave_service:service_manager find;
-binder_call($1, weaved)
-binder_call(weaved, $1)
+typeattribute $1 weave_client;
 ')
 
 #####################################
 # allow_call_update_engine(domain)
 # Allow a domain and update_engine to communicate with each other over binder.
 define(`allow_call_update_engine', `
-allow $1 update_engine_service:service_manager find;
-binder_call($1, update_engine)
-binder_call(update_engine, $1)
+typeattribute $1 update_engine_client;
 ')
 
 #####################################
 # allow_call_webservd(domain)
 # Allow a domain and webservd to communicate with each other over binder.
 define(`allow_call_webservd', `
-allow $1 webservd_service:service_manager find;
-binder_call($1, webservd)
-binder_call(webservd, $1)
+typeattribute $1 webservd_client;
 ')
 
 #####################################
 # allow_call_firewalld(domain)
 # Allow a domain and firewalld to communicate with each other over binder.
 define(`allow_call_firewalld', `
-allow $1 firewalld_service:service_manager find;
-binder_call($1, firewalld)
-binder_call(firewalld, $1)
+typeattribute $1 firewalld_client;
 ')

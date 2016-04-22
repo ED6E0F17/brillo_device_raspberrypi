@@ -11,9 +11,6 @@ userdebug_or_eng(`
   # Allow crash_reporter access to core dump files.
   allow_crash_reporter(webservd_testc)
 
-  # Allow servicing HTTP(S) requests via webservd.
-  use_webservd(webservd_testc)
-
   # Allow weaved to talk to webservd.
   allow_call_webservd(webservd_testc)
 ')

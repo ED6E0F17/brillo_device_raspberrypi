@@ -24,10 +24,7 @@ allow weaved weave_service:service_manager { add find };
 allow weaved weaved_data_file:dir w_dir_perms;
 allow weaved weaved_data_file:file create_file_perms;
 
-# Allow talking to webservd.
-use_webservd(weaved)
-
 allow weaved system_file:dir r_file_perms;
 
 # Allow reading os-release.d properties.
-r_dir_file(weaved, os_release_file);
+r_dir_file(weaved, os_release_file)

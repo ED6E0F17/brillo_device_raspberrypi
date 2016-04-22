@@ -13,7 +13,7 @@ allow peripheralman sysfs:file rw_file_perms;
 allow peripheralman sysfs:dir r_dir_perms;
 
 # Allow access to spidev devices.
-#allow peripheralman spi_device:chr_file rw_file_perms;
+allow peripheralman spi_device:chr_file rw_file_perms;
 
 # Allow access to i2cdev devices.
 allow peripheralman i2c_device:chr_file rw_file_perms;

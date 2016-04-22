@@ -1,0 +1,6 @@
+# webservd_client attribute.
+allow webservd_client webservd_service:service_manager find;
+bidi_binder_call(webservd_client, webservd)
+allow webservd_client webservd:fd use;
+allow webservd_client webservd:fifo_file { getattr read ioctl write };
+allow webservd_client webservd_data_file:file { getattr read ioctl };

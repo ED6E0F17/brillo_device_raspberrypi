@@ -1,0 +1,6 @@
+# metrics_reporting attribute.
+allow metrics_reporting metricsd_service:service_manager find;
+binder_use(metrics_reporting)
+binder_call(metrics_reporting, metricsd)
+allow metrics_reporting metrics_data_file:dir r_dir_perms;
+allow metrics_reporting metrics_data_file:file r_file_perms;

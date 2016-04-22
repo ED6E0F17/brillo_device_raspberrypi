@@ -8,7 +8,7 @@ init_daemon_domain(dbus_daemon)
 allow_crash_reporter(dbus_daemon)
 
 allow dbus_daemon proc:dir search;
-use_webservd(dbus_daemon)
+allow_call_webservd(dbus_daemon)
 
 # dbus-daemon optimistically tries to read debug information from /proc when it
 # sees a connection. Suppress the denials when this happens.
