@@ -8,7 +8,7 @@ cma_offline_start=16
 
 dtparam=act_led_activelow
 dtparam=audio
+dtoverlay=dwc2,g-rx-fifo-size="2000",g-tx-fifo-size="512 512 512 512"
 
-dtoverlay=dwc2:g-rx-fifo-size="2000",g-tx-fifo-size="512 512 512 512"
 # dtoverlay=vc4-kms-v3d
 # avoid_warnings=2            # KMS/DRM
