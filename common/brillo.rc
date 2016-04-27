@@ -20,6 +20,13 @@
 
 on boot
     start firewall-setup
+
+    # fake some battery state
+    setprop status.battery.state Slow
+    setprop status.battery.level 5
+    setprop status.battery.level_raw  50
+    setprop status.battery.level_scale 9
+
     setprop dev.bootcomplete 1
 
 on property:firewall.init=1

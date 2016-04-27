@@ -62,6 +62,7 @@ PRODUCT_PACKAGES = \
   adbd \
   bootctl \
   firewalld \
+  healthd \
   init \
   init.environ.rc \
   init.rc \
@@ -82,6 +83,7 @@ PRODUCT_PACKAGES = \
   reboot \
   rootdev \
   service \
+  servicemanager \
   softkeymaster \
   sh \
   toolbox \
@@ -90,9 +92,6 @@ PRODUCT_PACKAGES = \
   update_engine_client \
   weaved \
   webservd \
-
-#  Removed due to boot loops:
-# servicemanager \
 
 PRODUCT_PACKAGES += \
   brillo-update-payload-key
@@ -123,15 +122,11 @@ PRODUCT_PACKAGES += \
 # Audio dependencies.
 PRODUCT_PACKAGES += \
   libaudioroute \
+  libmedia \
   libtinyalsa \
   libtinycompress \
   local_time.default \
-
-#  mediaserver \
-
-# Audio libraries.
-PRODUCT_PACKAGES += \
-  libmedia \
+  mediaserver \
 
 # Connectivity packages.
 PRODUCT_PACKAGES += \
@@ -161,6 +156,7 @@ RTL8192CU_WIFI_FW_DST := system/vendor/firmware/rtlwifi
 PRODUCT_COPY_FILES += \
 	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
 	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.txt \
+	$(BRCM_WIFI_FW_SRC)/BCM43430A1.hcd:$(BRCM_WIFI_FW_DST)/BCM43430A1.hcd \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw.bin     \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_A.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_A.bin \
         $(RTL8192CU_WIFI_FW_SRC)/rtl8192cufw_B.bin:$(RTL8192CU_WIFI_FW_DST)/rtl8192cufw_B.bin \
