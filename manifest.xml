@@ -13,7 +13,7 @@
 
   <!-- Brillo-specific build tooling -->
   <project path="device/generic/brillo" name="device/generic/brillo" groups="bdk" />
-  <project path="tools/bdk" name="platform/tools/bdk" groups="bdk" />
+  <project path="tools/bdk" name="platform/tools/bdk" groups="bdk,bdk-cli" />
 
   <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" />
   <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" />
@@ -174,12 +174,19 @@
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
   <!-- BEGIN starter boards -->
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="bdk" remote="github" />
+  <project path="device/pifoundation/rpi3"
+           name="device/pifoundation/rpi3"
+           groups="rpi" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
            groups="rpi" remote="github" revision="rpi-4.6.y" clone-depth="1"/>
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
-<!-- Intel SoCs and Peripherals -->
+  <!-- Aaeon Upboard -->
+  <project path="device/aaeon/upboard"
+           name="device/aaeon/upboard"
+           groups="upboard" />
+  <!-- Intel SoCs and Peripherals -->
   <project path="device/intel/edison"
            name="device/intel/edison"
            groups="edison" />
