@@ -1,9 +1,8 @@
-#kernel=kernel.img
 ramfsfile=ramdisk.img
 ramfsaddr=0x01800000
 gpu_mem=128
 cma_lwm=16
 cma_hwm=32
 cma_offline_start=16
-dtparam=act_led_activelow=on
-#dtparam=audio=on
+dtparam=act_led_activelow
+dtparam=audio
