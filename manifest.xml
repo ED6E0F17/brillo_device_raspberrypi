@@ -95,6 +95,7 @@
   <project path="external/libvpx" name="platform/external/libvpx" groups="bdk" />
   <project path="external/libweave" name="platform/external/libweave" groups="bdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
+  <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
   <project path="external/lzop" name="platform/external/lzop" groups="bdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
@@ -133,20 +134,23 @@
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="bdk" clone-depth="1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="linux,bdk" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="linux,arm,bdk" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="linux,arm,bdk" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="linux,bdk" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="linux,bdk" />
-  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="linux,mips,bdk" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="linux,x86,bdk" />
-  <project path="prebuilts/gdb/linux-x86" name="platform/prebuilts/gdb/linux-x86" groups="linux,bdk" />
-  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,bdk" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
+	groups="linux,arm,bdk" clone-depth="1"/>
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
+	groups="linux,arm,bdk" clone-depth="1"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8"
+	groups="linux,bdk" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"
+	groups="linux,bdk" clone-depth="1" />
+  <project path="prebuilts/gdb/linux-x86" name="platform/prebuilts/gdb/linux-x86"
+	groups="linux,bdk" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,bdk" />
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="bdk" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="bdk" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,bdk" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="darwin,bdk" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86"
+	groups="linux,bdk" clone-depth="1" />
   <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="bdk,linux" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
