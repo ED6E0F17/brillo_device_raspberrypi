@@ -14,3 +14,9 @@ Lunch options:
     gert: armv6 (ModelB+).
     eben: armv7 (Model2B).
 
+Static IP addresses:
+
+    set in common/init.net-setup.sh
+    eth0 192.168.1.10
+    usb0 10.10.10.10
+
