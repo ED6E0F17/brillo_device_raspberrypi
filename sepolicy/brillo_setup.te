@@ -8,6 +8,7 @@ net_domain(brillo_setup)
 
 # Inherit open file to shell (interpreter) for script.
 allow brillo_setup shell_exec:file read;
+allow brillo_setup shell_exec:file getattr;
 
 # Configure interfaces, routes and firewall rules.
 allow brillo_setup self:capability { net_admin net_raw };
