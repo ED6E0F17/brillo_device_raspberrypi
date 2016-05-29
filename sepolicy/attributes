@@ -1,6 +1,7 @@
 attribute firewalld_client;
 attribute metrics_reporting;
 attribute metrics_event_reporting;
+attribute shill_client;
 attribute update_engine_client;
 attribute weave_client;
 attribute webservd_client;

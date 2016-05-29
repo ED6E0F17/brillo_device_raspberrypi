@@ -85,3 +85,10 @@ typeattribute $1 webservd_client;
 define(`allow_call_firewalld', `
 typeattribute $1 firewalld_client;
 ')
+
+#####################################
+# allow_call_shill(domain)
+# Allow a domain and shill to communicate with each other over binder.
+define(`allow_call_shill', `
+typeattribute $1 shill_client;
+')

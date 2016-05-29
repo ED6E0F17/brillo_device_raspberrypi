@@ -6,3 +6,4 @@ type weave_service, service_manager_type;
 type brilloaudioservice, service_manager_type;
 type webservd_service, service_manager_type;
 type firewalld_service, service_manager_type;
+type shill_service, service_manager_type;

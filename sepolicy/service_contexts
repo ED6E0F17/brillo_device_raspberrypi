@@ -7,3 +7,4 @@ weave_service u:object_r:weave_service:s0
 android.brillo.brilloaudioservice.BrilloAudioService u:object_r:brilloaudioservice:s0
 android.webservd.Server u:object_r:webservd_service:s0
 android.firewalld.Firewall u:object_r:firewalld_service:s0
+android.system.connectivity.shill.IManager u:object_r:shill_service:s0

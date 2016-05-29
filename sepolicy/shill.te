@@ -53,6 +53,8 @@ allow shill rootfs:dir getattr;
 r_dir_file(shill, sysfs)
 allow shill sysfs:lnk_file read;
 
+allow shill shill_service:service_manager add;
+
 # Don't spam the logs when trying to kill dhcpcd.
 # TODO(samueltan): remove this once b/24944751 is fixed.
 dontaudit shill domain:dir search;
