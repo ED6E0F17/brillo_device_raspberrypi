@@ -17,3 +17,6 @@ allow peripheralman spi_device:chr_file rw_file_perms;
 
 # Allow access to i2cdev devices.
 allow peripheralman i2c_device:chr_file rw_file_perms;
+
+# Allow access to uart devices.
+allow peripheralman console_device:chr_file rw_file_perms;

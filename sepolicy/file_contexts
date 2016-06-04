@@ -9,6 +9,7 @@
 /data/misc/crash_reporter(/.*)?  u:object_r:crash_reporter_data_file:s0
 
 /system/bin/avahi-daemon   u:object_r:avahi_exec:s0
+
 /system/bin/firewalld      u:object_r:firewalld_exec:s0
 
 /dev/tty0                  u:object_r:console_device:s0

@@ -7,15 +7,13 @@ init_daemon_domain(brillo_setup)
 net_domain(brillo_setup)
 
 # Inherit open file to shell (interpreter) for script.
-allow brillo_setup shell_exec:file read;
-allow brillo_setup shell_exec:file getattr;
+allow brillo_setup shell_exec:file {read getattr};
 
 # Configure interfaces, routes and firewall rules.
 allow brillo_setup self:capability { net_admin net_raw };
-allow brillo_setup self:rawip_socket create;
-allow brillo_setup self:rawip_socket getopt;
-allow brillo_setup self:rawip_socket setopt;
+allow brillo_setup self:rawip_socket { create getopt setopt };
 allow brillo_setup system_file:file execute_no_trans;
+allow brillo_setup self:netlink_route_socket nlmsg_write;
 
 # Set properties for init.
 set_prop(brillo_setup, brillo_setup_prop)
@@ -33,5 +31,3 @@ allow brillo_setup selinuxfs:filesystem getattr;
 
 # Quiet logging.
 dontaudit brillo_setup kernel:system module_request;
-dontaudit brillo_setup sysfs_devices_system_cpu:dir search;
-dontaudit brillo_setup sysfs_devices_system_cpu:file r_file_perms;

@@ -8,7 +8,7 @@ type wifi_sysfs_entry, fs_type, sysfs_type;
 brillo_domain(wifi_setup)
 
 # Inherit open file to shell (interpreter) for script.
-allow wifi_setup shell_exec:file read;
+allow wifi_setup shell_exec:file rx_file_perms;
 allow wifi_setup system_file:file execute_no_trans;
 allow wifi_setup toolbox_exec:file { rx_file_perms };
 
