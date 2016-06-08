@@ -43,7 +43,7 @@
   <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
-  <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" revision="09f2501f7faf115dc26e0c2310b3ea8c97f66007" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
