@@ -5,3 +5,4 @@ attribute shill_client;
 attribute update_engine_client;
 attribute weave_client;
 attribute webservd_client;
+attribute trunks_client;

@@ -2,6 +2,8 @@ android.brillo.metrics.IMetricsd u:object_r:metricsd_service:s0
 android.brillo.metrics.IMetricsCollectorService u:object_r:metricscollectorservice:s0
 android.os.IPeripheralManager u:object_r:peripheralman_service:s0
 trunks_service u:object_r:trunks_service:s0
+android.tpm_manager.ITpmNvram u:object_r:tpm_manager_service:s0
+android.tpm_manager.ITpmOwnership u:object_r:tpm_manager_service:s0
 android.brillo.UpdateEngineService u:object_r:update_engine_service:s0
 weave_service u:object_r:weave_service:s0
 android.brillo.brilloaudioservice.BrilloAudioService u:object_r:brilloaudioservice:s0

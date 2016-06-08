@@ -92,3 +92,10 @@ typeattribute $1 firewalld_client;
 define(`allow_call_shill', `
 typeattribute $1 shill_client;
 ')
+
+#####################################
+# allow_call_trunksd(domain)
+# Allow a domain and trunksd to communicate with each other over binder.
+define(`allow_call_trunksd', `
+typeattribute $1 trunks_client;
+')

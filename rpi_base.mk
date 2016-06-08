@@ -23,9 +23,6 @@ BRILLO_USE_WEAVE := 1
 BRILLO_USE_OMAHA := 1
 BRILLO_USE_BINDER := 1
 
-#SHILL_USE_BINDER := true
-#SHILL_USE_WIFI := true
-
 JAVA_NOT_REQUIRED := true
 TARGET_NO_RECOVERY := true
 WITHOUT_CHECK_API := true
@@ -150,6 +147,7 @@ WIFI_DRIVER_HAL_MODULE := wifi_driver.8192cu
 WIFI_DRIVER_HAL_PERIPHERAL := rtl8192cu
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
+#SHILL_USE_BINDER := false
 
 # RTL8192CU WIFI Firmware
 BRCM_WIFI_FW_SRC := device/rpi/wifi/firmware/brcm
@@ -194,6 +192,9 @@ PRODUCT_PACKAGES += \
   trunks_client \
   trunksd \
   libtpm2\
+  libtpm_manager \
+  tpm_manager_client \
+  tpm_managerd \
 
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \

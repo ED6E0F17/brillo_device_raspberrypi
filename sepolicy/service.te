@@ -2,6 +2,7 @@ type metricsd_service, service_manager_type;
 type metricscollectorservice, service_manager_type;
 type peripheralman_service, service_manager_type;
 type trunks_service, service_manager_type;
+type tpm_manager_service, service_manager_type;
 type weave_service, service_manager_type;
 type brilloaudioservice, service_manager_type;
 type webservd_service, service_manager_type;

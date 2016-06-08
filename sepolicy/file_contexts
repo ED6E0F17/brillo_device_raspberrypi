@@ -19,9 +19,6 @@
 /dev/block/mmcblk0         u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p[0-9]+  u:object_r:mmc_block_device:s0
 
-/dev/spidev.*              u:object_r:spi_device:s0
-/dev/tpm[0-9]+             u:object_r:tpm_device:s0
-
 /data/misc/apmanager(/.*)? u:object_r:apmanager_data_file:s0
 /system/bin/apmanager      u:object_r:apmanager_exec:s0
 
@@ -52,8 +49,12 @@
 /system/bin/tlsdate-helper u:object_r:tlsdated_exec:s0
 /system/bin/tlsdate        u:object_r:tlsdated_exec:s0
 
+/dev/tpm[0-9]+             u:object_r:tpm_device:s0
 /data/misc/trunksd(/.*)?   u:object_r:trunksd_data_file:s0
 /system/bin/trunksd        u:object_r:trunksd_exec:s0
+
+/data/misc/tpm_managerd(/.*)?  u:object_r:tpm_managerd_data_file:s0
+/system/bin/tpm_managerd       u:object_r:tpm_managerd_exec:s0
 
 /dev/socket/nvram           u:object_r:fake-nvram_socket:s0
 /data/misc/fake-nvram(/.*)? u:object_r:fake-nvram_data_file:s0
@@ -77,10 +78,14 @@
 /system/bin/peripheralman  u:object_r:peripheralman_exec:s0
 
 # This service only runs during tests for webservd's correctness
-/system/bin/webservd_testc u:object_r:webservd_testc_exec:s0
+/system/bin/webservd_testc      u:object_r:webservd_testc_exec:s0
 
 /system/etc/init\.firewall-setup\.sh  u:object_r:brillo_setup_exec:s0
+
 /system/etc/init\.wifi-setup\.sh      u:object_r:wifi_setup_exec:s0
+
 /system/etc/init\.net-setup\.sh       u:object_r:net_setup_exec:s0
 
 /system/etc/os-release\.d(/.*)?       u:object_r:os_release_file:s0
+
+/dev/spidev.*                         u:object_r:spi_device:s0
