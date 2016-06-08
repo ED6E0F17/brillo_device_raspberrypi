@@ -1,0 +1,26 @@
+# tpm_managerd.
+type tpm_managerd, domain;
+type tpm_managerd_exec, exec_type, file_type;
+type tpm_managerd_data_file, file_type, data_file_type;
+
+brillo_domain(tpm_managerd)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(tpm_managerd)
+
+# Allow Minijail to drop privilege.
+allow tpm_managerd self:capability { setuid setgid };
+
+# Allow adding the binder services.
+allow tpm_managerd tpm_manager_service:service_manager { add find };
+
+# Allow communication with trunksd.
+allow_call_trunksd(tpm_managerd)
+
+# Allow tpm_managerd to manage persistent data.
+allow tpm_managerd tpm_managerd_data_file:dir rw_dir_perms;
+allow tpm_managerd tpm_managerd_data_file:file create_file_perms;
+
+# TODO(dkrahn): Investigate why these are needed.
+allow tpm_managerd proc:file r_file_perms;
+allow tpm_managerd self:capability dac_override;
