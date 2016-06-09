@@ -24,18 +24,13 @@
   <project path="product/google/example-ledflasher" name="product/google/example-ledflasher" groups="bdk" />
 
   <!-- BEGIN open-source projects -->
-  <!--project path="build" name="platform/build" groups="bdk" -->
-  <project path="build" name="ed6e0f17/platform_build" groups="bdk" remote="github" clone-depth="1">
-    <copyfile src="core/root.mk" dest="Makefile" />
-    <linkfile src="soong/root.bp" dest="Android.bp" />
-    <linkfile src="soong/bootstrap.bash" dest="bootstrap.bash" />
-  </project>
+  <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" />
   <project path="build/blueprint" name="platform/build/blueprint" groups="bdk" />
   <project path="build/kati" name="platform/build/kati" groups="bdk" />
-  <!--project path="build/soong" name="platform/build/soong" groups="bdk" >
+  <project path="build/soong" name="ED6E0F17/soong" groups="bdk" remote="github" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
-  </project-->
+  </project>
   <project path="bionic" name="platform/bionic" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
