@@ -44,14 +44,10 @@ KERNEL_TOOLCHAIN_ABS := $(realpath $(TARGET_TOOLCHAIN_ROOT)/bin)
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androideabi-
-KERNEL_SRC_ARCH := arm
+KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/aarch64-linux-android-
+KERNEL_SRC_ARCH := arm64
 KERNEL_CFLAGS :=
-ifdef TARGET_KERNEL_DTB
-KERNEL_NAME := zImage
-else
-KERNEL_NAME := zImage-dtb
-endif
+KERNEL_NAME := Image
 
 # Allow caller to override toolchain.
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(strip $(TARGET_KERNEL_CROSS_COMPILE_PREFIX))
@@ -69,14 +65,14 @@ KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
 
-KERNEL_BIN := $(KERNEL_OUT)/arch/arm/boot/$(KERNEL_NAME)
+KERNEL_BIN := $(KERNEL_OUT)/arch/arm64/boot/$(KERNEL_NAME)
 
 # Figure out which kernel version is being built (disregard -stable version).
 KERNEL_VERSION := $(shell $(MAKE) --no-print-directory -C $(TARGET_KERNEL_SRC) -s SUBLEVEL="" kernelversion)
 
 
 ifdef TARGET_KERNEL_DTB
-KERNEL_DTB := $(KERNEL_OUT)/arch/arm/boot/dts/$(TARGET_KERNEL_DTB)
+KERNEL_DTB := $(KERNEL_OUT)/arch/arm64/boot/dts/$(TARGET_KERNEL_DTB)
 $(PRODUCT_OUT)/kernel-dtb: $(KERNEL_BIN) | $(ACP)
 	$(ACP) -fp $(KERNEL_DTB) $@
 endif
@@ -88,19 +84,18 @@ $(KERNEL_OUT):
 # Merge the final target kernel config.
 $(KERNEL_CONFIG): $(KERNEL_OUT)
 	$(hide) cp device/rpi/pete/kernel.config $(KERNEL_OUT)/.config
-	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) olddefconfig ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE)
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) olddefconfig ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE)
 
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) echo "Building RPI $(KERNEL_VERSION) kernel..."
-	$(hide) rm -rf $(KERNEL_OUT)/arch/arm/boot/dts
-	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
-	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
+	$(hide) rm -rf $(KERNEL_OUT)/arch/arm64/boot/dts
+	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/zImage $(PRODUCT_OUT)/boot/kernel7.img
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2709* $(PRODUCT_OUT)/boot
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2710* $(PRODUCT_OUT)/boot
-	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
+	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/Image $(PRODUCT_OUT)/boot/kernel8.img
+#	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb $(PRODUCT_OUT)/boot
+#	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
+#	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
 	$(hide) cp device/rpi/pete/bsp/cmdline.txt $(PRODUCT_OUT)/boot
 
@@ -109,16 +104,6 @@ $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 # match as well as the filename in the first line of the .sym file.
 .PHONY: $(KERNEL_BIN).vdso
 $(KERNEL_BIN).vdso: $(KERNEL_BIN)
-ifeq ($(BREAKPAD_GENERATE_SYMBOLS),true)
-	@echo "BREAKPAD: Generating kernel VDSO symbol files."
-	$(hide) set -e; \
-	for sofile in `cd $(KERNEL_OUT) && find . -type f -name '*.so'`; do \
-		mkdir -p $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}; \
-		$(BREAKPAD_DUMP_SYMS) -c $(KERNEL_OUT)/$${sofile} > $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym; \
-		sed -i.tmp "1s/`basename "$${sofile}"`/linux-gate.so/" $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym; \
-		rm $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym.tmp; \
-	done
-endif
 
 ifdef TARGET_KERNEL_DTB
 $(PRODUCT_OUT)/kernel: $(KERNEL_BIN) $(PRODUCT_OUT)/kernel-dtb $(KERNEL_BIN).vdso | $(ACP)
