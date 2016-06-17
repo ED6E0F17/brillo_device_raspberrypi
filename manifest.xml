@@ -40,6 +40,7 @@
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="ed6e0f17/excitingssl" groups="bdk" remote="github" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
+  <project path="external/bvb" name="platform/external/bvb" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
@@ -150,7 +151,6 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
   <project path="system/bt" name="platform/system/bt" groups="bdk" />
-  <project path="system/bvb" name="platform/system/bvb" groups="bdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
