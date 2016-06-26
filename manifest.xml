@@ -24,7 +24,9 @@
   <project path="product/google/example-ledflasher" name="product/google/example-ledflasher" groups="bdk" />
 
   <!-- BEGIN open-source projects -->
-  <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" />
+  <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="bdk" />
   <project path="build/kati" name="platform/build/kati" groups="bdk" />
   <project path="build/soong" name="ED6E0F17/soong" groups="bdk" remote="github" >
