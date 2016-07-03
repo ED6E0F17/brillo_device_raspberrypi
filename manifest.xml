@@ -181,7 +181,7 @@
            groups="rpi" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
-           groups="rpi" remote="github" revision="rpi-4.6.y" clone-depth="1"/>
+           groups="rpi" remote="github" revision="rpi-4.7.y" clone-depth="1"/>
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
   <!-- Aaeon Upboard -->
