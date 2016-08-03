@@ -59,7 +59,7 @@ include device/rpi/common/cfgtree.mk
 # Template for init files.
 INITRC_TEMPLATE := device/rpi/common/init.template.rc.in
 
-PRODUCT_PACKAGES = \
+PRODUCT_PACKAGES := \
   adbd \
   bootctl \
   firewalld \
@@ -94,8 +94,10 @@ PRODUCT_PACKAGES = \
   weaved \
   webservd \
 
-PRODUCT_PACKAGES += \
-  brillo-update-payload-key
+PRODUCT_PACKAGES_ENG += \
+  brillo_camera_client \
+  brillo-update-payload-key \
+  shill_setup_wifi \
 
 # SELinux packages.
 PRODUCT_PACKAGES += \
@@ -143,8 +145,8 @@ PRODUCT_PACKAGES += \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
-WIFI_DRIVER_HAL_MODULE := wifi_driver.8192cu
-WIFI_DRIVER_HAL_PERIPHERAL := rtl8192cu
+WIFI_DRIVER_HAL_MODULE := wifi_driver.bcm43438
+WIFI_DRIVER_HAL_PERIPHERAL := bcm43438
 PRODUCT_PACKAGES += apmanager
 SHILL_USE_WIFI := true
 #SHILL_USE_BINDER := false
@@ -202,11 +204,9 @@ device/rpi/common/android_filesystem_config.h
 PRODUCT_PACKAGES += \
   fs_config_files \
 
-# Brillo targets use the A/B updater.
-AB_OTA_UPDATER := true
-
 # Do not build Android OTA package.
 TARGET_SKIP_OTA_PACKAGE := true
+AB_OTA_UPDATER := false
 
 # This is the list of partitions the A/B updater will update. These need to have
 # two partitions each in the partition table, with the right suffix used by the
@@ -302,18 +302,7 @@ $(firstword $(basename $(notdir \
 endef
 
 HARDWARE_BSP_PREFIX := hardware/bsp
-HARDWARE_BSP_PREBUILTS_PREFIX := vendor/bsp
 # New BSP helpers - move to /build once stable.
-define set_soc
-  $(eval soc_vendor := $(strip $(1))) \
-  $(eval soc_name := $(strip $(2))) \
-  $(eval soc_make_file := $(HARDWARE_BSP_PREFIX)/$(soc_vendor)/soc/$(soc_name)/soc.mk) \
-  $(eval soc_prebuilts_make_file := $(HARDWARE_BSP_PREBUILTS_PREFIX)/$(soc_vendor)/hardware/soc/$(soc_name)/soc.mk) \
-  $(if $(wildcard $(soc_make_file)),$(eval include $(soc_make_file)), \
-    $(if $(wildcard $(soc_prebuilts_make_file)),$(eval include $(soc_prebuilts_make_file)), \
-       $(error Can't find SoC definition. Vendor: $(soc_vendor) SoC: $(soc_name))))
-endef
-
 define add_peripheral
   $(eval peripheral_vendor := $(strip $(1))) \
   $(eval peripheral_name := $(strip $(2))) \
@@ -328,6 +317,3 @@ define add_device_packages
   $(eval CUSTOM_MODULES += $(DEVICE_PACKAGES))
 endef
 
-define add_kernel_configs
-  $(eval TARGET_KERNEL_CONFIGS := $(TARGET_KERNEL_CONFIGS) $(1))
-endef
