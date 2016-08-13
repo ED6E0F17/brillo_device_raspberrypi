@@ -136,9 +136,9 @@
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="bdk" clone-depth="1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="linux,bdk" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
-	groups="linux,arm,bdk" clone-depth="1"/>
+	groups="linux,arm,bdk" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
-	groups="linux,arm,bdk" clone-depth="1"/>
+	groups="linux,arm,bdk" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8"
 	groups="linux,bdk" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"
@@ -182,7 +182,7 @@
            groups="rpi" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
-           groups="rpi" remote="github" revision="rpi-4.7.y" clone-depth="1"/>
+           groups="rpi" remote="github" revision="rpi-4.7.y" clone-depth="1" />
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
   <!-- Aaeon Upboard -->

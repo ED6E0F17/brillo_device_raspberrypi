@@ -206,11 +206,11 @@ PRODUCT_PACKAGES += \
 
 # Do not build Android OTA package.
 TARGET_SKIP_OTA_PACKAGE := true
-AB_OTA_UPDATER := false
 
 # This is the list of partitions the A/B updater will update. These need to have
 # two partitions each in the partition table, with the right suffix used by the
 # bootloader, for example "system_a" and "system_b".
+AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
   system
 
