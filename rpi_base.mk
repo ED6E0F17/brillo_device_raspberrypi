@@ -95,7 +95,6 @@ PRODUCT_PACKAGES := \
   webservd \
 
 PRODUCT_PACKAGES_ENG += \
-  brillo_camera_client \
   brillo-update-payload-key \
   shill_setup_wifi \
 
@@ -129,7 +128,6 @@ PRODUCT_PACKAGES += \
   libtinyalsa \
   libtinycompress \
   local_time.default \
-  mediaserver \
 
 # Connectivity packages.
 PRODUCT_PACKAGES += \
