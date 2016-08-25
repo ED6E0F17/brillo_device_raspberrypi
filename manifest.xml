@@ -52,7 +52,6 @@
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="bdk" />
-  <project path="external/dhcpcd" name="platform/external/dhcpcd" groups="bdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
@@ -64,6 +63,7 @@
   <project path="external/gmock" name="platform/external/gmock" groups="bdk" />
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
+  <project path="external/googletest" name="platform/external/googletest" groups="dragon,bdk" />
   <project path="external/gtest" name="platform/external/gtest" groups="bdk" />
   <project path="external/icu" name="platform/external/icu" groups="bdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
@@ -71,7 +71,6 @@
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
   <project path="external/iw" name="platform/external/iw" groups="bdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
-  <project path="external/jpeg" name="platform/external/jpeg" groups="bdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="bdk" />
@@ -83,6 +82,7 @@
   <project path="external/libdaemon" name="platform/external/libdaemon" groups="bdk" />
   <project path="external/libevent" name="platform/external/libevent" groups="bdk" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="bdk" />
+  <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="bdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="bdk" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="bdk" />
   <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
@@ -124,7 +124,6 @@
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
-  <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
