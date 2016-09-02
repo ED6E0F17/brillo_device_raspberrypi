@@ -73,6 +73,7 @@ KERNEL_VERSION := $(shell $(MAKE) --no-print-directory -C $(TARGET_KERNEL_SRC) -
 
 ifdef TARGET_KERNEL_DTB
 KERNEL_DTB := $(KERNEL_OUT)/arch/arm64/boot/dts/$(TARGET_KERNEL_DTB)
+#obj/KERNEL_OBJ/arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb
 $(PRODUCT_OUT)/kernel-dtb: $(KERNEL_BIN) | $(ACP)
 	$(ACP) -fp $(KERNEL_DTB) $@
 endif
@@ -92,9 +93,9 @@ $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
-	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/Image $(PRODUCT_OUT)/boot/kernel8.img
-#	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb $(PRODUCT_OUT)/boot
-#	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
+	$(hide) cp $(KERNEL_OUT)/vmlinux  $(PRODUCT_OUT)/boot/kernel8.img
+	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb $(PRODUCT_OUT)/boot
+	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
 #	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
 	$(hide) cp device/rpi/pete/bsp/cmdline.txt $(PRODUCT_OUT)/boot
