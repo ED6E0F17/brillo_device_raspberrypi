@@ -16,10 +16,10 @@ file_type_auto_trans(shill, system_data_file, shill_data_file)
 
 # Following permissions are needed for shill.
 allow shill dbus_daemon:unix_stream_socket connectto;
-allow shill self:packet_socket create_socket_perms;
-allow shill self:netlink_socket create_socket_perms;
-allow shill self:netlink_route_socket { rw_socket_perms nlmsg_write };
-allow shill self:netlink_generic_socket create_socket_perms;
+allow shill self:packet_socket create_socket_perms_no_ioctl;
+allow shill self:netlink_socket create_socket_perms_no_ioctl;
+allow shill self:netlink_route_socket { rw_socket_perms_no_ioctl nlmsg_write };
+allow shill self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow shill proc_net:file w_file_perms;
 allow shill sysfs:file w_file_perms;
 allow shill wifi_sysfs_entry:file rw_file_perms;

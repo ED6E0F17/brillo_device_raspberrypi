@@ -10,6 +10,7 @@ allow_crash_reporter(firewalld)
 
 allow firewalld self:capability { net_admin net_raw };
 allow firewalld self:rawip_socket create_socket_perms;
+allowxperm firewalld self:rawip_socket ioctl priv_sock_ioctls;
 
 allow firewalld system_file:file rx_file_perms;
 

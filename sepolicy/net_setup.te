@@ -18,6 +18,7 @@ set_prop(net_setup, net_setup_prop);
 # Permissions for driver initialization.
 allow net_setup self:capability { net_admin net_raw };
 allow net_setup self:udp_socket create_socket_perms;
+allowxperm net_setup self:udp_socket ioctl priv_sock_ioctls;
 allow net_setup sysfs:file w_file_perms;
 allow net_setup net_device:chr_file rw_file_perms;
 allow net_setup net_sysfs_entry:file rw_file_perms;

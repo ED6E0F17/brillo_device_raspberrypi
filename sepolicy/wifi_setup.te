@@ -18,6 +18,7 @@ set_prop(wifi_setup, wifi_setup_prop);
 # Permissions for WiFi driver initialization.
 allow wifi_setup self:capability { net_admin net_raw };
 allow wifi_setup self:udp_socket create_socket_perms;
+allowxperm wifi_setup self:udp_socket ioctl priv_sock_ioctls;
 allow wifi_setup sysfs:file w_file_perms;
 allow wifi_setup wifi_device:chr_file rw_file_perms;
 allow wifi_setup wifi_sysfs_entry:file rw_file_perms;
