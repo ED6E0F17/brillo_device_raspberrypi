@@ -155,10 +155,12 @@
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
+  <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
   <project path="system/firewalld" name="platform/system/firewalld" groups="bdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
+  <project path="system/metricsd" name="platform/system/metricsd" groups="bdk" />
   <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
   <project path="system/nvram" name="platform/system/nvram" groups="bdk" />
   <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" />

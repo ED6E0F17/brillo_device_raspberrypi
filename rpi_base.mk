@@ -142,6 +142,13 @@ PRODUCT_PACKAGES += \
   wifi_init \
   wpa_supplicant \
 
+# Metrics daemons and crash reporter.
+PRODUCT_PACKAGES += \
+  libmetrics \
+  metrics_client \
+  metricsd \
+  crash_reporter \
+
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
 WIFI_DRIVER_HAL_MODULE := wifi_driver.bcm43438
