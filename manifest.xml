@@ -60,11 +60,9 @@
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="bdk" />
   <project path="external/fec" name="platform/external/fec" groups="bdk" />
   <project path="external/flac" name="platform/external/flac" groups="bdk" />
-  <project path="external/gmock" name="platform/external/gmock" groups="bdk" />
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="dragon,bdk" />
-  <project path="external/gtest" name="platform/external/gtest" groups="bdk" />
   <project path="external/icu" name="platform/external/icu" groups="bdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
   <project path="external/iptables" name="platform/external/iptables" groups="bdk" />
