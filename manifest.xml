@@ -42,7 +42,7 @@
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
-  <project path="external/bvb" name="platform/external/bvb" groups="bdk" />
+  <project path="external/avb" name="platform/external/avb" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
