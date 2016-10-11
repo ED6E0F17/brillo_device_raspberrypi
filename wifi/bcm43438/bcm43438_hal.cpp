@@ -46,28 +46,24 @@ static wifi_driver_error wifi_driver_initialize_bcm43438_internal(void) {
 
     socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP);
     if (socketfd < 0) {
-        ALOGE("%s: unable to open control socket", __func__);
         return WIFI_ERROR_UNKNOWN;
     }
 
     strcpy (req.ifr_name, kStationDeviceName);
     rc = ioctl(socketfd, SIOCGIFFLAGS, &req);
     if (rc < 0) {
-        ALOGE("%s: unable to query interface wlan0", __func__);
         return WIFI_ERROR_UNKNOWN;
     }
 
     req.ifr_flags &= ~(IFF_UP|IFF_RUNNING);
     rc = ioctl(socketfd, SIOCSIFFLAGS, &req);
     if (rc < 0) {
-        ALOGE("%s: unable to down interface wlan0", __func__);
         return WIFI_ERROR_UNKNOWN;
     }
 
     req.ifr_flags |= IFF_UP|IFF_RUNNING;
     rc = ioctl(socketfd, SIOCSIFFLAGS, &req);
     if (rc < 0) {
-        ALOGE("%s: unable to up interface wlan0", __func__);
         return WIFI_ERROR_UNKNOWN;
     }
 
@@ -81,18 +77,14 @@ static wifi_driver_error wifi_driver_set_mode_bcm43438(
 
     switch (mode) {
     case WIFI_MODE_AP:
-        ALOGI("Setting mode WIFI_MODE_AP !");
         break;
     case WIFI_MODE_STATION:
-        ALOGI("Setting mode WIFI_MODE_STATION !");
         break;
 #ifdef WIFI_MODE_P2P
     case WIFI_MODE_P2P:
-        ALOGI("Setting mode WIFI_MODE_P2P !");
         break;
 #endif
     default:
-        ALOGE("Unknown WiFi driver mode %d", mode);
         return WIFI_ERROR_INVALID_ARGS;
     }
 
