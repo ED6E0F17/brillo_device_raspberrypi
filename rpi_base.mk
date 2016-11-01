@@ -155,8 +155,8 @@ WIFI_SUPPORTED := true
 WIFI_DRIVER_HAL_MODULE := wifi_driver.bcm43438
 WIFI_DRIVER_HAL_PERIPHERAL := bcm43438
 PRODUCT_PACKAGES += apmanager
-SHILL_USE_WIFI := false
-SHILL_USE_BINDER := false
+SHILL_USE_WIFI := true
+SHILL_USE_BINDER := true
 
 # RTL8192CU WIFI Firmware
 BRCM_WIFI_FW_SRC := device/rpi/wifi/firmware/brcm

@@ -4,6 +4,9 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
+  <remote  name="chromeos"
+           fetch="https://chromium.googlesource.com/aosp/"
+           review="https://android-review.googlesource.com/" />
   <remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
@@ -38,11 +41,11 @@
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
   <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
+  <project path="external/avb" name="platform/external/avb" groups="bdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
-  <project path="external/avb" name="platform/external/avb" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
@@ -153,7 +156,7 @@
   <project path="system/bt" name="platform/system/bt" groups="bdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
-  <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
+  <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" remote="chromeos" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
