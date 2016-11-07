@@ -51,7 +51,8 @@
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
-  <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
+  <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk"
+        revision="d6950b9922f97b59e2e1ed2ab3f37ae493ece87f" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="bdk" />
