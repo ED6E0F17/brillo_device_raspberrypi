@@ -4,9 +4,6 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
-  <remote  name="chromeos"
-           fetch="https://chromium.googlesource.com/aosp/"
-           review="https://android-review.googlesource.com/" />
   <remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
@@ -128,7 +125,8 @@
   <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk"
+    revision="3749a60b42f756f93e19830b03d3cd2bde3fc8d2" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
