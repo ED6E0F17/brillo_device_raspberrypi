@@ -44,7 +44,7 @@ KERNEL_TOOLCHAIN_ABS := $(realpath $(TARGET_TOOLCHAIN_ROOT)/bin)
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/aarch64-linux-android-
+KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/aarch64-linux-androidkernel-
 KERNEL_SRC_ARCH := arm64
 KERNEL_CFLAGS :=
 KERNEL_NAME := Image
@@ -90,11 +90,11 @@ $(KERNEL_CONFIG): $(KERNEL_OUT)
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) echo "Building RPI $(KERNEL_VERSION) kernel..."
 	$(hide) rm -rf $(KERNEL_OUT)/arch/arm64/boot/dts
-	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
 	$(hide) cp $(KERNEL_OUT)/vmlinux  $(PRODUCT_OUT)/boot/kernel8.img
-	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb $(PRODUCT_OUT)/boot
+	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2*.dtb $(PRODUCT_OUT)/boot
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
 #	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot

@@ -44,7 +44,7 @@ KERNEL_TOOLCHAIN_ABS := $(realpath $(TARGET_TOOLCHAIN_ROOT)/bin)
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androideabi-
+KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androidkernel-
 KERNEL_SRC_ARCH := arm
 KERNEL_CFLAGS :=
 ifdef TARGET_KERNEL_DTB
@@ -93,11 +93,11 @@ $(KERNEL_CONFIG): $(KERNEL_OUT)
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) echo "Building RPI $(KERNEL_VERSION) kernel..."
 	$(hide) rm -rf $(KERNEL_OUT)/arch/arm/boot/dts
-	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/zImage $(PRODUCT_OUT)/boot/kernel.img
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2708* $(PRODUCT_OUT)/boot
+	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2* $(PRODUCT_OUT)/boot
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot

@@ -44,7 +44,7 @@ KERNEL_TOOLCHAIN_ABS := $(realpath $(TARGET_TOOLCHAIN_ROOT)/bin)
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 
-KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androideabi-
+KERNEL_CROSS_COMPILE := $(KERNEL_TOOLCHAIN_ABS)/arm-linux-androidkernel-
 KERNEL_SRC_ARCH := arm
 KERNEL_CFLAGS :=
 ifdef TARGET_KERNEL_DTB
@@ -93,39 +93,25 @@ $(KERNEL_CONFIG): $(KERNEL_OUT)
 $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(hide) echo "Building RPI $(KERNEL_VERSION) kernel..."
 	$(hide) rm -rf $(KERNEL_OUT)/arch/arm/boot/dts
-	$(MAKE) -C $(TARGET_KERNEL_SRC)  O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
+	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) KCFLAGS="$(KERNEL_CFLAGS)"
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/zImage $(PRODUCT_OUT)/boot/kernel.img
-	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2708* $(PRODUCT_OUT)/boot
+	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/bcm2* $(PRODUCT_OUT)/boot
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp $(KERNEL_OUT)/arch/arm/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
 	$(hide) cp device/rpi/liz/bsp/config.txt $(PRODUCT_OUT)/boot
 
-# If the kernel generates VDSO files, generate breakpad symbol files for them.
-# VDSO libraries are mapped as linux-gate.so, so rename the symbol file to
-# match as well as the filename in the first line of the .sym file.
 .PHONY: $(KERNEL_BIN).vdso
 $(KERNEL_BIN).vdso: $(KERNEL_BIN)
-ifeq ($(BREAKPAD_GENERATE_SYMBOLS),true)
-	@echo "BREAKPAD: Generating kernel VDSO symbol files."
-	$(hide) set -e; \
-	for sofile in `cd $(KERNEL_OUT) && find . -type f -name '*.so'`; do \
-		mkdir -p $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}; \
-		$(BREAKPAD_DUMP_SYMS) -c $(KERNEL_OUT)/$${sofile} > $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym; \
-		sed -i.tmp "1s/`basename "$${sofile}"`/linux-gate.so/" $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym; \
-		rm $(TARGET_OUT_BREAKPAD)/kernel/$${sofile}/linux-gate.so.sym.tmp; \
-	done
-endif
 
 ifdef TARGET_KERNEL_DTB
-$(PRODUCT_OUT)/kernel: $(KERNEL_BIN) $(PRODUCT_OUT)/kernel-dtb $(KERNEL_BIN).vdso | $(ACP)
+$(PRODUCT_OUT)/kernel: $(KERNEL_BIN) $(PRODUCT_OUT)/kernel-dtb | $(ACP)
 	$(ACP) -fp $< $@
 else
-$(PRODUCT_OUT)/kernel: $(KERNEL_BIN) $(KERNEL_BIN).vdso | $(ACP)
+$(PRODUCT_OUT)/kernel: $(KERNEL_BIN) | $(ACP)
 	$(ACP) -fp $< $@
 endif
 
 endif
-
