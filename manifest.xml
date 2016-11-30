@@ -126,7 +126,7 @@
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk"
-    revision="3749a60b42f756f93e19830b03d3cd2bde3fc8d2" />
+        revision="3749a60b42f756f93e19830b03d3cd2bde3fc8d2" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
@@ -158,9 +158,12 @@
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
-  <project path="system/extras" name="platform/system/extras" groups="bdk" />
+  <project path="system/extras" name="platform/system/extras" groups="bdk"
+        revision="5be914df7e842a052219a6ef4891ff3208373fc3" />
   <project path="system/firewalld" name="platform/system/firewalld" groups="bdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
+  <!--project path="system/libhidl" name="platform/system/libhidl" groups="bdk" /-->
+  <!--project path="system/libhwbinder" name="platform/system/libhwbinder" groups="bdk" /-->
   <project path="system/media" name="platform/system/media" groups="bdk" />
   <project path="system/metricsd" name="platform/system/metricsd" groups="bdk" />
   <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
@@ -172,7 +175,8 @@
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="bdk" />
   <project path="system/tools/bpt" name="platform/system/tools/bpt" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
-  <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
+  <project path="system/update_engine" name="platform/system/update_engine" groups="bdk"
+        revision="063863bbda33704db4628e66444077bc1c33342a" />
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
