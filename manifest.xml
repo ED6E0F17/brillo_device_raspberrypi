@@ -175,7 +175,8 @@
   <project path="system/tools/bpt" name="platform/system/tools/bpt" groups="bdk" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
-  <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
+  <project path="system/update_engine" name="platform/system/update_engine" groups="bdk"
+        revision="25cea5ed4cb0d4e946fb06f97837373aa8605fff" />
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
