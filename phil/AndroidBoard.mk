@@ -18,7 +18,7 @@
 # not read when BoardConfig.mk is parsed.
 
 TARGET_KERNEL_DEFCONFIG :=bcmrpi_defconfig
-TARGET_KERNEL_SRC :=hardware/bsp/rpi/kernel/
+TARGET_KERNEL_SRC :=hardware/bsp/torvalds/linux/
 TARGET_KERNEL_DTB :=bcm2835-rpi-zero.dtb
 #TARGET_KERNEL_DTB :=bcm2835-rpi-a-plus.dtb
 include device/rpi/phil/kernel.mk

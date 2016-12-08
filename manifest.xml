@@ -79,6 +79,7 @@
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="bdk" />
   <project path="external/libdivsufsort" name="platform/external/libdivsufsort" groups="bdk" />
   <project path="external/libdaemon" name="platform/external/libdaemon" groups="bdk" />
+  <project path="external/libdrm" name="platform/external/libdrm" groups="bdk" />
   <project path="external/libevent" name="platform/external/libevent" groups="bdk" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="bdk" />
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="bdk" />
@@ -87,6 +88,7 @@
   <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
   <project path="external/libogg" name="platform/external/libogg" groups="bdk" />
   <project path="external/libopus" name="platform/external/libopus" groups="bdk" />
+  <project path="external/libpng" name="platform/external/libpng" groups="bdk" />
   <project path="external/libselinux" name="platform/external/libselinux" groups="bdk" />
   <project path="external/libunwind" name="platform/external/libunwind" groups="bdk" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="bdk" />
@@ -179,7 +181,11 @@
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
+  <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
   <!-- BEGIN starter boards -->
+  <!--project path="hardware/bsp/torvalds/linux"
+           name="torvalds/linux"
+           groups="rpi" remote="github" clone-depth="1" /-->
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" />
   <project path="device/pifoundation/rpi3"
            name="device/pifoundation/rpi3"
