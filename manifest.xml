@@ -46,8 +46,7 @@
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
-  <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk"
-        revision="d6950b9922f97b59e2e1ed2ab3f37ae493ece87f" />
+  <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="bdk" />
@@ -119,7 +118,6 @@
   <project path="external/tpm2" name="platform/external/tpm2" groups="bdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
   <project path="external/valgrind" name="platform/external/valgrind" groups="bdk" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
@@ -154,8 +152,6 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
   <project path="system/bt" name="platform/system/bt" groups="bdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
-  <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" groups="bdk" />
-  <project path="system/connectivity/shill" name="platform/system/connectivity/shill" groups="bdk" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
