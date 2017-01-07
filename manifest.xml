@@ -5,8 +5,7 @@
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
   <remote  name="github"
-           fetch="https://github.com/"
-           review="review.cyanogenmod.org" />
+           fetch="https://github.com/" />
   <default revision="master"
            remote="aosp"
            sync-j="4" />
@@ -14,7 +13,6 @@
   <!-- Brillo-specific build tooling -->
   <project path="device/generic/brillo" name="device/generic/brillo" groups="bdk" />
   <project path="tools/bdk" name="platform/tools/bdk" groups="bdk,bdk-cli" />
-
   <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" />
   <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" />
   <project path="external/gentoo/portage" name="platform/external/gentoo/portage" groups="bdk" />
@@ -182,7 +180,7 @@
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
-  <!-- BEGIN starter boards -->
+  <!-- BEGIN Brillo boards -->
   <!--project path="hardware/bsp/torvalds/linux"
            name="torvalds/linux"
            groups="rpi" remote="github" clone-depth="1" /-->
@@ -195,46 +193,4 @@
            groups="rpi" remote="github" revision="rpi-4.9.y" clone-depth="1" />
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
-  <!-- Aaeon Upboard -->
-  <project path="device/aaeon/upboard"
-           name="device/aaeon/upboard"
-           groups="upboard" />
-  <!-- Intel SoCs and Peripherals -->
-  <project path="device/intel/edison"
-           name="device/intel/edison"
-           groups="edison" />
-  <project path="hardware/broadcom/libbt"
-           name="platform/hardware/broadcom/libbt"
-           groups="edison" />
-  <!-- Intel MinnowBoard -->
-  <project path="device/intel/minnowboard"
-           name="device/intel/minnowboard"
-           groups="minnowboard" />
-  <!-- Qualcomm Dragonboard -->
-  <project path="device/qcom/dragonboard"
-           name="device/qcom/dragonboard"
-           groups="dragonboard" />
-  <!-- Marvell Abox -->
-  <project path="device/marvell/abox_edge"
-           name="device/marvell/abox_edge"
-           groups="abox" />
-  <!-- Rockchip Kylin -->
-  <project path="device/rockchip/kylin"
-           name="device/rockchip/kylin"
-           groups="kylin" />
-  <!-- Freescale Picoimx -->
-  <project path="device/freescale/picoimx"
-           name="device/freescale/picoimx"
-           groups="picoimx" />
-  <project path="hardware/bsp/freescale"
-           name="platform/hardware/bsp/freescale"
-           groups="picoimx" />
-  <!-- Imagination Creator -->
-  <project path="device/imagination/creatorci41"
-           name="device/imagination/creatorci41"
-           groups="creatorci41" />
-  <project path="hardware/bsp/imagination"
-           name="platform/hardware/bsp/imagination"
-           groups="creatorci41" />
-  <!-- END starter boards -->
 </manifest>
