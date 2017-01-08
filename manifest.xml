@@ -11,15 +11,10 @@
            sync-j="4" />
 
   <!-- Brillo-specific build tooling -->
-  <project path="device/generic/brillo" name="device/generic/brillo" groups="bdk" />
   <project path="tools/bdk" name="platform/tools/bdk" groups="bdk,bdk-cli" />
   <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" />
   <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" />
   <project path="external/gentoo/portage" name="platform/external/gentoo/portage" groups="bdk" />
-
-  <!-- Brillo product examples -->
-  <project path="product/google/common" name="product/google/common" groups="bdk" />
-  <project path="product/google/example-ledflasher" name="product/google/example-ledflasher" groups="bdk" />
 
   <!-- BEGIN open-source projects -->
   <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" >

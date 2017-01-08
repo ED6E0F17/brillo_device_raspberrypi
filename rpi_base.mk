@@ -34,7 +34,6 @@ BREAKPAD_GENERATE_SYMBOLS := falsify
 PRODUCT_COPY_FILES += \
   device/rpi/common/init.usb.rc:root/init.usb.rc \
   device/rpi/common/init.firewall-setup.sh:system/etc/init.firewall-setup.sh \
-  device/rpi/common/init.wifi-setup.sh:system/etc/init.wifi-setup.sh \
   device/rpi/common/init.net-setup.sh:system/etc/init.net-setup.sh \
   device/rpi/common/brillo.rc:system/etc/init/brillo.rc \
   device/rpi/common/consoles.rc:system/etc/init/consoles.rc \
@@ -95,7 +94,6 @@ PRODUCT_PACKAGES := \
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \
-  shill_setup_wifi \
 
 # SELinux packages.
 PRODUCT_PACKAGES += \
@@ -135,7 +133,6 @@ PRODUCT_PACKAGES += \
   dhcpcd \
   dhcpcd-6.8.2 \
   dnsmasq \
-  hostapd \
 
 # Metrics daemons and crash reporter.
 PRODUCT_PACKAGES += \
@@ -255,7 +252,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
   device/rpi/common/dbus.conf:system/etc/dbus.conf \
-  device/rpi/common/weaved.conf:system/etc/weaved/weaved.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy

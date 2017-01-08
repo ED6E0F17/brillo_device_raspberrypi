@@ -19,7 +19,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_CFLAGS += -Wno-unused-parameter
-LOCAL_C_INCLUDES += device/generic/brillo/wifi_driver_hal/include
 LOCAL_SHARED_LIBRARIES := libcutils
 LOCAL_SRC_FILES := bcm43438_hal.cpp
 LOCAL_MODULE := $(WIFI_DRIVER_HAL_MODULE)
