@@ -123,6 +123,7 @@
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
+  <project path="libcore" name="platform/libcore" groups="bdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="bdk" clone-depth="1" />
@@ -170,6 +171,7 @@
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
+  <project path="test/vts" name="platform/test/vts" groups="bdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
   <!-- BEGIN Brillo boards -->
   <!--project path="hardware/bsp/torvalds/linux"
