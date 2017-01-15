@@ -174,13 +174,9 @@
   <project path="test/vts" name="platform/test/vts" groups="bdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
   <!-- BEGIN Brillo boards -->
-  <!--project path="hardware/bsp/torvalds/linux"
-           name="torvalds/linux"
-           groups="rpi" remote="github" clone-depth="1" /-->
+  <project path="hardware/bsp/android/linux"
+           name="kernel/common/" revision="experimental/android-4.9" groups="rpi" clone-depth="1" />
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" />
-  <project path="device/pifoundation/rpi3"
-           name="device/pifoundation/rpi3"
-           groups="rpi" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
            groups="rpi" remote="github" revision="rpi-4.9.y" clone-depth="1" />
