@@ -12,7 +12,7 @@ sudo umount rootmount
 sudo rm -f boot/overlays/.*tmp
 sudo rm -f boot/overlays/.*cmd
 FSIZE=$((`du boot |tail -n 1| cut -f 1`))
-dd if=/dev/zero of=bootimage.fat bs=1024 count=$(($FSIZE+40))
+dd if=/dev/zero of=bootimage.fat bs=1024 count=$(($FSIZE+50))
 
 sudo mkfs.vfat -F 16 -s 1 bootimage.fat
 sudo mount -o loop bootimage.fat rootmount
