@@ -10,4 +10,6 @@ dtparam=g-np-tx-fifo-size="16"
 dtparam=g-rx-fifo-size="2000"
 dtparam=g-tx-fifo-size="512 512 512 512"
 
+dtoverlay=spi
+dtoverlay=i2c-arm
 # dtoverlay=vc4-kms-v3d

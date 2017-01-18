@@ -175,7 +175,7 @@
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
   <!-- BEGIN Brillo boards -->
   <project path="hardware/bsp/android/linux"
-           name="kernel/common/" revision="experimental/android-4.9" groups="rpi" clone-depth="1" />
+           name="ED6E0F17/linux" remote="github" revision="android-rpi" clone-depth="1" />
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" />
   <project path="hardware/bsp/rpi/kernel"
            name="raspberrypi/linux"
