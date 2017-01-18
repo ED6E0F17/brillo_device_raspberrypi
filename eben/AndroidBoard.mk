@@ -18,6 +18,6 @@
 # not read when BoardConfig.mk is parsed.
 
 TARGET_KERNEL_DEFCONFIG :=bcm2709_defconfig
-TARGET_KERNEL_SRC :=hardware/bsp/rpi/kernel/
+TARGET_KERNEL_SRC :=hardware/bsp/android/linux
 TARGET_KERNEL_DTB :=bcm2709-rpi-2-b.dtb
 include device/rpi/eben/kernel.mk

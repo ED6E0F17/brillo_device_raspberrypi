@@ -18,6 +18,6 @@
 # not read when BoardConfig.mk is parsed.
 
 TARGET_KERNEL_DEFCONFIG :=bcmrpi3_defconfig
-TARGET_KERNEL_SRC :=hardware/bsp/rpi/kernel/
-#TARGET_KERNEL_DTB :=broadcom/bcm2710-rpi-3-b.dtb
+TARGET_KERNEL_SRC :=hardware/bsp/android/linux
+TARGET_KERNEL_DTB :=broadcom/bcm2710-rpi-3-b.dtb
 include device/rpi/pete/kernel.mk
