@@ -75,6 +75,7 @@
   <project path="external/libevent" name="platform/external/libevent" groups="bdk" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="bdk" />
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="bdk" />
+  <project path="external/libldac" name="platform/external/libldac" groups="bdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="bdk" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="bdk" />
   <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
@@ -173,13 +174,9 @@
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
   <project path="test/vts" name="platform/test/vts" groups="bdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
-  <!-- BEGIN Brillo boards -->
-  <project path="hardware/bsp/android/linux"
-           name="ED6E0F17/linux" remote="github" revision="android-rpi" clone-depth="1" />
+  <!-- BEGIN RPI extras -->
+  <project path="hardware/bsp/android/linux" name="ED6E0F17/linux" remote="github" revision="android-rpi" clone-depth="1" />
   <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" />
-  <project path="hardware/bsp/rpi/kernel"
-           name="raspberrypi/linux"
-           groups="rpi" remote="github" revision="rpi-4.9.y" clone-depth="1" />
   <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
   <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
 </manifest>
