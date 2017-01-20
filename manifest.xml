@@ -30,6 +30,8 @@
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
+  <project path="external/abi-compliance-checker" name="platform/external/abi-compliance-checker" groups="bdk" />
+  <project path="external/abi-dumper" name="platform/external/abi-dumper" groups="bdk" />
   <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
   <project path="external/avb" name="platform/external/avb" groups="bdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
@@ -41,6 +43,7 @@
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
+  <project path="external/conscrypt" name="platform/external/conscrypt" groups="bdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
