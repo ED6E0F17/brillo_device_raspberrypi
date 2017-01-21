@@ -3,13 +3,13 @@ cma_lwm=16
 cma_hwm=32
 cma_offline_start=16
 
-dtparam=act_led_activelow
-dtparam=audio
 dtoverlay=dwc2
 dtparam=g-np-tx-fifo-size="16"
 dtparam=g-rx-fifo-size="2000"
 dtparam=g-tx-fifo-size="512 512 512 512"
 
-dtoverlay=spi
-dtoverlay=i2c-arm
+dtparam=act_led_activelow
+dtparam=audio
+dtparam=spi
+dtparam=i2c-arm
 # dtoverlay=vc4-kms-v3d

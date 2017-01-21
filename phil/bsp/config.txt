@@ -4,8 +4,8 @@ gpu_mem=128
 
 # dtparam=act_led_activelow
 # dtparam=audio
-# dtoverlay=spi
-# dtoverlay=i2c-arm
+# dtparam=spi
+# dtparam=i2c-arm
 # dtoverlay=vc4-kms-v3d
 
 dtparam=g-np-tx-fifo-size="16"
