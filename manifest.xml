@@ -172,6 +172,7 @@
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
+  <project path="system/libvintf" name="platform/system/libvintf" groups="bdk" />
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
   <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
   <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
