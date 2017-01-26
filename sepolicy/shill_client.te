@@ -1,3 +1,0 @@
-# shill_client attribute.
-allow shill_client shill_service:service_manager find;
-bidi_binder_call(shill_client, shill)

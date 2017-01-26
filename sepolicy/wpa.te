@@ -1,5 +1,0 @@
-# Allow WPA supplicant to use the D-Bus socket.
-unix_socket_connect(wpa, dbus_daemon, dbus_daemon)
-
-# Allow crash_reporter access to core dump files.
-allow_crash_reporter(wpa)

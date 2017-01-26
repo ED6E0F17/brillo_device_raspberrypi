@@ -37,8 +37,6 @@ static const struct fs_path_config android_device_files[] = {
     { 00700, AID_DHCP,   AID_DBUS,  CAP_MASK_LONG(CAP_NET_ADMIN) |
                                     CAP_MASK_LONG(CAP_NET_BIND_SERVICE) |
                                     CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/dhcpcd-6.8.2" },
-    { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
-                                    CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/wpa_supplicant" },
     { 00700, AID_BLUETOOTH, AID_SHELL, CAP_MASK_LONG(CAP_BLOCK_SUSPEND) |
                                        CAP_MASK_LONG(CAP_NET_ADMIN)     |
                                        CAP_MASK_LONG(CAP_WAKE_ALARM),    "system/bin/bluetoothtbd" },
@@ -52,5 +50,4 @@ static const struct fs_path_config android_device_files[] = {
     { 00550, AID_ROOT,   AID_SHELL, 0,                                   "system/etc/init.firewall-setup.sh" },
     { 00550, AID_ROOT,   AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
 				    CAP_MASK_LONG(CAP_NET_RAW),		 "system/etc/init.net-setup.sh" },
-    { 00550, AID_ROOT,   AID_SHELL, 0,                                   "system/etc/init.wifi-setup.sh" },
 };

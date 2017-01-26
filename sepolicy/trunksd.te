@@ -12,7 +12,7 @@ allow_crash_reporter(trunksd)
 allow trunksd self:capability { setuid setgid };
 
 # Allow adding the binder service.
-allow trunksd trunks_service:service_manager { add find };
+# addservice(trunksd trunks_service);
 
 # Allow the TPM simulator to manage persistent data.
 allow trunksd trunksd_data_file:dir rw_dir_perms;

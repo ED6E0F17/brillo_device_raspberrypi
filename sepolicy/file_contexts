@@ -19,9 +19,6 @@
 /dev/block/mmcblk0         u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p[0-9]+  u:object_r:mmc_block_device:s0
 
-/data/misc/apmanager(/.*)? u:object_r:apmanager_data_file:s0
-/system/bin/apmanager      u:object_r:apmanager_exec:s0
-
 /system/bin/sensorservice  u:object_r:sensorservice_exec:s0
 
 /system/bin/webservd       u:object_r:webservd_exec:s0
@@ -65,10 +62,6 @@
 
 /system/bin/nativeperms     u:object_r:nativeperms_exec:s0
 
-# Defining the contexts for shill.
-/system/bin/shill          u:object_r:shill_exec:s0
-/data/misc/shill(/.*)?     u:object_r:shill_data_file:s0
-
 # Defining the contexts for brilloaudioservice.
 /system/bin/brilloaudioservice         u:object_r:brillo_audio_service_exec:s0
 /sys/devices/virtual/switch/h2w/state  u:object_r:brillo_audio_service_state:s0
@@ -81,8 +74,6 @@
 /system/bin/webservd_testc      u:object_r:webservd_testc_exec:s0
 
 /system/etc/init\.firewall-setup\.sh  u:object_r:brillo_setup_exec:s0
-
-/system/etc/init\.wifi-setup\.sh      u:object_r:wifi_setup_exec:s0
 
 /system/etc/init\.net-setup\.sh       u:object_r:net_setup_exec:s0
 

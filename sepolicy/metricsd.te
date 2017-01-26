@@ -22,7 +22,7 @@ allow metricsd metrics_data_file:dir r_dir_perms;
 allow metricsd metrics_data_file:file r_file_perms;
 
 # Allow adding the service.
-allow metricsd metricsd_service:service_manager { add find };
+# addservice(metricsd, metricsd_service);
 
 allow metricsd system_file:dir getattr;
 

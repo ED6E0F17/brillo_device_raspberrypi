@@ -7,4 +7,4 @@ brillo_domain(nativeperms)
 # Allow crash_reporter access to core dump files.
 allow_crash_reporter(nativeperms)
 
-allow nativeperms permission_service:service_manager { add find };
+# addservice(nativeperms permission_service);

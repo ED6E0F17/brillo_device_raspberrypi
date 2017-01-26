@@ -4,7 +4,7 @@ type sensorservice_exec, exec_type, file_type;
 brillo_domain(sensorservice)
 
 # Allow sensorservice to be discovered by servicemanager and use binder.
-allow sensorservice sensorservice_service:service_manager add;
+# addservice(sensorservice, sensorservice_service);
 allow sensorservice servicemanager:binder { transfer call };
 
 # Allow crash_reporter access to core dump files.
