@@ -1,3 +1,3 @@
 # trunks_client attribute.
-# addservice(trunks_client, trunks_service);
+# add_service(trunks_client, trunks_service);
 bidi_binder_call(trunks_client, trunksd)

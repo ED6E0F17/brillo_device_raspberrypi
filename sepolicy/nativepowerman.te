@@ -4,7 +4,7 @@ type nativepowerman_exec, exec_type, file_type;
 type sysfs_power_state, fs_type, sysfs_type;
 
 brillo_domain(nativepowerman)
-# addservice(nativepowerman, power_service);
+# add_service(nativepowerman, power_service);
 wakelock_use(nativepowerman)
 
 # Allow crash_reporter access to core dump files.

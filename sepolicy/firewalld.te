@@ -17,4 +17,4 @@ allow firewalld system_file:file rx_file_perms;
 r_dir_file(firewalld, proc)
 allow firewalld proc:filesystem getattr;
 allow firewalld proc_net:file getattr;
-# addservice(firewalld, firewalld_service);
+add_service(firewalld, firewalld_service);
