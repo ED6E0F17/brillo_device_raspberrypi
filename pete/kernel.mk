@@ -94,7 +94,7 @@ $(KERNEL_BIN): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(MAKE) -C $(TARGET_KERNEL_SRC) O=$(realpath $(KERNEL_OUT)) ARCH=arm64 CROSS_COMPILE=$(KERNEL_CROSS_COMPILE) headers_install;
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot
 	$(hide) cp $(KERNEL_OUT)/vmlinux  $(PRODUCT_OUT)/boot/kernel8.img
-	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm27*.dtb $(PRODUCT_OUT)/boot
+	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/broadcom/bcm2710*.dtb $(PRODUCT_OUT)/boot
 	$(hide) mkdir -p $(PRODUCT_OUT)/boot/overlays
 #	$(hide) cp $(KERNEL_OUT)/arch/arm64/boot/dts/overlays/*dtbo $(PRODUCT_OUT)/boot/overlays
 	$(hide) cp device/rpi/boot/* $(PRODUCT_OUT)/boot
