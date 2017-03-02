@@ -20,6 +20,8 @@
 BRILLO := 1
 BRILLO_USE_DBUS := 1
 BRILLO_USE_OMAHA := 1
+BRILLO_USE_SHILL := 0
+BRILLO_USE_WEAVE := 0
 BRILLO_USE_BINDER := 1
 
 JAVA_NOT_REQUIRED := true
@@ -62,7 +64,6 @@ PRODUCT_PACKAGES := \
   bootctl \
   firewalld \
   init \
-  init.environ.rc \
   init.rc \
   ip \
   ip6tables \
@@ -116,11 +117,23 @@ PRODUCT_PACKAGES += \
   dhcpcd \
   dhcpcd-6.8.2 \
   dnsmasq \
+  wifi_init \
+  wpa_supplicant \
 
 # It only makes sense to include apmanager if WiFi is supported.
-WIFI_SUPPORTED := false
-SHILL_USE_WIFI := false
-SHILL_USE_BINDER := false
+WIFI_SUPPORTED := true
+WIFI_DRIVER_HAL_MODULE := wifi_driver.bcm43438
+WIFI_DRIVER_HAL_PERIPHERAL := bcm43438
+PRODUCT_PACKAGES += apmanager
+
+# WIFI Firmware
+BRCM_WIFI_FW_SRC := device/rpi/wifi/firmware/brcm
+BRCM_WIFI_FW_DST := system/vendor/firmware/brcm
+
+PRODUCT_COPY_FILES += \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.txt \
+	$(BRCM_WIFI_FW_SRC)/BCM43430A1.hcd:$(BRCM_WIFI_FW_DST)/BCM43430A1.hcd \
 
 PRODUCT_PACKAGES += \
   3rd-party-packages \
@@ -128,8 +141,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_3RD_PARTY_PACKAGES += \
   dev-libs/wiringPi \
   media-libs/brillo-userland
-
-#  dev-lang/python:2.7
 
 # Avahi packages.
 PRODUCT_PACKAGES += \
@@ -170,7 +181,9 @@ DHCPCD_USE_DBUS=yes
 
 # Wireless debugging.
 PRODUCT_PACKAGES += \
+  iw \
   ping \
+  wpa_cli \
 
 #
 # Bluetooth.
@@ -190,6 +203,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
   device/rpi/common/dbus.conf:system/etc/dbus.conf \
+  device/rpi/common/wpa_supplicant.conf:/system/etc/wpa_supplicant.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
 BOARD_SEPOLICY_DIRS := $(BOARD_SEPOLICY_DIRS) device/rpi/sepolicy
