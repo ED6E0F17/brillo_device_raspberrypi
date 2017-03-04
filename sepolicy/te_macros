@@ -6,8 +6,6 @@ init_daemon_domain($1)
 # Allow using binder and performing IPC to system services.
 binder_use($1)
 binder_service($1)
-# Allow connections to dbus_daemon.
-unix_socket_connect($1, dbus_daemon, dbus_daemon)
 
 # Allow access to files in /proc.
 # Fixes denials like:

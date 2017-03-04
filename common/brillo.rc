@@ -19,8 +19,6 @@
 # them into /system/etc/init.
 
 on boot
-    start firewall-setup
-
     # fake some battery state
     setprop status.battery.state Slow
     setprop status.battery.level 5
@@ -29,23 +27,9 @@ on boot
 
     setprop dev.bootcomplete 1
 
-on property:firewall.init=1
-    enable firewalld
-
-service firewall-setup /system/etc/init.firewall-setup.sh
-    user root
-    group root net_admin net_raw
-    oneshot
-
 service net-setup /system/etc/init.net-setup.sh
     class core
     user root
     group root net_admin net_raw shell
     oneshot
-
-service dbus /system/bin/dbus-daemon --system --nofork
-    class core
-    socket dbus stream 0660 dbus dbus
-    user dbus
-    group dbus
 

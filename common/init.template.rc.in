@@ -1,4 +1,4 @@
 service %SERVICENAME% /system/bin/%SERVICENAME% %ARGS%
     class main
     user system
-    group system dbus %GROUPS%
+    group system %GROUPS%

@@ -1,5 +1,0 @@
-class dbus
-{
-	acquire_svc
-	send_msg
-}

@@ -34,7 +34,7 @@ static const struct fs_path_config android_device_files[] = {
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_BLOCK_SUSPEND),    "system/bin/nativepowerman" },
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_SYS_TIME),         "system/bin/tlsdated" },
     { 00700, AID_SYSTEM, AID_SHELL, CAP_MASK_LONG(CAP_NET_BIND_SERVICE), "system/bin/webservd" },
-    { 00700, AID_DHCP,   AID_DBUS,  CAP_MASK_LONG(CAP_NET_ADMIN) |
+    { 00700, AID_DHCP,   AID_SHELL, CAP_MASK_LONG(CAP_NET_ADMIN) |
                                     CAP_MASK_LONG(CAP_NET_BIND_SERVICE) |
                                     CAP_MASK_LONG(CAP_NET_RAW),          "system/bin/dhcpcd-6.8.2" },
     { 00700, AID_BLUETOOTH, AID_SHELL, CAP_MASK_LONG(CAP_BLOCK_SUSPEND) |

@@ -43,8 +43,6 @@
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="bdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
-  <project path="external/dbus" name="platform/external/dbus" groups="bdk" />
-  <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="bdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
@@ -153,7 +151,6 @@
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
-  <project path="system/firewalld" name="platform/system/firewalld" groups="bdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="bdk" />
   <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="bdk" />

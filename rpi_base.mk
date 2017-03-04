@@ -18,7 +18,7 @@
 # It contains the mandatory targets required to boot a Brillo device.
 
 BRILLO := 1
-BRILLO_USE_DBUS := 1
+BRILLO_USE_DBUS := 0
 BRILLO_USE_OMAHA := 1
 BRILLO_USE_SHILL := 0
 BRILLO_USE_WEAVE := 0
@@ -62,14 +62,11 @@ INITRC_TEMPLATE := device/rpi/common/init.template.rc.in
 PRODUCT_PACKAGES := \
   adbd \
   bootctl \
-  firewalld \
   init \
   init.rc \
   ip \
   ip6tables \
   iptables \
-  keymaster \
-  keystore \
   libminijail \
   libstdc++ \
   linker \
@@ -78,8 +75,6 @@ PRODUCT_PACKAGES := \
   reboot \
   rootdev \
   service \
-  servicemanager \
-  softkeymaster \
   sh \
   toolbox \
   toybox \
@@ -101,14 +96,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
   product_version \
   product_id \
-
-# D-Bus daemon, utilities, and example programs.
-PRODUCT_PACKAGES += \
-  dbus-daemon \
-  dbus-example-client \
-  dbus-example-daemon \
-  dbus-monitor \
-  dbus-send \
 
 # Connectivity packages.
 PRODUCT_PACKAGES += \
@@ -142,19 +129,6 @@ PRODUCT_3RD_PARTY_PACKAGES += \
   dev-libs/wiringPi \
   media-libs/brillo-userland
 
-# Avahi packages.
-PRODUCT_PACKAGES += \
-  avahi-browse \
-  avahi-client \
-  avahi-daemon \
-  libdaemon \
-
-# tlsdate binaries.
-PRODUCT_PACKAGES += \
-  tlsdate \
-  tlsdate-helper \
-  tlsdated \
-
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
 device/rpi/common/android_filesystem_config.h
@@ -177,7 +151,7 @@ BOARD_HOSTAPD_DRIVER := NL80211
 
 # Settings for dhcpcd-6.8.2.
 DHCPCD_USE_IPV6=yes
-DHCPCD_USE_DBUS=yes
+DHCPCD_USE_DBUS=no
 
 # Wireless debugging.
 PRODUCT_PACKAGES += \
@@ -202,7 +176,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
   ro.build.shutdown_timeout=5 \
 
 PRODUCT_COPY_FILES += \
-  device/rpi/common/dbus.conf:system/etc/dbus.conf \
   device/rpi/common/wpa_supplicant.conf:/system/etc/wpa_supplicant.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 

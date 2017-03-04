@@ -1,6 +1,3 @@
-/dev/socket/dbus           u:object_r:dbus_daemon_socket:s0
-/system/bin/dbus-daemon    u:object_r:dbus_daemon_exec:s0
-/system/bin/dbus-send      u:object_r:dbus_daemon_exec:s0
 
 /system/bin/core2md              u:object_r:crash_reporter_exec:s0
 /system/bin/crash_reporter       u:object_r:crash_reporter_exec:s0
