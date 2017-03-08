@@ -152,6 +152,7 @@
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
+  <project path="system/libfmq" name="platform/system/libfmq" groups="bdk" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="bdk" />
   <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
