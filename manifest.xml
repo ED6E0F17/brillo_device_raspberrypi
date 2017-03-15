@@ -90,6 +90,7 @@
   <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
   <project path="external/lzop" name="platform/external/lzop" groups="bdk" />
+  <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="bdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
