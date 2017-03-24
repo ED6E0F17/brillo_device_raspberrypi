@@ -1,1 +1,0 @@
-selinux=1 androidboot.hardware=phil init=/init androidboot.selinux=permissive root=/dev/mmcblk0p2 rootwait firmware_class.path=/system/vendor/firmware console=tty0 androidboot.console=tty0

@@ -5,8 +5,7 @@ cma_offline_start=16
 
 dtoverlay=dwc2
 dtparam=g-np-tx-fifo-size="16"
-dtparam=g-rx-fifo-size="2000"
-dtparam=g-tx-fifo-size="512 512 512 512"
+dtparam=g-rx-fifo-size="720"
 
 dtparam=audio
 dtparam=spi
