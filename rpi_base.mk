@@ -24,6 +24,7 @@ BRILLO_USE_SHILL := 0
 BRILLO_USE_WEAVE := 0
 BRILLO_USE_BINDER := 1
 
+PRODUCT_IOT := true
 JAVA_NOT_REQUIRED := true
 TARGET_NO_RECOVERY := true
 WITHOUT_CHECK_API := true
@@ -71,13 +72,9 @@ PRODUCT_PACKAGES := \
   libstdc++ \
   linker \
   logcat \
-  logd \
-  reboot \
   rootdev \
   service \
-  sh \
-  toolbox \
-  toybox \
+  shell_and_utilities \
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \
