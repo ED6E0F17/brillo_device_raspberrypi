@@ -63,6 +63,7 @@ INITRC_TEMPLATE := device/rpi/common/init.template.rc.in
 PRODUCT_PACKAGES := \
   adbd \
   bootctl \
+  e2fsck \
   init \
   init.rc \
   ip \
