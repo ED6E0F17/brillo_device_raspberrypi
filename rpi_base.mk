@@ -30,7 +30,6 @@ TARGET_NO_RECOVERY := true
 WITHOUT_CHECK_API := true
 ANDROID_NO_TEST_CHECK := true
 TARGET_BOARD_PLATFORM := rpi
-TARGET_BOARD_HAS_NO_SURFACE_FLINGER := true
 BREAKPAD_GENERATE_SYMBOLS := falsify
 
 # Common Brillo init scripts.
@@ -69,13 +68,21 @@ PRODUCT_PACKAGES := \
   ip \
   ip6tables \
   iptables \
+  libmedia \
   libminijail \
   libstdc++ \
+  libutils \
   linker \
   logcat \
   rootdev \
-  service \
+  services \
   shell_and_utilities \
+
+#  bootanimation \
+#  libinput \
+#  libinputflinger \
+#  libpixelflinger \
+#  surfaceflinger
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \

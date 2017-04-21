@@ -44,6 +44,7 @@
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
+  <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="bdk" />
@@ -51,6 +52,7 @@
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="bdk" />
   <project path="external/fec" name="platform/external/fec" groups="bdk" />
   <project path="external/flac" name="platform/external/flac" groups="bdk" />
+  <project path="external/giflib" name="platform/external/giflib" groups="bdk" />
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="dragon,bdk" />
@@ -60,6 +62,7 @@
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
   <project path="external/iw" name="platform/external/iw" groups="bdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
+  <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="bdk" />
@@ -85,7 +88,6 @@
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="bdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="bdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="bdk" />
-  <project path="external/libweave" name="platform/external/libweave" groups="bdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
@@ -95,11 +97,14 @@
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
+  <project path="external/piex" name="platform/external/piex" groups="bdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="bdk" />
   <project path="external/rootdev" name="platform/external/rootdev" groups="bdk" />
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="bdk" />
   <project path="external/selinux" name="platform/external/selinux" groups="bdk" />
+  <project path="external/sfntly" name="platform/external/sfntly" groups="bdk" />
   <project path="external/shflags" name="platform/external/shflags" groups="bdk" />
+  <project path="external/skia" name="platform/external/skia" groups="bdk" />
   <project path="external/sonic" name="platform/external/sonic" groups="bdk" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="bdk" />
   <project path="external/speex" name="platform/external/speex" groups="bdk" />
@@ -114,6 +119,7 @@
   <project path="external/tpm2" name="platform/external/tpm2" groups="bdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
   <project path="external/valgrind" name="platform/external/valgrind" groups="bdk" />
+  <project path="external/webp" name="platform/external/webp" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
@@ -158,7 +164,6 @@
   <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
   <project path="system/metricsd" name="platform/system/metricsd" groups="bdk" />
-  <project path="system/nativepower" name="platform/system/nativepower" groups="bdk" />
   <project path="system/nvram" name="platform/system/nvram" groups="bdk" />
   <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" />
   <project path="system/netd" name="platform/system/netd" groups="bdk" />
