@@ -122,14 +122,14 @@
   <project path="external/webp" name="platform/external/webp" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
+  <!--project path="frameworks/av" name="platform/frameworks/av" groups="bdk" /-->
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" revision="e1b504457d6fa2d531e7398f00ff93f05d21037e" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
-  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
+  <!--project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" /-->
   <project path="libcore" name="platform/libcore" groups="bdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
@@ -153,7 +153,7 @@
   <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="bdk,linux" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
-  <project path="system/bt" name="platform/system/bt" groups="bdk" />
+  <!--project path="system/bt" name="platform/system/bt" groups="bdk" /-->
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
