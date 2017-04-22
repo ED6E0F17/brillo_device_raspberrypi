@@ -104,7 +104,7 @@
   <project path="external/selinux" name="platform/external/selinux" groups="bdk" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="bdk" />
   <project path="external/shflags" name="platform/external/shflags" groups="bdk" />
-  <project path="external/skia" name="platform/external/skia" groups="bdk" />
+  <!--project path="external/skia" name="platform/external/skia" groups="bdk" /-->
   <project path="external/sonic" name="platform/external/sonic" groups="bdk" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="bdk" />
   <project path="external/speex" name="platform/external/speex" groups="bdk" />
@@ -125,7 +125,7 @@
   <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" revision="e1b504457d6fa2d531e7398f00ff93f05d21037e" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
