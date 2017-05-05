@@ -68,7 +68,6 @@ PRODUCT_PACKAGES := \
   ip \
   ip6tables \
   iptables \
-  libmedia \
   libminijail \
   libstdc++ \
   libutils \

@@ -62,6 +62,7 @@
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
   <project path="external/iw" name="platform/external/iw" groups="bdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
+  <project path="external/jsmn" name="platform/external/jsmn" groups="bdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
@@ -122,7 +123,7 @@
   <project path="external/webp" name="platform/external/webp" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" revision ="5c3df3952099b15e139ec764980f65336fe23d8a"/>
+  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" revision="5c3df3952099b15e139ec764980f65336fe23d8a" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" revision="e1b504457d6fa2d531e7398f00ff93f05d21037e" />
