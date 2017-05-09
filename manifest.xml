@@ -46,6 +46,7 @@
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="bdk" />
   <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
@@ -65,6 +66,7 @@
   <project path="external/iptables" name="platform/external/iptables" groups="bdk" />
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
   <project path="external/iw" name="platform/external/iw" groups="bdk" />
+  <project path="external/jacoco" name="platform/external/jacoco" groups="bdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="bdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
