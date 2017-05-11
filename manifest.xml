@@ -23,7 +23,9 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
+  <project path="art" name="platform/art" groups="bdk" />
   <project path="bionic" name="platform/bionic" groups="bdk" />
+  <project path="dalvik" name="platform/dalvik" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
@@ -34,6 +36,7 @@
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="bdk" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="bdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
@@ -43,7 +46,11 @@
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="bdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="bdk" />
   <project path="external/curl" name="platform/external/curl" groups="bdk" />
+  <project path="external/dagger2" name="platform/external/dagger2" groups="bdk" />
+  <project path="external/desugar" name="platform/external/desugar" groups="bdk" />
+  <project path="external/dexmaker" name="platform/external/dexmaker" groups="bdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="bdk" />
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="bdk" />
   <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
@@ -57,11 +64,14 @@
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="dragon,bdk" />
+  <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="bdk" />
   <project path="external/icu" name="platform/external/icu" groups="bdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
   <project path="external/iptables" name="platform/external/iptables" groups="bdk" />
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
   <project path="external/iw" name="platform/external/iw" groups="bdk" />
+  <project path="external/jacoco" name="platform/external/jacoco" groups="bdk" />
+  <project path="external/jarjar" name="platform/external/jarjar" groups="bdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="bdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
@@ -84,12 +94,14 @@
   <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
   <project path="external/libogg" name="platform/external/libogg" groups="bdk" />
   <project path="external/libopus" name="platform/external/libopus" groups="bdk" />
+  <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="bdk" />
   <project path="external/libpng" name="platform/external/libpng" groups="bdk" />
   <project path="external/libselinux" name="platform/external/libselinux" groups="bdk" />
   <project path="external/libunwind" name="platform/external/libunwind" groups="bdk" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="bdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="bdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="bdk" />
+  <project path="external/libxml2" name="platform/external/libxml2" groups="bdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
@@ -98,7 +110,9 @@
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
+  <project path="external/okhttp" name="platform/external/okhttp" groups="bdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
+  <project path="external/pdfium" name="platform/external/pdfium" groups="bdk" />
   <project path="external/piex" name="platform/external/piex" groups="bdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="bdk" />
   <project path="external/rootdev" name="platform/external/rootdev" groups="bdk" />
@@ -110,8 +124,10 @@
   <project path="external/sonic" name="platform/external/sonic" groups="bdk" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="bdk" />
   <project path="external/speex" name="platform/external/speex" groups="bdk" />
+  <project path="external/sqlite" name="platform/external/sqlite" groups="bdk" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="bdk" />
   <project path="external/strace" name="platform/external/strace" groups="bdk" />
+  <project path="external/tagsoup" name="platform/external/tagsoup" groups="bdk" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="bdk" />
   <project path="external/tinycompress" name="platform/external/tinycompress" groups="bdk" />
   <project path="external/tinyxml" name="platform/external/tinyxml" groups="bdk" />
@@ -120,15 +136,22 @@
   <project path="external/toybox" name="platform/external/toybox" groups="bdk" />
   <project path="external/tpm2" name="platform/external/tpm2" groups="bdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
+  <project path="external/unicode" name="platform/external/unicode" groups="bdk" />
   <project path="external/valgrind" name="platform/external/valgrind" groups="bdk" />
+  <project path="external/vixl" name="platform/external/vixl" groups="bdk" />
   <project path="external/webp" name="platform/external/webp" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" revision="5c3df3952099b15e139ec764980f65336fe23d8a" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" revision="2cb9b1b621ae744bf05384087b3ae1719968f168" />
+  <project path="frameworks/base" name="platform/frameworks/base" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" revision="e1b504457d6fa2d531e7398f00ff93f05d21037e" />
+  <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="bdk" />
+  <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="bdk" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
+  <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" groups="bdk" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" revision="0e215cb1acd2556f70c30d548766999a9078e57c" />
+  <project path="frameworks/support" name="platform/frameworks/support" groups="bdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
@@ -160,6 +183,10 @@
   <project path="system/core" name="platform/system/core" groups="bdk" />
   <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
+  <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="bdk" />
+  <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="bdk" />
+  <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="bdk" />
+  <project path="system/iot/mtdutils" name="platform/system/iot/mtdutils" groups="bdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/libfmq" name="platform/system/libfmq" groups="bdk" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="bdk" />
