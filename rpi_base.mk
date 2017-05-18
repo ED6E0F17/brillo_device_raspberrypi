@@ -87,6 +87,16 @@ PRODUCT_PACKAGES := \
 #  libpixelflinger \
 #  surfaceflinger
 
+# art packages.
+PRODUCT_PACKAGES += \
+  apache-xml \
+  bouncycastle \
+  core-oj \
+  core-libart \
+  conscrypt \
+  libmedia \
+  okhttp \
+
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \
 
@@ -99,6 +109,13 @@ PRODUCT_PACKAGES += \
   mac_permissions.xml \
   selinux_version \
   service_contexts \
+  nonplat_property_contexts \
+  nonplat_seapp_contexts \
+  nonplat_service_contexts \
+  plat_mac_permissions.xml \
+  plat_property_contexts \
+  plat_seapp_contexts \
+  plat_service_contexts \
 
 # Build time parameters.
 PRODUCT_PACKAGES += \

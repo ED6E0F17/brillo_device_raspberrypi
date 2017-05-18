@@ -25,6 +25,7 @@
   </project>
   <project path="art" name="platform/art" groups="bdk" />
   <project path="bionic" name="platform/bionic" groups="bdk" />
+  <project path="cts" name="platform/cts" clone-depth="1" groups="bdk" />
   <project path="dalvik" name="platform/dalvik" groups="bdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="bdk" />
   <project path="device/generic/common" name="device/generic/common" groups="bdk" />
@@ -56,6 +57,7 @@
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="bdk" />
   <project path="external/expat" name="platform/external/expat" groups="bdk" />
+  <project path="external/fdlibm" name="platform/external/fdlibm" groups="bdk" />
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="bdk" />
   <project path="external/fec" name="platform/external/fec" groups="bdk" />
   <project path="external/flac" name="platform/external/flac" groups="bdk" />
@@ -75,6 +77,7 @@
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="bdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
+  <project path="external/libavc" name="platform/external/libavc" groups="bdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="bdk" />
@@ -86,11 +89,14 @@
   <project path="external/libdaemon" name="platform/external/libdaemon" groups="bdk" />
   <project path="external/libdrm" name="platform/external/libdrm" groups="bdk" />
   <project path="external/libevent" name="platform/external/libevent" groups="bdk" />
+  <project path="external/libexif" name="platform/external/libexif" groups="bdk" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="bdk" />
+  <project path="external/libhevc" name="platform/external/libhevc" groups="bdk" />
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="bdk" />
   <project path="external/libldac" name="platform/external/libldac" groups="bdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="bdk" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="bdk" />
+  <project path="external/libmpeg2" name="platform/external/libmpeg2" groups="bdk" />
   <project path="external/libnl" name="platform/external/libnl" groups="bdk" />
   <project path="external/libogg" name="platform/external/libogg" groups="bdk" />
   <project path="external/libopus" name="platform/external/libopus" groups="bdk" />
@@ -102,6 +108,7 @@
   <project path="external/libusb" name="platform/external/libusb" groups="bdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="bdk" />
   <project path="external/libxml2" name="platform/external/libxml2" groups="bdk" />
+  <project path="external/libyuv" name="platform/external/libyuv" groups="bdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
@@ -110,6 +117,7 @@
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
+  <project path="external/mp4parser" name="platform/external/mp4parser" groups="bdk" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="bdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="bdk" />
@@ -142,7 +150,7 @@
   <project path="external/webp" name="platform/external/webp" groups="bdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="bdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="bdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" revision="2cb9b1b621ae744bf05384087b3ae1719968f168" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="bdk" />
   <project path="frameworks/base" name="platform/frameworks/base" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
@@ -150,12 +158,13 @@
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" groups="bdk" />
-  <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" revision="0e215cb1acd2556f70c30d548766999a9078e57c" />
+  <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="frameworks/support" name="platform/frameworks/support" groups="bdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
   <project path="libcore" name="platform/libcore" groups="bdk" />
+  <project path="packages/apps/RetailDemo" name="platform/packages/apps/RetailDemo" groups="bdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="bdk" clone-depth="1" />
