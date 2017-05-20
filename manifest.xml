@@ -41,6 +41,7 @@
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="bdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
+  <project path="external/cblas" name="platform/external/cblas" groups="bdk" />
   <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
@@ -55,6 +56,7 @@
   <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="bdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="bdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="bdk" />
+  <project path="external/eigen" name="platform/external/eigen" groups="bdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="bdk" />
   <project path="external/expat" name="platform/external/expat" groups="bdk" />
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="bdk" />
@@ -62,6 +64,7 @@
   <project path="external/fec" name="platform/external/fec" groups="bdk" />
   <project path="external/flac" name="platform/external/flac" groups="bdk" />
   <project path="external/freetype" name="platform/external/freetype" groups="bdk" />
+  <project path="external/gemmlowp" name="platform/external/gemmlowp" groups="bdk" />
   <project path="external/giflib" name="platform/external/giflib" groups="bdk" />
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
