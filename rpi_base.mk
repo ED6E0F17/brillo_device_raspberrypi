@@ -28,6 +28,7 @@ USE_JACK := false
 #JAVA_NOT_REQUIRED := true
 ANDROID_COMPILE_WITH_JACK := false
 ANDROID_FORCE_JACK_ENABLED := disabled
+WITH_DEXPREOPT := false
 
 PRODUCT_IOT := true
 TARGET_NO_RECOVERY := true
@@ -91,11 +92,17 @@ PRODUCT_PACKAGES := \
 PRODUCT_PACKAGES += \
   apache-xml \
   bouncycastle \
-  core-oj \
   core-libart \
+  core-oj \
   conscrypt \
   libmedia \
   okhttp \
+
+#PRODUCT_PACKAGES += \
+#  libjavacore \
+#  libopenjdk \
+#  libopenjdkjvm \
+#  libopenjdkjvmti \
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \

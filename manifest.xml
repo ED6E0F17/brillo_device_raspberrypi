@@ -69,6 +69,7 @@
   <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="bdk" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon,bdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="dragon,bdk" />
+  <project path="external/guava" name="platform/external/guava" groups="bdk" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="bdk" />
   <project path="external/icu" name="platform/external/icu" groups="bdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
@@ -80,6 +81,7 @@
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="bdk" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="bdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="bdk" />
+  <project path="external/jsr305" name="platform/external/jsr305" groups="bdk" />
   <project path="external/libavc" name="platform/external/libavc" groups="bdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="bdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="bdk" />
