@@ -3,23 +3,23 @@
 
   <remote  name="aosp" fetch="https://android.googlesource.com/" />
   <remote  name="github" fetch="https://github.com/" />
-  <default revision="master"
+  <default revision="o-preview"
            remote="aosp"
            sync-j="4" />
 
   <!-- Brillo-specific build tooling -->
-  <project path="tools/bdk" name="platform/tools/bdk" groups="bdk,bdk-cli" />
-  <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" />
-  <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" />
-  <project path="external/gentoo/portage" name="platform/external/gentoo/portage" groups="bdk" />
+  <project path="tools/bdk" name="platform/tools/bdk" groups="bdk,bdk-cli" revision="master" />
+  <project path="external/gentoo/integration" name="platform/external/gentoo/integration" groups="bdk" revision="master" />
+  <project path="external/gentoo/overlays/gentoo" name="platform/external/gentoo/overlays/gentoo" groups="bdk" clone-depth="1" revision="master" />
+  <project path="external/gentoo/portage" name="platform/external/gentoo/portage" groups="bdk" revision="master" />
 
   <!-- BEGIN open-source projects -->
-  <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" >
+  <project path="build" name="ED6E0F17/platform_build" groups="bdk" remote="github" revision="master" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="bdk" />
   <project path="build/kati" name="platform/build/kati" groups="bdk" />
-  <project path="build/soong" name="ED6E0F17/soong" groups="bdk" remote="github" >
+  <project path="build/soong" name="ED6E0F17/soong" groups="bdk" remote="github" revision="master">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -32,7 +32,7 @@
   <project path="external/aac" name="platform/external/aac" groups="bdk" />
   <project path="external/abi-compliance-checker" name="platform/external/abi-compliance-checker" groups="bdk" />
   <project path="external/abi-dumper" name="platform/external/abi-dumper" groups="bdk" />
-  <project path="external/avahi" name="platform/external/avahi" groups="bdk" />
+  <project path="external/avahi" name="platform/external/avahi" groups="bdk" revision="master" />
   <project path="external/avb" name="platform/external/avb" groups="bdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="bdk" />
   <project path="external/bison" name="platform/external/bison" groups="bdk" />
@@ -42,7 +42,7 @@
   <project path="external/bzip2" name="platform/external/bzip2" groups="bdk" />
   <project path="external/c-ares" name="platform/external/c-ares" groups="bdk" />
   <project path="external/cblas" name="platform/external/cblas" groups="bdk" />
-  <project path="external/chromite" name="platform/external/chromite" groups="bdk" />
+  <project path="external/chromite" name="platform/external/chromite" groups="bdk" revision="master" />
   <project path="external/clang" name="platform/external/clang" groups="bdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="bdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="bdk" />
@@ -107,7 +107,7 @@
   <project path="external/libopus" name="platform/external/libopus" groups="bdk" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="bdk" />
   <project path="external/libpng" name="platform/external/libpng" groups="bdk" />
-  <project path="external/libselinux" name="platform/external/libselinux" groups="bdk" />
+  <project path="external/libselinux" name="platform/external/libselinux" groups="bdk" revision="master" />
   <project path="external/libunwind" name="platform/external/libunwind" groups="bdk" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="bdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="bdk" />
@@ -117,7 +117,7 @@
   <project path="external/llvm" name="platform/external/llvm" groups="bdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="bdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="bdk" />
-  <project path="external/lzop" name="platform/external/lzop" groups="bdk" />
+  <project path="external/lzop" name="platform/external/lzop" groups="bdk" revision="master"/>
   <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="bdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="bdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
@@ -125,7 +125,7 @@
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="bdk" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="bdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
-  <project path="external/pdfium" name="platform/external/pdfium" groups="bdk" />
+  <project path="external/pdfium" name="platform/external/pdfium" groups="bdk" revision="master" />
   <project path="external/piex" name="platform/external/piex" groups="bdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="bdk" />
   <project path="external/rootdev" name="platform/external/rootdev" groups="bdk" />
@@ -145,7 +145,7 @@
   <project path="external/tinycompress" name="platform/external/tinycompress" groups="bdk" />
   <project path="external/tinyxml" name="platform/external/tinyxml" groups="bdk" />
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="bdk" />
-  <project path="external/tlsdate" name="platform/external/tlsdate" groups="bdk" />
+  <project path="external/tlsdate" name="platform/external/tlsdate" groups="bdk" revision="master"/>
   <project path="external/toybox" name="platform/external/toybox" groups="bdk" />
   <project path="external/tpm2" name="platform/external/tpm2" groups="bdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="bdk" />
@@ -169,7 +169,7 @@
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="bdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="bdk" />
   <project path="libcore" name="platform/libcore" groups="bdk" />
-  <project path="packages/apps/RetailDemo" name="platform/packages/apps/RetailDemo" groups="bdk" />
+  <project path="packages/apps/RetailDemo" name="platform/packages/apps/RetailDemo" groups="bdk" revision="master" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="bdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="bdk" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="bdk" clone-depth="1" />
@@ -188,44 +188,44 @@
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="bdk" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="bdk" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86"
-	groups="linux,bdk" clone-depth="1" />
+	groups="linux,bdk" clone-depth="1" revision="master" />
   <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="bdk,linux" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="bdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="tools,bdk" />
   <project path="system/bt" name="platform/system/bt" groups="bdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="bdk" />
   <project path="system/core" name="platform/system/core" groups="bdk" />
-  <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" />
+  <project path="system/crash_reporter" name="platform/system/crash_reporter" groups="bdk" revision="master" />
   <project path="system/extras" name="platform/system/extras" groups="bdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="bdk" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="bdk" />
   <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="bdk" />
-  <project path="system/iot/mtdutils" name="platform/system/iot/mtdutils" groups="bdk" />
+  <project path="system/iot/mtdutils" name="platform/system/iot/mtdutils" groups="bdk" revision="master" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="bdk" />
   <project path="system/libfmq" name="platform/system/libfmq" groups="bdk" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="bdk" />
   <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="bdk" />
   <project path="system/media" name="platform/system/media" groups="bdk" />
-  <project path="system/metricsd" name="platform/system/metricsd" groups="bdk" />
+  <project path="system/metricsd" name="platform/system/metricsd" groups="bdk" revision="master" />
   <project path="system/nvram" name="platform/system/nvram" groups="bdk" />
-  <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" />
+  <project path="system/peripheralmanager" name="platform/system/peripheralmanager" groups="bdk" revision="master" />
   <project path="system/netd" name="platform/system/netd" groups="bdk" />
   <project path="system/security" name="platform/system/security" groups="bdk" />
   <project path="system/sepolicy" name="platform/system/sepolicy" groups="bdk" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="bdk" />
-  <project path="system/tools/bpt" name="platform/system/tools/bpt" groups="bdk" />
+  <project path="system/tools/bpt" name="platform/system/tools/bpt" groups="bdk" revision="master"/>
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="bdk" />
   <project path="system/tpm" name="platform/system/tpm" groups="bdk" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="bdk" />
   <project path="system/libvintf" name="platform/system/libvintf" groups="bdk" />
   <project path="system/vold" name="platform/system/vold" groups="bdk" />
-  <project path="system/weaved" name="platform/system/weaved" groups="bdk" />
-  <project path="system/webservd" name="platform/system/webservd" groups="bdk" />
+  <project path="system/weaved" name="platform/system/weaved" groups="bdk" revision="master" />
+  <project path="system/webservd" name="platform/system/webservd" groups="bdk" revision="master" />
   <project path="test/vts" name="platform/test/vts" groups="bdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="bdk" clone-depth="1" />
   <!-- BEGIN RPI extras -->
   <project path="hardware/bsp/android/linux" name="ED6E0F17/linux" remote="github" revision="android-rpi" clone-depth="1" />
-  <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" />
-  <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" />
-  <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" />
+  <project path="device/rpi" name="ed6e0f17/brillo_device_raspberrypi" groups="rpi" remote="github" revision="master" />
+  <project path="external/gentoo/overlays/gentoo/dev-libs/wiringPi" name="ED6E0F17/brillo_wiringpi" groups="bdk" remote="github" revision="master" />
+  <project path="external/gentoo/overlays/gentoo/media-libs/brillo-userland" name="ED6E0F17/brillo_userland" groups="bdk" remote="github" revision="master" />
 </manifest>

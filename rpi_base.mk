@@ -135,6 +135,7 @@ PRODUCT_PACKAGES += \
   cacerts_google \
   dhcpcd \
   dhcpcd-6.8.2 \
+  libnl \
   wifi_init \
   wpa_supplicant \
 
