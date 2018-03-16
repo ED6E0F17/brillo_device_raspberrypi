@@ -3,7 +3,7 @@
 
   <remote  name="aosp" fetch="https://android.googlesource.com/" />
   <remote  name="github" fetch="https://github.com/" />
-  <default revision="o-preview"
+  <default revision="oreo-release"
            remote="aosp"
            sync-j="4" />
 
@@ -72,6 +72,7 @@
   <project path="external/guava" name="platform/external/guava" groups="bdk" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="bdk" />
   <project path="external/icu" name="platform/external/icu" groups="bdk" />
+  <project path="external/ims" name="platform/external/ims" groups="bdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="bdk" />
   <project path="external/iptables" name="platform/external/iptables" groups="bdk" />
   <project path="external/iputils" name="platform/external/iputils" groups="bdk" />
@@ -123,6 +124,7 @@
   <project path="external/mksh" name="platform/external/mksh" groups="bdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="bdk" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="bdk" />
+  <project path="external/nist-sip" name="platform/external/nist-sip" groups="bdk" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="bdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="bdk" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="bdk" revision="master" />
@@ -159,10 +161,13 @@
   <project path="frameworks/base" name="platform/frameworks/base" groups="bdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="bdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="bdk" />
+  <project path="frameworks/data-binding" name="platform/frameworks/data-binding" groups="bdk" />
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="bdk" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="bdk" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="bdk" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" groups="bdk" />
+  <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" groups="bdk" />
+  <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="bdk" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="bdk" />
   <project path="frameworks/support" name="platform/frameworks/support" groups="bdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="bdk" />

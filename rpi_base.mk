@@ -98,11 +98,11 @@ PRODUCT_PACKAGES += \
   libmedia \
   okhttp \
 
-#PRODUCT_PACKAGES += \
-#  libjavacore \
-#  libopenjdk \
-#  libopenjdkjvm \
-#  libopenjdkjvmti \
+PRODUCT_PACKAGES += \
+  libjavacore \
+  libopenjdk \
+  libopenjdkjvm \
+  libopenjdkjvmti \
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \
@@ -135,9 +135,10 @@ PRODUCT_PACKAGES += \
   cacerts_google \
   dhcpcd \
   dhcpcd-6.8.2 \
+  iw \
   libnl \
+  ping \
   wifi_init \
-  wpa_supplicant \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
@@ -152,7 +153,10 @@ BRCM_WIFI_FW_DST := system/vendor/firmware/brcm
 PRODUCT_COPY_FILES += \
 	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.bin  \
 	$(BRCM_WIFI_FW_SRC)/brcmfmac43430-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43430-sdio.txt \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43455-sdio.bin:$(BRCM_WIFI_FW_DST)/brcmfmac43455-sdio.bin  \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43455-sdio.txt:$(BRCM_WIFI_FW_DST)/brcmfmac43455-sdio.txt \
 	$(BRCM_WIFI_FW_SRC)/BCM43430A1.hcd:$(BRCM_WIFI_FW_DST)/BCM43430A1.hcd \
+	$(BRCM_WIFI_FW_SRC)/brcmfmac43455-sdio.clm_blob:$(BRCM_WIFI_FW_DST)/brcmfmac43455-sdio.clm_blob
 
 PRODUCT_PACKAGES += \
   3rd-party-packages \
@@ -184,12 +188,6 @@ BOARD_HOSTAPD_DRIVER := NL80211
 # Settings for dhcpcd-6.8.2.
 DHCPCD_USE_IPV6=yes
 DHCPCD_USE_DBUS=no
-
-# Wireless debugging.
-PRODUCT_PACKAGES += \
-  iw \
-  ping \
-  wpa_cli \
 
 #
 # Bluetooth.
