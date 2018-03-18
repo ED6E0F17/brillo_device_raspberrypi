@@ -68,6 +68,7 @@ PRODUCT_PACKAGES := \
   adbd \
   bootctl \
   e2fsck \
+  firewalld \
   init \
   init.rc \
   ip \
@@ -78,8 +79,12 @@ PRODUCT_PACKAGES := \
   libutils \
   linker \
   logcat \
+  reboot \
   rootdev \
+  sh \
   shell_and_utilities \
+  toolbox \
+  toybox \
 
 #  services \
 #  bootanimation \
@@ -123,12 +128,21 @@ PRODUCT_PACKAGES += \
   product_version \
   product_id \
 
+# D-Bus daemon, utilities, and example programs.
+PRODUCT_PACKAGES += \
+  dbus-daemon \
+  dbus-example-client \
+  dbus-example-daemon \
+  dbus-monitor \
+  dbus-send \
+
 # Connectivity packages.
 PRODUCT_PACKAGES += \
   cacerts \
   cacerts_google \
   dhcpcd \
   dhcpcd-6.8.2 \
+  dnsmasq \
   iw \
   libnl \
   ping \
@@ -159,6 +173,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_3RD_PARTY_PACKAGES += \
   dev-libs/wiringPi \
   media-libs/brillo-userland
+
+# Avahi packages.
+PRODUCT_PACKAGES += \
+  avahi-browse \
+  avahi-client \
+  avahi-daemon \
+  libdaemon \
+
+# tlsdate binaries.
+PRODUCT_PACKAGES += \
+  tlsdate \
+  tlsdate-helper \
+  tlsdated \
 
 # This configures filesystem capabilities.
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
@@ -201,6 +228,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
   ro.build.shutdown_timeout=5 \
 
 PRODUCT_COPY_FILES += \
+  device/rpi/common/dbus.conf:system/etc/dbus.conf \
   device/rpi/common/wpa_supplicant.conf:/system/etc/wpa_supplicant.conf \
   device/rpi/common/dhcpcd-6.8.2.conf:/system/etc/dhcpcd-6.8.2/dhcpcd.conf \
 
