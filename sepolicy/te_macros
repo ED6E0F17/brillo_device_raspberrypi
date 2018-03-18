@@ -6,6 +6,8 @@ init_daemon_domain($1)
 # Allow using binder and performing IPC to system services.
 binder_use($1)
 binder_service($1)
+# Allow connections to dbus_daemon.
+unix_socket_connect($1, dbus_daemon, dbus_daemon)
 
 # Allow access to files in /proc.
 # Fixes denials like:
@@ -85,8 +87,21 @@ typeattribute $1 firewalld_client;
 ')
 
 #####################################
+# allow_call_shill(domain)
+# Allow a domain and shill to communicate with each other over binder.
+define(`allow_call_shill', `
+typeattribute $1 shill_client;
+')
+
+#####################################
 # allow_call_trunksd(domain)
 # Allow a domain and trunksd to communicate with each other over binder.
 define(`allow_call_trunksd', `
 typeattribute $1 trunks_client;
+')
+
+#####################################
+# sockets for kernel >= 4.4
+define(`create_socket_perms_no_ioctl', `
+{ create rw_socket_perms_no_ioctl }
 ')

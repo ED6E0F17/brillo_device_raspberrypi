@@ -1,0 +1,15 @@
+type dbus_daemon_socket, file_type;
+type dbus_daemon, domain;
+type dbus_daemon_exec, exec_type, file_type;
+
+init_daemon_domain(dbus_daemon)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(dbus_daemon)
+
+allow_call_webservd(dbus_daemon)
+
+# dbus-daemon optimistically tries to read debug information from /proc when it
+# sees a connection. Suppress the denials when this happens.
+dontaudit dbus_daemon domain:file r_file_perms;
+dontaudit dbus_daemon domain:dir search;

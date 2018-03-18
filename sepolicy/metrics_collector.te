@@ -17,7 +17,7 @@ allow metrics_collector metrics_data_file:dir rw_dir_perms;
 allow metrics_collector metrics_data_file:file create_file_perms;
 
 # metrics_collector adds metricscollectorservice binder interface.
-add_service(metrics_collector, metricscollectorservice);
+allow metrics_collector metricscollectorservice:service_manager { add find };
 
 # Allow metrics_collector to talk to weaved over binder.
 allow_call_weave(metrics_collector)

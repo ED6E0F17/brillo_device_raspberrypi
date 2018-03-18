@@ -1,0 +1,63 @@
+# Domain for shill daemon.
+type shill, domain;
+type shill_exec, exec_type, file_type;
+type shill_data_file, file_type, data_file_type;
+
+brillo_domain(shill)
+net_domain(shill)
+
+# Allow crash_reporter access to core dump files.
+allow_crash_reporter(shill)
+
+# Allow shill to report metrics.
+allow_metrics_reporting(shill)
+
+file_type_auto_trans(shill, system_data_file, shill_data_file)
+
+# Following permissions are needed for shill.
+allow shill dbus_daemon:unix_stream_socket connectto;
+# allow shill self:packet_socket create_socket_perms_no_ioctl;
+# allow shill self:netlink_socket create_socket_perms_no_ioctl;
+# allow shill self:netlink_route_socket { rw_socket_perms_no_ioctl nlmsg_write };
+# allow shill self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow shill proc_net:file w_file_perms;
+allow shill sysfs:file w_file_perms;
+allow shill wifi_sysfs_entry:file rw_file_perms;
+allow shill self:capability { setuid setgid fsetid kill net_admin net_bind_service net_raw sys_module dac_override fowner };
+allow shill self:capability2 block_suspend;
+
+# Permissions for dhcpcd-6.8.2, which shill spawns using minijail.
+allow shill dhcp_exec:file rx_file_perms;
+# TODO(samueltan, jorgelo): remove these when dhcpcd-6.8.2 can be spawned with
+# in the dhcp domain.
+allow shill dhcp_data_file:dir create_dir_perms;
+allow shill dhcp_data_file:file create_file_perms;
+
+# Permissions for WiFi driver initialization.
+allow shill wifi_device:chr_file rw_file_perms;
+dontaudit shill wifi_device:chr_file { getattr ioctl };
+
+# Permissions for dnsmasq.
+allow shill dnsmasq_exec:file rx_file_perms;
+
+# Read /proc.
+r_dir_file(shill, proc)
+
+allow shill proc_cpuinfo:file { read getattr open };
+allow shill proc_net:dir search;
+allow shill proc_net:file { read getattr };
+
+allow shill rootfs:dir getattr;
+
+# Read /sys.
+r_dir_file(shill, sysfs)
+allow shill sysfs:lnk_file read;
+
+allow shill shill_service:service_manager add;
+
+# Don't spam the logs when trying to kill dhcpcd.
+# TODO(samueltan): remove this once b/24944751 is fixed.
+dontaudit shill domain:dir search;
+dontaudit shill domain:{file lnk_file} r_file_perms;
+
+dontaudit shill self:capability sys_ptrace;
