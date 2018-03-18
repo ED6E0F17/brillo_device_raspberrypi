@@ -18,24 +18,24 @@
 # It contains the mandatory targets required to boot a Brillo device.
 
 BRILLO := 1
-BRILLO_USE_DBUS := 0
+BRILLO_USE_DBUS := 1
 BRILLO_USE_OMAHA := 1
 BRILLO_USE_SHILL := 0
 BRILLO_USE_WEAVE := 0
 BRILLO_USE_BINDER := 1
 
-USE_JACK := false
-#JAVA_NOT_REQUIRED := true
+USE_JACK := true
+JAVA_NOT_REQUIRED := false
 ANDROID_COMPILE_WITH_JACK := false
 ANDROID_FORCE_JACK_ENABLED := disabled
-WITH_DEXPREOPT := false
+WITH_DEXPREOPT := true
 
 PRODUCT_IOT := true
 TARGET_NO_RECOVERY := true
 WITHOUT_CHECK_API := true
 ANDROID_NO_TEST_CHECK := true
 TARGET_BOARD_PLATFORM := rpi
-BREAKPAD_GENERATE_SYMBOLS := falsify
+BREAKPAD_GENERATE_SYMBOLS := false
 
 # Common Brillo init scripts.
 PRODUCT_COPY_FILES += \
@@ -79,9 +79,9 @@ PRODUCT_PACKAGES := \
   linker \
   logcat \
   rootdev \
-  services \
   shell_and_utilities \
 
+#  services \
 #  bootanimation \
 #  libinput \
 #  libinputflinger \
@@ -89,20 +89,14 @@ PRODUCT_PACKAGES := \
 #  surfaceflinger
 
 # art packages.
-PRODUCT_PACKAGES += \
-  apache-xml \
-  bouncycastle \
-  core-libart \
-  core-oj \
-  conscrypt \
-  libmedia \
-  okhttp \
-
-PRODUCT_PACKAGES += \
-  libjavacore \
-  libopenjdk \
-  libopenjdkjvm \
-  libopenjdkjvmti \
+#PRODUCT_PACKAGES += \
+#  apache-xml \
+#  bouncycastle \
+#  core-libart \
+#  core-oj \
+#  conscrypt \
+#  libmedia \
+#  okhttp \
 
 PRODUCT_PACKAGES_ENG += \
   brillo-update-payload-key \
@@ -139,6 +133,7 @@ PRODUCT_PACKAGES += \
   libnl \
   ping \
   wifi_init \
+  wpa_supplicant \
 
 # It only makes sense to include apmanager if WiFi is supported.
 WIFI_SUPPORTED := true
@@ -187,7 +182,7 @@ BOARD_HOSTAPD_DRIVER := NL80211
 
 # Settings for dhcpcd-6.8.2.
 DHCPCD_USE_IPV6=yes
-DHCPCD_USE_DBUS=no
+DHCPCD_USE_DBUS=yes
 
 #
 # Bluetooth.

@@ -29,7 +29,7 @@
 #include <netinet/in.h>
 #include <cutils/log.h>
 #include <cutils/properties.h>
-#include <hardware_brillo/wifi_driver_hal.h>
+#include "wifi_driver_hal.h"
 
 const char kStationDeviceName[] = "wlan0";
 
