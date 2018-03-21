@@ -1,7 +1,8 @@
-gpu_mem=256
-cma_lwm=16
-cma_hwm=32
-cma_offline_start=16
+gpu_mem=32
+#gpu_mem=256
+#cma_lwm=16
+#cma_hwm=32
+#cma_offline_start=16
 
 dtoverlay=dwc2
 dtparam=g-np-tx-fifo-size="16"

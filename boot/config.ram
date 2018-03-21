@@ -1,13 +1,13 @@
 initramfs ramdisk.img followkernel
-gpu_mem=256
-cma_lwm=16
-cma_hwm=32
-cma_offline_start=16
+gpu_mem=32
+#gpu_mem=256
+#cma_lwm=16
+#cma_hwm=32
+#cma_offline_start=16
 
 dtparam=act_led_activelow
 dtparam=audio
 dtoverlay=dwc2
 g-np-tx-fifo-size="16"
-g-rx-fifo-size="2000"
-g-tx-fifo-size="512 512 512 512"
+g-rx-fifo-size="720"
 

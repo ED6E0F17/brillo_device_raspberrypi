@@ -1,1 +1,1 @@
-coherent_pool=16M cma=256 selinux=1 root=/dev/ram0 initrd=0x1800000 init=/init androidboot.selinux=permissive androidboot.hardware=liz firmware_class.path=/system/vendor/firmware console=tty0 androidboot.console=tty0
+coherent_pool=5M selinux=1 root=/dev/ram0 initrd=0x1800000 init=/init androidboot.selinux=permissive androidboot.hardware=liz firmware_class.path=/system/vendor/firmware console=tty0 androidboot.console=tty0
